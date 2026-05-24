@@ -1,0 +1,21 @@
+---
+title: "在文章中使用 MDX"
+description: "MDX 可以在 Markdown 中嵌入组件，适合写交互示例、提示块或更复杂的技术文档。"
+pubDate: 2026-05-10
+tags: ["MDX", "写作"]
+cover: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80"
+---
+
+普通文章使用 Markdown 已经足够。如果需要在内容里插入组件、局部交互或更灵活的标记，可以使用 `.mdx`。
+
+<div className="mdx-note">
+  MDX 文件同样会进入内容集合，并共享标题、摘要、标签、封面图等元数据。
+</div>
+
+## 使用场景
+
+- 给教程加入可复用提示块。
+- 在文章中嵌入小型演示组件。
+- 写需要局部 JSX 表达能力的长文档。
+
+保持 Markdown 为主、MDX 为辅，后续维护会更轻。

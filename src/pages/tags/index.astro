@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getTagGroups } from "../../lib/posts";
+import { withBase } from "../../lib/url";
+
+const tagGroups = await getTagGroups();
+---
+
+<BaseLayout title="标签" description="按标签浏览博客文章。">
+  <section class="page-heading">
+    <p class="eyebrow">Topics</p>
+    <h1>标签</h1>
+    <p>从主题入口快速回到相关记录。</p>
+  </section>
+
+  <section class="tag-index" aria-label="全部标签">
+    {
+      tagGroups.map((tag) => (
+        <a href={withBase(`/tags/${tag.slug}/`)}>
+          <strong>{tag.name}</strong>
+          <span>{tag.count} 篇</span>
+        </a>
+      ))
+    }
+  </section>
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import PostCard from "../../components/PostCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getTagGroups } from "../../lib/posts";
+
+export async function getStaticPaths() {
+  const tagGroups = await getTagGroups();
+
+  return tagGroups.map((tag) => ({
+    params: { tag: tag.slug },
+    props: tag,
+  }));
+}
+
+const { name, posts, count } = Astro.props;
+---
+
+<BaseLayout title={`标签：${name}`} description={`标签 ${name} 下的 ${count} 篇文章。`}>
+  <section class="page-heading">
+    <p class="eyebrow">Topic</p>
+    <h1>#{name}</h1>
+    <p>{count} 篇文章</p>
+  </section>
+
+  <section class="post-list archive-list" aria-label={`${name} 标签文章`}>
+    {posts.map((post) => <PostCard post={post} />)}
+  </section>
+</BaseLayout>
