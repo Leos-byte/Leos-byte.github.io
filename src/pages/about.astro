@@ -1,0 +1,40 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '关于',
+  description: '关于 Leo 的技术札记。',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="About" title="关于这个博客">
+    <Fragment slot="subtitle">
+      这里记录我在前端工程、静态站点、自动化部署和开发工具链中的实践。内容会尽量保持短、清楚、能复用。
+    </Fragment>
+  </HeroText>
+
+  <Content
+    title="写作原则"
+    items={[
+      {
+        title: '问题先行',
+        description: '先说明遇到的问题，再记录可验证的解决过程。',
+      },
+      {
+        title: '保留上下文',
+        description: '配置、命令、边界条件和验证结果都会尽量写完整。',
+      },
+      {
+        title: '持续维护',
+        description: '当工具链升级或部署方式变化时，文章会跟着更新。',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1600&q=80',
+      alt: '代码编辑器与开发环境',
+    }}
+  />
+</Layout>

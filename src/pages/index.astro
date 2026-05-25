@@ -1,64 +1,59 @@
 ---
-import PostCard from "../components/PostCard.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { SITE_DESCRIPTION } from "../consts";
-import { getPublishedPosts, getTagGroups } from "../lib/posts";
-import { withBase } from "../lib/url";
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
-const posts = await getPublishedPosts();
-const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
-const latestPosts = posts.filter((post) => post.id !== featuredPost?.id).slice(0, 4);
-const tagGroups = await getTagGroups();
+const metadata = {
+  title: 'Leo 的技术札记',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout description={SITE_DESCRIPTION}>
-  <section class="intro-section">
-    <p class="eyebrow">Astro / GitHub Pages / Notes</p>
-    <h1>把开发过程写成可复用的记录。</h1>
-    <p>
-      {SITE_DESCRIPTION}
-    </p>
-  </section>
+<Layout metadata={metadata}>
+  <Hero
+    tagline="Astro / GitHub Pages / Notes"
+    actions={[
+      { variant: 'primary', text: '阅读文章', href: getBlogPermalink(), icon: 'tabler:book-2' },
+      { text: '关于作者', href: getPermalink('/about') },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: '工作台与开发笔记' }}
+  >
+    <Fragment slot="title"> Leo 的技术札记 </Fragment>
 
-  {
-    featuredPost && (
-      <section class="featured-section" aria-labelledby="featured-title">
-        <div class="section-heading">
-          <p>Featured</p>
-          <h2 id="featured-title">精选文章</h2>
-        </div>
-        <PostCard post={featuredPost} featured />
-      </section>
-    )
-  }
+    <Fragment slot="subtitle">
+      记录 Astro、前端工程、自动化部署和日常开发经验，把踩过的坑整理成可复用的笔记。
+    </Fragment>
+  </Hero>
 
-  <section class="home-grid" aria-label="博客内容">
-    <div>
-      <div class="section-heading">
-        <p>Latest</p>
-        <h2>最新文章</h2>
-      </div>
-      <div class="post-list">
-        {latestPosts.map((post) => <PostCard post={post} />)}
-      </div>
-      <a class="text-link" href={withBase("/blog/")}>查看全部文章</a>
-    </div>
+  <BlogLatestPosts
+    title="最新文章"
+    linkText="查看全部文章"
+    count={3}
+    information="围绕静态站点、内容管理、部署链路和写作工作流的实践记录。"
+  />
 
-    <aside class="home-aside" aria-label="标签">
-      <div class="section-heading">
-        <p>Topics</p>
-        <h2>标签</h2>
-      </div>
-      <div class="tag-cloud">
-        {
-          tagGroups.map((tag) => (
-            <a href={withBase(`/tags/${tag.slug}/`)}>
-              {tag.name}
-              <span>{tag.count}</span>
-            </a>
-          ))
-        }
-      </div>
-    </aside>
-  </section>
-</BaseLayout>
+  <Features2
+    title="博客关注点"
+    subtitle="偏向工程实践、可维护性和真实部署流程。"
+    columns={3}
+    items={[
+      {
+        title: 'Astro 实践',
+        description: '站点结构、内容集合、MDX 和性能优化。',
+        icon: 'tabler:brand-astro',
+      },
+      {
+        title: '部署自动化',
+        description: 'GitHub Pages、Actions、构建配置和发布验证。',
+        icon: 'tabler:cloud-upload',
+      },
+      {
+        title: '写作工作流',
+        description: '让文章元数据、标签和 RSS 保持清晰一致。',
+        icon: 'tabler:pencil',
+      },
+    ]}
+  />
+</Layout>

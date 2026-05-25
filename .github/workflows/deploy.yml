@@ -16,6 +16,7 @@ concurrency:
 
 env:
   ASTRO_TELEMETRY_DISABLED: true
+  SITE: https://leoone.uk
 
 jobs:
   build:
