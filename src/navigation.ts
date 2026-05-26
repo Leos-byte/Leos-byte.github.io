@@ -4,118 +4,145 @@ export const headerData = {
   links: [
     {
       text: 'Homes',
+      textZh: '首页模板',
       links: [
         {
           text: 'SaaS',
+          textZh: 'SaaS',
           href: getPermalink('/homes/saas'),
         },
         {
           text: 'Startup',
+          textZh: '创业公司',
           href: getPermalink('/homes/startup'),
         },
         {
           text: 'Mobile App',
+          textZh: '移动应用',
           href: getPermalink('/homes/mobile-app'),
         },
         {
           text: 'Personal',
+          textZh: '个人主页',
           href: getPermalink('/homes/personal'),
         },
       ],
     },
     {
       text: 'Pages',
+      textZh: '页面',
       links: [
         {
           text: 'Features (Anchor Link)',
+          textZh: '功能锚点',
           href: getPermalink('/#features'),
         },
         {
           text: 'Services',
+          textZh: '服务',
           href: getPermalink('/services'),
         },
         {
           text: 'Pricing',
+          textZh: '价格',
           href: getPermalink('/pricing'),
         },
         {
           text: 'About us',
+          textZh: '关于我们',
           href: getPermalink('/about'),
         },
         {
           text: 'Contact',
+          textZh: '联系',
           href: getPermalink('/contact'),
         },
         {
           text: 'Terms',
+          textZh: '条款',
           href: getPermalink('/terms'),
         },
         {
           text: 'Privacy policy',
+          textZh: '隐私政策',
           href: getPermalink('/privacy'),
         },
       ],
     },
     {
       text: 'Landing',
+      textZh: '落地页',
       links: [
         {
           text: 'Lead Generation',
+          textZh: '线索获取',
           href: getPermalink('/landing/lead-generation'),
         },
         {
           text: 'Long-form Sales',
+          textZh: '长篇销售页',
           href: getPermalink('/landing/sales'),
         },
         {
           text: 'Click-Through',
+          textZh: '点击转化页',
           href: getPermalink('/landing/click-through'),
         },
         {
           text: 'Product Details (or Services)',
+          textZh: '产品详情',
           href: getPermalink('/landing/product'),
         },
         {
           text: 'Coming Soon or Pre-Launch',
+          textZh: '即将发布',
           href: getPermalink('/landing/pre-launch'),
         },
         {
           text: 'Subscription',
+          textZh: '订阅',
           href: getPermalink('/landing/subscription'),
         },
       ],
     },
     {
       text: 'Blog',
+      textZh: '博客',
       links: [
         {
           text: 'Blog List',
+          textZh: '博客列表',
           href: getBlogPermalink(),
         },
         {
           text: 'Article',
+          textZh: '文章',
           href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
         },
         {
           text: 'Article (with MDX)',
+          textZh: 'MDX 文章',
           href: getPermalink('markdown-elements-demo-post', 'post'),
         },
         {
           text: 'Category Page',
+          textZh: '分类页',
           href: getPermalink('tutorials', 'category'),
         },
         {
           text: 'Tag Page',
+          textZh: '标签页',
           href: getPermalink('astro', 'tag'),
         },
       ],
     },
     {
       text: 'Widgets',
+      textZh: '组件',
       href: '#',
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
+  actions: [{ text: 'Download', textZh: '下载', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
 };
 
 export const footerData = {

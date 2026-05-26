@@ -31,6 +31,48 @@ import { UI } from 'astrowind:config';
   };
   initTheme();
 
+  const languageStorageKey = 'aw-language';
+
+  function getStoredLanguage() {
+    try {
+      const value = localStorage.getItem(languageStorageKey);
+      return value === 'en' ? 'en' : 'zh';
+    } catch {
+      return 'zh';
+    }
+  }
+
+  function setStoredLanguage(language) {
+    try {
+      localStorage.setItem(languageStorageKey, language);
+    } catch {
+      // Ignore storage errors in private browsing or restricted environments.
+    }
+  }
+
+  function applyLanguage(language) {
+    const activeLanguage = language === 'en' ? 'en' : 'zh';
+
+    document.documentElement.lang = activeLanguage === 'en' ? 'en' : 'zh-CN';
+
+    document.querySelectorAll('[data-aw-i18n]').forEach((elem) => {
+      const text =
+        elem.getAttribute(activeLanguage === 'en' ? 'data-aw-i18n-en' : 'data-aw-i18n-zh') || elem.textContent || '';
+      elem.textContent = text;
+    });
+
+    document.querySelectorAll('[data-aw-toggle-language]').forEach((elem) => {
+      elem.textContent = activeLanguage === 'en' ? '中文' : 'EN';
+      elem.setAttribute('aria-label', activeLanguage === 'en' ? '切换到中文' : 'Switch to English');
+      elem.setAttribute('title', activeLanguage === 'en' ? '切换到中文' : 'Switch to English');
+    });
+  }
+
+  const initLanguage = function () {
+    applyLanguage(getStoredLanguage());
+  };
+  initLanguage();
+
   function attachEvent(selector, event, fn) {
     const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
     if (matches && matches.length) {
@@ -73,6 +115,13 @@ import { UI } from 'astrowind:config';
 
       document.documentElement.classList.toggle('dark');
       localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    attachEvent('[data-aw-toggle-language]', 'click', function (event) {
+      event.stopPropagation();
+      const nextLanguage = getStoredLanguage() === 'en' ? 'zh' : 'en';
+      setStoredLanguage(nextLanguage);
+      applyLanguage(nextLanguage);
     });
 
     attachEvent('[data-aw-social-share]', 'click', function (_, elem) {
@@ -159,6 +208,7 @@ import { UI } from 'astrowind:config';
 
   document.addEventListener('astro:after-swap', () => {
     initTheme();
+    initLanguage();
     onLoad();
     onPageShow();
   });
