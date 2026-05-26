@@ -1,31 +1,34 @@
 site:
-  name: Leo 的技术札记
+  name: AstroWind
   site: 'https://leoone.uk'
   base: '/'
-  trailingSlash: true
+  trailingSlash: false
 
-  googleSiteVerificationId: ''
+  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
+# Default SEO metadata
 metadata:
   title:
-    default: Leo 的技术札记
-    template: '%s - Leo 的技术札记'
-  description: '记录 Astro、前端工程、自动化部署和日常开发经验。'
+    default: AstroWind
+    template: '%s — AstroWind'
+  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Leo 的技术札记
+    site_name: AstroWind
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
+    handle: '@arthelokyo'
+    site: '@arthelokyo'
     cardType: summary_large_image
 
 i18n:
-  language: zh-CN
+  language: en
   textDirection: ltr
 
 apps:
@@ -35,7 +38,7 @@ apps:
 
     post:
       isEnabled: true
-      permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
       robots:
         index: true
 

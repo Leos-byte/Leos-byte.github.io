@@ -17,36 +17,13 @@ import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin } from './src/uti
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const [, githubRepo] = process.env.GITHUB_REPOSITORY?.split('/') ?? [];
-const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
-const isUserOrOrgPagesRepo = githubRepo?.endsWith('.github.io') ?? false;
-
-function normalizeBase(value?: string) {
-  if (!value || value === '/') {
-    return '/';
-  }
-
-  return `/${value.replace(/^\/+|\/+$/g, '')}`;
-}
-
-const base =
-  process.env.BASE_PATH !== undefined
-    ? normalizeBase(process.env.BASE_PATH)
-    : isGitHubActions && githubRepo && !isUserOrOrgPagesRepo
-      ? `/${githubRepo}`
-      : '/';
-
-const site = process.env.SITE?.trim() || 'https://leoone.uk';
-
 const hasExternalScripts = false;
 const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroIntegration)[] = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
   output: 'static',
-  site,
-  base,
-  trailingSlash: 'always',
+  site: process.env.SITE || 'https://leoone.uk',
 
   integrations: [
     sitemap(),
