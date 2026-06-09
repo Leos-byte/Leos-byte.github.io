@@ -4,13 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-| Command             | Purpose                                    |
-| ------------------- | ------------------------------------------ |
-| `npm run dev`       | Dev server at `localhost:4321`             |
-| `npm run build`     | Production build to `./dist/`              |
-| `npm run preview`   | Preview the production build locally       |
-| `npm run check`     | Astro type-check + ESLint + Prettier       |
-| `npm run fix`       | Auto-fix ESLint + Prettier issues          |
+| Command           | Purpose                              |
+| ----------------- | ------------------------------------ |
+| `npm run dev`     | Dev server at `localhost:4321`       |
+| `npm run build`   | Production build to `./dist/`        |
+| `npm run preview` | Preview the production build locally |
+| `npm run check`   | Astro type-check + ESLint + Prettier |
+| `npm run fix`     | Auto-fix ESLint + Prettier issues    |
 
 **Node.js >= 22.12.0** required. The site is deployed to `https://leoone.uk`.
 
@@ -33,6 +33,7 @@ This means `config.yaml` changes are picked up as a watched file and hot-reloade
 ### Path aliases
 
 Import from `src/` using `~/`:
+
 ```typescript
 import Image from '~/components/common/Image.astro';
 import { SITE } from 'astrowind:config';
@@ -53,6 +54,7 @@ Defined in both `tsconfig.json` (for type checking) and `astro.config.ts` `vite.
 ### Tailwind CSS v4 (CSS-first config)
 
 All Tailwind configuration is CSS-first in `src/assets/styles/tailwind.css`:
+
 - **`@theme`** block maps design tokens (colors, fonts) from CSS custom properties
 - **`@utility`** directives define custom utilities like `bg-page`
 - **Dark mode:** class-based via `@variant dark (&:where(.dark, .dark *))`
@@ -76,6 +78,7 @@ Defined in `src/content.config.ts` using the Content Layer API with `glob()` loa
 ### Image handling
 
 `src/components/common/Image.astro` is the single image component:
+
 - Local images → `astro:assets` (Sharp optimization)
 - Remote images → Unpic CDN (URL rewriting, no Astro download)
 - Fallback remote images (providers Unpic can't detect) → `astro:assets` domain allowlist (currently `cdn.pixabay.com`)
