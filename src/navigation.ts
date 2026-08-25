@@ -9,7 +9,7 @@ export const headerData = {
         {
           text: 'SaaS',
           textZh: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          href: getPermalink('/'),
         },
       ],
     },
@@ -31,16 +31,6 @@ export const headerData = {
           text: 'Pricing',
           textZh: '价格',
           href: getPermalink('/pricing'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          textZh: '产品详情',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Subscription',
-          textZh: '订阅',
-          href: getPermalink('/landing/subscription'),
         },
         {
           text: 'About us',
