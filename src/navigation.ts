@@ -11,16 +11,11 @@ export const headerData = {
           textZh: 'SaaS',
           href: getPermalink('/homes/saas'),
         },
-        {
-          text: 'Personal',
-          textZh: '个人主页',
-          href: getPermalink('/homes/personal'),
-        },
       ],
     },
     {
-      text: 'Pages',
-      textZh: '页面',
+      text: 'Product',
+      textZh: '产品',
       links: [
         {
           text: 'Features (Anchor Link)',
@@ -36,6 +31,16 @@ export const headerData = {
           text: 'Pricing',
           textZh: '价格',
           href: getPermalink('/pricing'),
+        },
+        {
+          text: 'Product Details (or Services)',
+          textZh: '产品详情',
+          href: getPermalink('/landing/product'),
+        },
+        {
+          text: 'Subscription',
+          textZh: '订阅',
+          href: getPermalink('/landing/subscription'),
         },
         {
           text: 'About us',
@@ -60,18 +65,13 @@ export const headerData = {
       ],
     },
     {
-      text: 'Landing',
-      textZh: '落地页',
+      text: 'About',
+      textZh: '关于',
       links: [
         {
-          text: 'Product Details (or Services)',
-          textZh: '产品详情',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Subscription',
-          textZh: '订阅',
-          href: getPermalink('/landing/subscription'),
+          text: 'Personal',
+          textZh: '个人主页',
+          href: getPermalink('/homes/personal'),
         },
       ],
     },
