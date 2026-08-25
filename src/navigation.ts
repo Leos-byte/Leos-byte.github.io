@@ -64,29 +64,9 @@ export const headerData = {
       textZh: '落地页',
       links: [
         {
-          text: 'Lead Generation',
-          textZh: '线索获取',
-          href: getPermalink('/landing/lead-generation'),
-        },
-        {
-          text: 'Long-form Sales',
-          textZh: '长篇销售页',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          textZh: '点击转化页',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
           text: 'Product Details (or Services)',
           textZh: '产品详情',
           href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          textZh: '即将发布',
-          href: getPermalink('/landing/pre-launch'),
         },
         {
           text: 'Subscription',
@@ -125,6 +105,12 @@ export const headerData = {
           href: getPermalink('astro', 'tag'),
         },
       ],
+    },
+    {
+      text: 'Search',
+      textZh: '搜索',
+      href: getPermalink('/search'),
+      icon: 'tabler:search',
     },
     {
       text: 'Widgets',

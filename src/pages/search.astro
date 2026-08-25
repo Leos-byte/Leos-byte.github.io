@@ -1,0 +1,171 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import Layout from '~/layouts/PageLayout.astro';
+import { fetchPosts } from '~/utils/blog';
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
+
+const posts = await fetchPosts();
+
+const pageItems = [
+  { title: '首页', titleEn: 'Home', description: 'AstroWind 网站首页', href: getPermalink('/') },
+  { title: 'SaaS', titleEn: 'SaaS', description: 'SaaS 产品网站模板', href: getPermalink('/homes/saas') },
+  {
+    title: '个人主页',
+    titleEn: 'Personal',
+    description: '个人作品与履历展示页面',
+    href: getPermalink('/homes/personal'),
+  },
+  { title: '服务', titleEn: 'Services', description: '服务内容与解决方案', href: getPermalink('/services') },
+  { title: '价格', titleEn: 'Pricing', description: '产品方案和价格信息', href: getPermalink('/pricing') },
+  { title: '关于我们', titleEn: 'About us', description: '团队与网站介绍', href: getPermalink('/about') },
+  { title: '联系', titleEn: 'Contact', description: '联系表单与联系方式', href: getPermalink('/contact') },
+  {
+    title: '产品详情',
+    titleEn: 'Product details',
+    description: '产品详情落地页',
+    href: getPermalink('/landing/product'),
+  },
+  {
+    title: '订阅',
+    titleEn: 'Subscription',
+    description: '订阅服务落地页',
+    href: getPermalink('/landing/subscription'),
+  },
+  { title: '博客', titleEn: 'Blog', description: '文章、教程与资源', href: getBlogPermalink() },
+  { title: '条款', titleEn: 'Terms', description: '网站服务条款', href: getPermalink('/terms') },
+  { title: '隐私政策', titleEn: 'Privacy policy', description: '网站隐私政策', href: getPermalink('/privacy') },
+];
+
+const searchItems = [
+  ...pageItems.map((item) => ({ ...item, typeZh: '页面', typeEn: 'Page', keywords: '' })),
+  ...posts.map((post) => ({
+    title: post.title,
+    titleEn: post.title,
+    description: post.excerpt || '',
+    href: getPermalink(post.permalink, 'post'),
+    typeZh: '文章',
+    typeEn: 'Article',
+    keywords: [post.category?.title, ...(post.tags?.map((tag) => tag.title) || [])].filter(Boolean).join(' '),
+  })),
+];
+
+const metadata = {
+  title: '站内搜索',
+  description: '搜索站内页面和博客文章。',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto min-h-[60vh] max-w-4xl px-6 py-12 sm:py-16 lg:py-20">
+    <header class="mb-8">
+      <h1
+        class="mb-3 text-3xl font-bold text-heading sm:text-4xl"
+        data-aw-i18n
+        data-aw-i18n-zh="站内搜索"
+        data-aw-i18n-en="Site search"
+      >
+        站内搜索
+      </h1>
+      <p
+        class="text-lg text-muted"
+        data-aw-i18n
+        data-aw-i18n-zh="搜索网站页面和博客文章。"
+        data-aw-i18n-en="Search site pages and blog posts."
+      >
+        搜索网站页面和博客文章。
+      </p>
+    </header>
+
+    <form class="relative" role="search" data-search-form>
+      <label class="sr-only" for="site-search" data-aw-i18n data-aw-i18n-zh="搜索关键词" data-aw-i18n-en="Search terms">
+        搜索关键词
+      </label>
+      <Icon
+        name="tabler:search"
+        class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted"
+      />
+      <input
+        id="site-search"
+        name="q"
+        type="search"
+        autocomplete="off"
+        placeholder="输入关键词"
+        class="h-12 w-full rounded-md border border-gray-300 bg-page pl-12 pr-4 text-base text-heading outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 dark:border-slate-700"
+        data-search-input
+      />
+    </form>
+
+    <p class="mt-5 min-h-6 text-sm text-muted" aria-live="polite" data-search-status></p>
+    <ul
+      class="mt-2 divide-y divide-gray-200 border-y border-gray-200 dark:divide-slate-700 dark:border-slate-700"
+      data-search-results
+    >
+    </ul>
+  </section>
+</Layout>
+
+<script is:inline define:vars={{ searchItems }}>
+  const form = document.querySelector('[data-search-form]');
+  const input = document.querySelector('[data-search-input]');
+  const status = document.querySelector('[data-search-status]');
+  const results = document.querySelector('[data-search-results]');
+
+  const normalize = (value) => value.toLocaleLowerCase().normalize('NFKC').trim();
+  const isEnglish = () => document.documentElement.lang === 'en';
+
+  const render = () => {
+    const query = normalize(input.value);
+    input.placeholder = isEnglish() ? 'Enter keywords' : '输入关键词';
+
+    if (!query) {
+      status.textContent = isEnglish() ? 'Enter a keyword to start searching.' : '输入关键词开始搜索。';
+      results.replaceChildren();
+      return;
+    }
+
+    const matches = searchItems.filter((item) =>
+      normalize([item.title, item.titleEn, item.description, item.keywords].join(' ')).includes(query)
+    );
+
+    status.textContent = isEnglish() ? `${matches.length} results found` : `找到 ${matches.length} 个结果`;
+    results.replaceChildren(
+      ...matches.map((item) => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        const heading = document.createElement('span');
+        const type = document.createElement('span');
+        const description = document.createElement('span');
+
+        link.href = item.href;
+        link.className = 'group block py-5 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary';
+        heading.className = 'block font-semibold text-heading group-hover:text-link';
+        heading.textContent = isEnglish() ? item.titleEn : item.title;
+        type.className = 'mt-1 block text-xs font-semibold uppercase text-primary';
+        type.textContent = isEnglish() ? item.typeEn : item.typeZh;
+        description.className = 'mt-2 block text-sm text-muted';
+        description.textContent = item.description;
+
+        link.append(heading, type, description);
+        li.append(link);
+        return li;
+      })
+    );
+  };
+
+  form.addEventListener('submit', (event) => event.preventDefault());
+  input.addEventListener('input', () => {
+    const url = new URL(window.location.href);
+    if (input.value) {
+      url.searchParams.set('q', input.value);
+    } else {
+      url.searchParams.delete('q');
+    }
+    history.replaceState({}, '', url);
+    render();
+  });
+
+  input.value = new URL(window.location.href).searchParams.get('q') || '';
+  new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  render();
+</script>
