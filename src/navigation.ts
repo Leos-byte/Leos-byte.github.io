@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'Homes',
-      textZh: '首页模板',
+      textZh: '首页',
       links: [
         {
           text: 'SaaS',
@@ -15,11 +15,6 @@ export const headerData = {
           text: 'Startup',
           textZh: '创业公司',
           href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          textZh: '移动应用',
-          href: getPermalink('/homes/mobile-app'),
         },
         {
           text: 'Personal',
