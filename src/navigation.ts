@@ -12,11 +12,6 @@ export const headerData = {
           href: getPermalink('/homes/saas'),
         },
         {
-          text: 'Startup',
-          textZh: '创业公司',
-          href: getPermalink('/homes/startup'),
-        },
-        {
           text: 'Personal',
           textZh: '个人主页',
           href: getPermalink('/homes/personal'),
