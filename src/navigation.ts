@@ -3,15 +3,9 @@ import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: 'Home',
       textZh: '首页',
-      links: [
-        {
-          text: 'SaaS',
-          textZh: 'SaaS',
-          href: getPermalink('/'),
-        },
-      ],
+      href: getPermalink('/'),
     },
     {
       text: 'Product',
@@ -33,11 +27,6 @@ export const headerData = {
           href: getPermalink('/pricing'),
         },
         {
-          text: 'About us',
-          textZh: '关于我们',
-          href: getPermalink('/about'),
-        },
-        {
           text: 'Contact',
           textZh: '联系',
           href: getPermalink('/contact'),
@@ -51,17 +40,6 @@ export const headerData = {
           text: 'Privacy policy',
           textZh: '隐私政策',
           href: getPermalink('/privacy'),
-        },
-      ],
-    },
-    {
-      text: 'About',
-      textZh: '关于',
-      links: [
-        {
-          text: 'Personal',
-          textZh: '个人主页',
-          href: getPermalink('/homes/personal'),
         },
       ],
     },
@@ -93,6 +71,22 @@ export const headerData = {
           text: 'Tag Page',
           textZh: '标签页',
           href: getPermalink('astro', 'tag'),
+        },
+      ],
+    },
+    {
+      text: 'About',
+      textZh: '关于',
+      links: [
+        {
+          text: 'About us',
+          textZh: '关于我们',
+          href: getPermalink('/about'),
+        },
+        {
+          text: 'Personal',
+          textZh: '个人主页',
+          href: getPermalink('/homes/personal'),
         },
       ],
     },
