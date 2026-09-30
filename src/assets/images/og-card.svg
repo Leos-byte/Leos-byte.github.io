@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="628" viewBox="0 0 1200 628">
+  <rect width="1200" height="628" fill="#ffffff" />
+  <rect x="470" y="98" width="260" height="260" rx="56" fill="#0161ef" />
+  <rect x="551" y="151" width="53" height="134" rx="16" fill="#ffffff" />
+  <rect x="551" y="256" width="114" height="53" rx="16" fill="#ffffff" />
+  <text x="600" y="478" font-family="DejaVu Sans, sans-serif" font-size="72" font-weight="700" text-anchor="middle" fill="#0f172a">LeoOne</text>
+  <text x="600" y="545" font-family="DejaVu Sans, sans-serif" font-size="30" text-anchor="middle" fill="#475569">中文优先的 AI 研究与 AI Agent 安全洞见</text>
+</svg>

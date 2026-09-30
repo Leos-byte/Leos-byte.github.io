@@ -5,9 +5,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
 import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
-// import PostTags from "~/components/blog/Tags.astro";
 
-import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
+import { blogListRobots, fetchPosts, getStaticPathsBlogList } from '~/utils/blog';
+import { getPermalink } from '~/utils/permalinks';
 
 export const prerender = true;
 
@@ -20,33 +20,52 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
-// const allCategories = await findCategories();
-// const allTags = await findTags();
+const posts = await fetchPosts();
+const categories = [
+  ...new Map(posts.filter((post) => post.category).map((post) => [post.category!.slug, post.category!])).values(),
+];
 
 const metadata = {
-  title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: currentPage > 1 ? `洞见｜第 ${currentPage} 页` : '洞见｜AI 研究与 Agent 安全',
+  description: 'LeoOne 发布有来源、标明适用范围的 AI Agent 安全情报与前沿 AI 研究分析。',
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
-  },
-  openGraph: {
-    type: 'blog',
   },
 };
 ---
 
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline
-      subtitle="A statically generated blog example with news, tutorials, resources and other interesting content related to AstroWind"
-    >
-      The Blog
+    <Headline subtitle="围绕 AI Agent 安全与前沿 AI 研究的中文内容；每篇标明发布日期、来源和适用范围。">
+      洞见
     </Headline>
-    <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-    <!--
-      <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
-      <PostTags tags={allTags}  title="Search by Tags:" />
-    -->
+    {
+      categories.length > 0 && (
+        <p class="mb-8 -mt-4 md:-mt-10 text-center">
+          按栏目浏览：
+          {categories.map((category, index) => (
+            <>
+              {index > 0 ? ' · ' : ''}
+              <a class="hover:underline" href={getPermalink(category.slug, 'category')}>
+                {category.title}
+              </a>
+            </>
+          ))}
+        </p>
+      )
+    }
+    {
+      page.data.length > 0 ? (
+        <>
+          <BlogList posts={page.data} />
+          <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} prevText="更新的文章" nextText="更早的文章" />
+        </>
+      ) : (
+        <p class="text-lg text-muted dark:text-slate-400 text-center">
+          公开洞见正在整理中。本站不会用模板文章补足内容。
+        </p>
+      )
+    }
   </section>
 </Layout>

@@ -110,6 +110,16 @@ const link = APP_BLOG?.post?.isEnabled ? getPermalink(post.permalink, 'post') : 
 
     {post.excerpt && <p class="flex-grow text-muted dark:text-slate-400 text-lg">{post.excerpt}</p>}
     {
+      link && (
+        <a
+          class="inline-flex items-center mt-4 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
+          href={link}
+        >
+          阅读全文 <span aria-hidden="true">→</span>
+        </a>
+      )
+    }
+    {
       post.tags && Array.isArray(post.tags) ? (
         <footer class="mt-5">
           <PostTags tags={post.tags} />

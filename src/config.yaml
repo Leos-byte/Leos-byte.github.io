@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: LeoOne
   site: 'https://leoone.uk'
   base: '/'
   trailingSlash: false
@@ -9,23 +9,19 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: LeoOne
+    template: '%s｜LeoOne'
+  description: 面向中文技术从业者的 AI 研究与 AI Agent 安全洞见，区分已证实事实、主张与不确定性，并链接原始来源。
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: LeoOne
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/og-card.png'
         width: 1200
         height: 628
     type: website
-  twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
-    cardType: summary_large_image
 
 i18n:
   language: zh-CN

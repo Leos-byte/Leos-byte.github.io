@@ -44,26 +44,29 @@ function buildOpenGraph(og: MetaDataOpenGraph): SEOProps['openGraph'] | undefine
   if (!og) return undefined;
 
   const imageUrl = firstImage?.url || '';
-  if (!imageUrl) return undefined;
 
   return {
     basic: {
       title: title || METADATA?.title?.default || '',
       type: og.type || 'website',
-      image: imageUrl,
       url: og.url,
+      image: imageUrl,
     },
     optional: {
       description: description || METADATA?.description,
       locale: og.locale,
       siteName: og.siteName,
     },
-    image: {
-      url: imageUrl,
-      width: firstImage?.width,
-      height: firstImage?.height,
-      alt: title || METADATA?.title?.default || '',
-    },
+    ...(imageUrl
+      ? {
+          image: {
+            url: imageUrl,
+            width: firstImage?.width,
+            height: firstImage?.height,
+            alt: title || METADATA?.title?.default || '',
+          },
+        }
+      : {}),
   };
 }
 

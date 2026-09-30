@@ -1,5 +1,194 @@
 ---
-import SaaSHome from '~/pages/homes/saas.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+import HeroText from '~/components/widgets/HeroText.astro';
+import Note from '~/components/widgets/Note.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { findLatestPosts } from '~/utils/blog';
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
+import { getFormattedDate } from '~/utils/utils';
+
+const posts = (await findLatestPosts({ count: 3 })).slice(0, 3);
+
+const metadata = {
+  title: 'LeoOne｜有来源的 AI 研究与 Agent 安全洞见',
+  ignoreTitleTemplate: true,
+  description: '面向中文技术从业者的 AI 研究与 AI Agent 安全洞见，区分已证实事实、主张与不确定性，并链接原始来源。',
+};
 ---
 
-<SaaSHome />
+<Layout metadata={metadata}>
+  <!-- Hero -->
+
+  <HeroText
+    tagline="中文优先的 AI 研究与安全情报"
+    title={'把 AI Agent 的新风险与前沿研究，<br class="hidden md:inline" />放回可核验的证据里'}
+    subtitle="LeoOne 整理公开的一手来源与研究材料，说明哪些变化值得关注、适用条件是什么，以及哪些结论仍不确定。"
+    callToAction={{ variant: 'primary', text: '阅读最新洞见', href: getBlogPermalink(), icon: 'tabler:chevron-right' }}
+    callToAction2={{ variant: 'secondary', text: '了解方法与范围', href: getPermalink('/services') }}
+  />
+
+  <Note title="当前为公开内容与方向验证阶段；" description="不提供实时告警、扫描或托管安全服务。" />
+
+  <!-- 读者与任务 -->
+
+  <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">当你需要判断“这项变化是否影响我们”</h2>
+    </div>
+    <div class="mt-8 md:mt-12 grid gap-6 md:grid-cols-3">
+      {
+        [
+          {
+            title: 'AI Agent 安全',
+            description: '识别公开披露中的受影响条件、版本与缓解动作。',
+          },
+          {
+            title: '前沿 AI',
+            description: '区分研究结果、公司主张与尚待验证的能力判断。',
+          },
+          {
+            title: '决策沟通',
+            description: '带回原始来源、日期和限制，而不是只转述结论。',
+          },
+        ].map(({ title, description }) => (
+          <div class="rounded-lg border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+            <h3 class="text-xl md:text-2xl font-bold font-heading">{title}</h3>
+            <p class="mt-3 text-muted dark:text-slate-400">{description}</p>
+          </div>
+        ))
+      }
+    </div>
+    <a
+      class="inline-flex items-center mt-8 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
+      href={getBlogPermalink()}
+    >
+      浏览全部洞见 <span aria-hidden="true">→</span>
+    </a>
+  </section>
+
+  <!-- 编辑方法预览 -->
+
+  <section class="border-t border-gray-200 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">每篇内容遵循同一套可检查的方法</h2>
+      </div>
+      <ol class="mt-8 md:mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          ['确定时间范围', '优先原始来源', '标出证据状态', '说明适用范围与未知项'].map((step, index) => (
+            <li class="flex gap-4">
+              <span class="flex-none font-bold text-2xl text-primary dark:text-blue-500">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span class="text-lg font-medium leading-snug">{step}</span>
+            </li>
+          ))
+        }
+      </ol>
+      <a
+        class="inline-flex items-center mt-8 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
+        href={getPermalink('/services')}
+      >
+        查看完整方法与范围 <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 最新洞见 -->
+
+  <section class="border-t border-gray-200 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">最新洞见</h2>
+      </div>
+      {
+        posts.length > 0 ? (
+          <div class="mt-8 md:mt-12 grid gap-6 md:grid-cols-3">
+            {posts.map((post) => (
+              <article class="rounded-lg border border-gray-200 dark:border-slate-700 p-6 md:p-8 flex flex-col">
+                {post.category && (
+                  <p class="text-sm">
+                    <a class="hover:underline" href={getPermalink(post.category.slug, 'category')}>
+                      {post.category.title}
+                    </a>
+                  </p>
+                )}
+                <h3 class="mt-2 text-xl md:text-2xl font-bold leading-tight font-heading">
+                  <a
+                    class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+                    href={getPermalink(post.permalink, 'post')}
+                  >
+                    {post.title}
+                  </a>
+                </h3>
+                <p class="mt-2 text-sm text-muted dark:text-slate-400">
+                  <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
+                  {post.readingTime ? ` · 阅读约 ${post.readingTime} 分钟` : ''}
+                </p>
+                {post.excerpt && <p class="mt-3 flex-grow text-muted dark:text-slate-400">{post.excerpt}</p>}
+                <a
+                  class="inline-flex items-center mt-4 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
+                  href={getPermalink(post.permalink, 'post')}
+                >
+                  阅读全文 <span aria-hidden="true">→</span>
+                </a>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p class="mt-8 text-lg text-muted dark:text-slate-400">内容正在整理中。本站不会用模板文章补足内容。</p>
+        )
+      }
+      {
+        posts.length > 0 && (
+          <a
+            class="inline-flex items-center mt-8 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
+            href={getBlogPermalink()}
+          >
+            全部洞见 <span aria-hidden="true">→</span>
+          </a>
+        )
+      }
+    </div>
+  </section>
+
+  <!-- 安全与责任边界 -->
+
+  <section class="border-t border-gray-200 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">我们会说明，也会明确不说明什么</h2>
+        <ul class="mt-8 space-y-4 text-lg">
+          <li class="flex gap-3">
+            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
+            <span>不把未证实披露写成已发生攻击。</span>
+          </li>
+          <li class="flex gap-3">
+            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
+            <span>不提供可操作的攻击复现内容。</span>
+          </li>
+          <li class="flex gap-3">
+            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
+            <span>发现错误时保留更正记录。</span>
+          </li>
+        </ul>
+        <a
+          class="inline-flex items-center mt-8 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
+          href={getPermalink('/safeguards')}
+        >
+          阅读安全与编辑边界 <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 低风险结尾 -->
+
+  <CallToAction
+    title="先阅读，再决定是否继续关注"
+    subtitle="本站目前不提供账户、付费订阅或实时服务。若希望了解后续公开内容或提供非敏感反馈，请先阅读联系与关注说明。"
+    actions={[{ variant: 'primary', text: '联系与关注说明', href: getPermalink('/contact') }]}
+  />
+</Layout>

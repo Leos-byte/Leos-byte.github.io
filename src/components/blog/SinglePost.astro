@@ -30,6 +30,14 @@ const { post, url } = Astro.props;
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
           {
+            post.updateDate && (
+              <>
+                {' '}
+                · <span class="inline-block">最后更新：{getFormattedDate(post.updateDate)}</span>
+              </>
+            )
+          }
+          {
             post.author && (
               <>
                 {' '}
@@ -52,7 +60,7 @@ const { post, url } = Astro.props;
           {
             post.readingTime && (
               <>
-                &nbsp;· <span>{post.readingTime}</span> min read
+                &nbsp;· <span>{post.readingTime} 分钟阅读</span>
               </>
             )
           }
@@ -95,6 +103,25 @@ const { post, url } = Astro.props;
       class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
     >
       <slot />
+    </div>
+    <div
+      class="mx-auto px-6 sm:px-6 max-w-3xl mt-10 border-t dark:border-slate-700 pt-6 text-sm text-muted dark:text-slate-400"
+    >
+      <p>
+        <span class="font-semibold">适用范围与局限：</span
+        >本文仅覆盖正文列出的时间范围与来源，证据状态以正文标注为准；未注明之处按“未知”处理。
+      </p>
+      <p class="mt-2">
+        <span class="font-semibold">原始来源：</span>文中以链接标注，点击可核验原文。
+      </p>
+      <p class="mt-2">
+        <span class="font-semibold">更新记录：</span>发现事实错误时，本站会在此记录更正日期与原因；不悄然改写实质结论。
+      </p>
+      <p class="mt-2">
+        本站内容不构成安全、法律或采购意见。详见<a class="underline" href={getPermalink('/safeguards')}
+          >安全与编辑边界</a
+        >与<a class="underline" href={getPermalink('/corrections')}>更正与来源政策</a>。
+      </p>
     </div>
     <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-8 flex justify-between flex-col sm:flex-row">
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />

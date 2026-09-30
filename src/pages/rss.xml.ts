@@ -15,9 +15,10 @@ export const GET = async () => {
   const posts = await fetchPosts();
 
   const rss = await getRssString({
-    title: `${SITE.name}’s Blog`,
+    title: `${SITE.name} 洞见`,
     description: METADATA?.description || '',
     site: import.meta.env.SITE,
+    customData: `<language>zh-cn</language>`,
 
     items: posts.map((post) => ({
       link: getPermalink(post.permalink, 'post'),

@@ -1,169 +1,57 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Home',
+      text: '首页',
       textZh: '首页',
       href: getPermalink('/'),
     },
     {
-      text: 'Product',
-      textZh: '产品',
-      links: [
-        {
-          text: 'Features (Anchor Link)',
-          textZh: '功能锚点',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          textZh: '服务',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          textZh: '价格',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'Contact',
-          textZh: '联系',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          textZh: '条款',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          textZh: '隐私政策',
-          href: getPermalink('/privacy'),
-        },
-      ],
+      text: '方法与范围',
+      textZh: '方法与范围',
+      href: getPermalink('/services'),
     },
     {
-      text: 'Blog',
-      textZh: '博客',
-      links: [
-        {
-          text: 'Blog List',
-          textZh: '博客列表',
-          href: getBlogPermalink(),
-        },
-        {
-          text: 'Article',
-          textZh: '文章',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
-        },
-        {
-          text: 'Article (with MDX)',
-          textZh: 'MDX 文章',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          textZh: '分类页',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          textZh: '标签页',
-          href: getPermalink('astro', 'tag'),
-        },
-      ],
+      text: '安全与边界',
+      textZh: '安全与边界',
+      href: getPermalink('/safeguards'),
     },
     {
-      text: 'About',
-      textZh: '关于',
-      links: [
-        {
-          text: 'About us',
-          textZh: '关于我们',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Personal',
-          textZh: '个人主页',
-          href: getPermalink('/homes/personal'),
-        },
-      ],
+      text: '洞见',
+      textZh: '洞见',
+      href: getBlogPermalink(),
     },
     {
-      text: 'Search',
-      textZh: '搜索',
-      href: getPermalink('/search'),
-      icon: 'tabler:search',
-    },
-    {
-      text: 'Widgets',
-      textZh: '组件',
-      href: '#',
+      text: '联系与关注',
+      textZh: '联系与关注',
+      href: getPermalink('/contact'),
     },
   ],
-  actions: [{ text: 'Download', textZh: '下载', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
+  actions: [],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: '导航',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: '首页', href: getPermalink('/') },
+        { text: '方法与范围', href: getPermalink('/services') },
+        { text: '安全与边界', href: getPermalink('/safeguards') },
+        { text: '洞见', href: getBlogPermalink() },
+        { text: '联系与关注', href: getPermalink('/contact') },
       ],
     },
     {
-      title: 'Platform',
+      title: '站点说明',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
-      ],
-    },
-    {
-      title: 'Support',
-      links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
-      ],
-    },
-    {
-      title: 'Company',
-      links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: '隐私说明', href: getPermalink('/privacy') },
+        { text: '更正与来源政策', href: getPermalink('/corrections') },
       ],
     },
   ],
-  secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
-  ],
-  socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/arthelokyo/astrowind' },
-  ],
-  footNote: `
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo"> Arthelokyo</a> · All rights reserved.
-  `,
+  secondaryLinks: [],
+  socialLinks: [],
+  footNote: `LeoOne 是中文优先的 AI 研究与 AI Agent 安全情报出版物。 © ${new Date().getFullYear()} LeoOne`,
 };

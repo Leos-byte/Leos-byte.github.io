@@ -1,0 +1,100 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: '安全与编辑边界',
+  description: 'LeoOne 的公开内容范围、来源与更正原则，以及不提供的安全服务和不发布的内容。',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
+        安全信息需要边界，不需要夸大
+      </h1>
+      <p class="mt-4 text-xl text-muted dark:text-slate-300">
+        LeoOne 提供面向理解与决策的公开信息整理，不替代内部安全团队、专业顾问、厂商支持或法律意见。
+      </p>
+    </div>
+
+    <!-- 内容安全规则 -->
+
+    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">内容安全规则</h2>
+    <ul class="mt-8 space-y-4 text-lg">
+      {
+        [
+          '以原始来源为优先；二手报道必须明确标为二手，并尽可能回链原始材料。',
+          '明确区分已利用、已披露、研究演示、供应商声明和推测。',
+          '说明影响成立所需的版本、权限、配置或部署条件；信息不足时写明未知。',
+          '不发布利用载荷、绕过步骤、窃取/破坏指令或其他会显著降低攻击门槛的细节。',
+        ].map((item) => (
+          <li class="flex gap-3">
+            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- 我们不做什么 -->
+
+    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">我们不做什么</h2>
+    <ul class="mt-8 space-y-4 text-lg">
+      {
+        [
+          '不监控读者环境，不承诺发现所有威胁，也不发送实时告警。',
+          '不扫描、测试、修复或代管任何系统。',
+          '不提供 SLA、全天候支持、合规认证、法律意见或投资建议。',
+          '不接受凭据、生产日志、客户机密、个人敏感信息或漏洞利用细节。',
+          '不基于尚未批准的内部产品能力提供账户、工作区或团队协作功能。',
+        ].map((item) => (
+          <li class="flex gap-3">
+            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- 更正与反馈 -->
+
+    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">更正与反馈</h2>
+    <ul class="mt-8 space-y-4 text-lg">
+      <li class="flex gap-3">
+        <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
+        <span>
+          更正格式：文章页的“更新记录”含日期、原表述摘要、修改原因；不悄然改写实质结论。详见<a
+            class="underline"
+            href={getPermalink('/corrections')}>更正与来源政策</a
+          >。
+        </span>
+      </li>
+      <li class="flex gap-3">
+        <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
+        <span>
+          非敏感的事实纠正可通过<a class="underline" href={getPermalink('/contact')}>联系与关注</a
+          >页所列的经批准渠道提交。
+        </span>
+      </li>
+      <li class="flex gap-3">
+        <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
+        <span
+          >安全漏洞报告不通过普通联系入口处理；只有在真实安全联系渠道、处理人和披露规则获批准后，才链接其专页或
+          security.txt。</span
+        >
+      </li>
+    </ul>
+  </section>
+
+  <CallToAction
+    title="继续了解"
+    actions={[
+      { text: '查看编辑方法', href: getPermalink('/services') },
+      { variant: 'primary', text: '阅读洞见', href: getBlogPermalink() },
+    ]}
+  />
+</Layout>

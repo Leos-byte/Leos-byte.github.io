@@ -3,11 +3,9 @@ publishDate: 2026-08-25
 draft: false
 title: 'AI Agent 网络安全周报：n8n 主进程 RCE、CoSnitch 修复与 OpenAI 收紧隔离'
 excerpt: '汇总 2026 年 8 月 18 日至 25 日 AI Agent 领域的新披露与新进展，并区分此前事件的持续影响。'
-category: 网络安全
+category: AI Agent 安全
 tags:
-  - AI Agent
-  - 网络安全
-  - 漏洞情报
+  - AI Agent 安全
 metadata:
   description: '2026 年 8 月 18 日至 25 日 AI Agent 重大网络安全事件周报：n8n 两项 RCE、Microsoft Copilot CoSnitch 修复及 OpenAI 强化测试隔离。'
 ---

@@ -1,79 +1,71 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { getAsset, getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Contact',
+  title: '联系与关注',
+  description: 'LeoOne 当前的联系与关注边界；本站尚未开放账户、付费订阅、咨询销售或含个人信息的在线表单。',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">联系与关注</h1>
+    </div>
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+    <!-- 状态说明 -->
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+    <div class="mt-10 rounded-lg border border-gray-200 dark:border-slate-700 p-6 md:p-8 max-w-3xl">
+      <h2 class="text-xl md:text-2xl font-bold font-heading">当前状态</h2>
+      <p class="mt-3 text-lg text-muted dark:text-slate-300">
+        LeoOne
+        目前处于公开内容与方向验证阶段。本站不提供账户、付费订阅、实时安全服务或咨询销售，也不设在线联系/候补表单。
+      </p>
+    </div>
 
-  <!-- Features2 Widget ************** -->
+    <!-- 如何关注 -->
 
-  <Features2
-    title="We are here to help!"
-    items={[
-      {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
-      },
+    <h2 class="mt-12 text-3xl md:text-4xl font-bold tracking-tight font-heading max-w-3xl">如何关注</h2>
+    <ul class="mt-8 space-y-4 text-lg max-w-3xl">
+      <li class="flex gap-3">
+        <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
+        <span>
+          请通过<a class="underline" href={getBlogPermalink()}>洞见页</a>阅读已发布内容。
+        </span>
+      </li>
+      <li class="flex gap-3">
+        <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
+        <span>
+          RSS 源：<a class="underline" href={getAsset('/rss.xml')}>/rss.xml</a>。
+        </span>
+      </li>
+    </ul>
+
+    <!-- 反馈边界 -->
+
+    <h2 class="mt-12 text-3xl md:text-4xl font-bold tracking-tight font-heading max-w-3xl">反馈边界</h2>
+    <p class="mt-8 text-lg text-muted dark:text-slate-400 max-w-3xl">
+      请勿通过公开渠道发送凭据、生产日志、客户机密、个人敏感信息、漏洞利用细节或紧急事件请求。
+    </p>
+
+    <!-- 条件化联系渠道 -->
+
+    <div class="mt-10 rounded-lg border border-gray-200 dark:border-slate-700 p-6 md:p-8 max-w-3xl">
+      <h2 class="text-xl md:text-2xl font-bold font-heading">联系渠道</h2>
+      <p class="mt-3 text-lg text-muted dark:text-slate-300">
+        非敏感的联系与反馈渠道正在准备中。请勿将此站点视为紧急支持或安全事件报告渠道。
+      </p>
+    </div>
+  </section>
+
+  <CallToAction
+    title="继续阅读"
+    actions={[
+      { variant: 'primary', text: '阅读洞见', href: getBlogPermalink() },
+      { text: '查看安全与编辑边界', href: getPermalink('/safeguards') },
     ]}
   />
 </Layout>

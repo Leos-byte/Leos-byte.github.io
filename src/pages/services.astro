@@ -1,224 +1,106 @@
 ---
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'Services',
+  title: '方法与范围',
+  description: 'LeoOne 如何筛选公开 AI 研究与 AI Agent 安全信息、标注证据状态，并说明当前不覆盖的范围。',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+  <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
+        我们如何处理公开 AI 研究与 Agent 安全信息
+      </h1>
+      <p class="mt-4 text-xl text-muted dark:text-slate-300">
+        本页描述 LeoOne 的公开编辑方法，不是咨询、监控或安全服务承诺。
+      </p>
+    </div>
 
-  <Hero
-    tagline="Services"
-    title="Elevate your projects with our stunning templates"
-    subtitle="Explore our meticulously crafted templates tailored to various industries and purposes. From captivating presentations to functional website designs, we offer the tools you need to succeed."
-    actions={[{ variant: 'primary', target: '_blank', text: 'Start exploring', href: '/' }]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'AstroWind Hero Image',
-    }}
-  />
+    <!-- 覆盖主题 -->
 
-  <!-- Features2 Widget ************** -->
+    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">覆盖主题</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      {
+        [
+          {
+            title: 'AI Agent 安全',
+            description: '公开披露、更新、研究与缓解信息；重点是受影响条件和行动优先级。',
+          },
+          {
+            title: '前沿 AI 研究',
+            description: '能力、世界模型、推理、Agent 等争议中的证据与可检验问题。',
+          },
+        ].map(({ title, description }) => (
+          <div class="rounded-lg border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+            <h3 class="text-xl md:text-2xl font-bold font-heading">{title}</h3>
+            <p class="mt-3 text-muted dark:text-slate-400">{description}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="mt-6 text-muted dark:text-slate-400">不承诺固定频率；每篇按实际发布日期更新。</p>
 
-  <Features2
-    title="Explore our diverse templates"
-    subtitle="Discover our selection below to streamline and elevate your projects."
-    columns={3}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'By harmonizing instructional design and visual appeal, templates streamline content creation for varied materials, expediting development and cultivating engaging educational spaces.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Crafting functional, visually appealing spaces for residential and commercial use. Templates emphasize layout, colors, and furniture setups, offering a versatile toolkit for your design vision.',
-        icon: 'tabler:home-star',
-      },
-      {
-        title: 'Photography',
-        description: `Empowering photographers, our templates facilitate captivating storytelling. With a keen focus on layout, galleries, and typography, they cater to both professionals and enthusiasts.`,
-        icon: 'tabler:photo',
-      },
-      {
-        title: 'E-commerce',
-        description:
-          'Developing engaging online stores, our E-commerce templates ensure a dynamic presence to effectively showcase products. Ideal for startups or revamps.',
-        icon: 'tabler:shopping-cart',
-      },
-      {
-        title: 'Blog',
-        description:
-          'With attention to typography, these templates empower effective content presentation for writers at any stage, ensuring visually engaging and user-friendly blogs.',
-        icon: 'tabler:article',
-      },
-      {
-        title: 'Business',
-        description:
-          'Providing polished options for effective visual communication, these templates empower both startups and established companies for a professional brand presence.',
-        icon: 'tabler:building-store',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Offering pre-designed elements for a consistent brand identity, including logos and marketing materials. Ideal for new ventures or revamps.',
-        icon: 'tabler:arrow-big-up-lines',
-      },
-      {
-        title: 'Medical',
-        description: `From presentations to patient forms, these tools enhance communication effectiveness for healthcare professionals. Ideal for medical practices and research pursuits.`,
-        icon: 'tabler:vaccine',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'With attention to detail, customization, and contemporary design, they empower designers to showcase ideas cohesively. Ideal for all levels of designers.',
-        icon: 'tabler:tie',
-      },
-    ]}
-  />
+    <!-- 固定处理流程 -->
 
-  <!-- Content Widget **************** -->
+    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">固定处理流程</h2>
+    <ol class="mt-8 space-y-4 text-lg">
+      {
+        [
+          '定义问题与时间窗口。',
+          '采集并优先链接原始公告、论文、代码库、机构材料或直接记录。',
+          '交叉检查发布日期、受影响前提、版本/配置与已知限制。',
+          '用标签区分：已证实、机构/作者主张、早期研究、未决问题。',
+          '发布前审校；后续发现实质错误则更正并记录日期与原因。',
+        ].map((step, index) => (
+          <li class="flex gap-4">
+            <span class="flex-none font-bold text-2xl text-primary dark:text-blue-500">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <span class="leading-snug">{step}</span>
+          </li>
+        ))
+      }
+    </ol>
 
-  <Content
-    isReversed
-    items={[
-      {
-        title: 'High-Quality Designs',
-        description:
-          'Our templates feature top-tier designs that ensure a professional and polished appearance for your projects.',
-        icon: 'tabler:wand',
-      },
-      {
-        title: 'Customization Tools',
-        description:
-          'Tailor each template to your unique needs with user-friendly customization tools that let you personalize colors, fonts, and content.',
-        icon: 'tabler:settings',
-      },
-      {
-        title: 'Pre-Designed Elements',
-        description:
-          'Save time and effort with our ready-to-use elements, including graphics, icons, and layouts that enhance the visual appeal of your creations.',
-        icon: 'tabler:presentation',
-      },
-      {
-        title: 'Preview and Mockup Views',
-        description:
-          'Visualize the final outcome before making any changes using our preview and mockup views, ensuring your projects meet your expectations.',
-        icon: 'tabler:carousel-horizontal',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Features Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Main Features</h3>
-    </Fragment>
-  </Content>
+    <!-- 单篇文章的最低内容结构 -->
 
-  <!-- Content Widget **************** -->
+    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">单篇文章的最低内容结构</h2>
+    <ul class="mt-8 space-y-4 text-lg">
+      {
+        [
+          '发生了什么 / 核心问题',
+          '对谁/什么环境可能相关',
+          '证据状态与时间范围',
+          '可考虑的下一步（不替代安全/法律意见）',
+          '原始来源与更新记录',
+        ].map((item) => (
+          <li class="flex gap-3">
+            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
 
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'Time Savings',
-        description:
-          'Streamline your workflow, enabling you to create stunning materials efficiently and allocate more time to your core tasks.',
-        icon: 'tabler:clock',
-      },
-      {
-        title: 'Professional Appearance',
-        description:
-          'Elevate your projects with the polished and sophisticated look that our templates provide, making a lasting impression on your audience.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Cost-Efficiency',
-        description:
-          'Benefit from cost savings by avoiding the need for custom design work, as our templates offer professional-grade designs at a fraction of the cost.',
-        icon: 'tabler:coin',
-      },
-      {
-        title: 'Instant Download',
-        description:
-          'Enjoy immediate access to your chosen templates upon purchase, enabling you to begin working on your projects without delay.',
-        icon: 'tabler:file-download',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1552664688-cf412ec27db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Benefits Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Benefits</h3>
-    </Fragment>
-  </Content>
+    <!-- 当前不做 -->
 
-  <!-- Testimonials Widget *********** -->
-
-  <Testimonials
-    title="Words from real customers"
-    testimonials={[
-      {
-        testimonial: `The designs are not only visually appealing but also highly professional. The templates have saved me a significant amount of time while helping me make a lasting impression on my clients.`,
-        name: 'Emily Kennedy',
-        job: 'Front-end developer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Emily Kennedy Image',
-        },
-      },
-      {
-        testimonial: `It beautifully showcases my work, with its clean and elegant design that lets my photographs shine. Customization was a breeze, even for a non-tech person like me. The result is a professional and immersive portfolio that's garnered numerous compliments.`,
-        name: 'Sarah Hansen',
-        job: 'Photographer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Sarah Hansen Image',
-        },
-      },
-      {
-        testimonial: `I discovered these templates and I'm impressed by their variety and quality. They've helped me establish a consistent brand image across my marketing and social platforms, elevating my business's overall appearance.`,
-        name: 'Mark Wilkinson',
-        job: 'Small business owner',
-        image: {
-          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
-          alt: 'Mark Wilkinson Image',
-        },
-      },
-    ]}
-    callToAction={{
-      target: '_blank',
-      text: 'More testimonials...',
-      href: 'https://github.com/arthelokyo/astrowind',
-      icon: 'tabler:chevron-right',
-    }}
-  />
-
-  <!-- CallToAction Widget *********** -->
+    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">当前不做</h2>
+    <p class="mt-6 text-lg text-muted dark:text-slate-400">
+      与<a class="underline" href={getPermalink('/safeguards')}>安全与编辑边界</a
+      >一致：不提供实时预警、系统扫描、事件处置、攻击指导、合规/法律意见，也不承诺付费或定制交付。
+    </p>
+  </section>
 
   <CallToAction
+    title="继续阅读"
     actions={[
-      {
-        variant: 'primary',
-        text: 'Start exploring',
-        href: '/',
-      },
+      { variant: 'primary', text: '阅读已发布洞见', href: getBlogPermalink() },
+      { text: '阅读安全与边界', href: getPermalink('/safeguards') },
     ]}
-    title="Dive into our template collection"
-    subtitle="Whether you're in business, design, or education, our templates are here to elevate your projects."
   />
 </Layout>
