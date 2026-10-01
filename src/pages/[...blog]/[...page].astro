@@ -26,8 +26,9 @@ const categories = [
 ];
 
 const metadata = {
-  title: currentPage > 1 ? `洞见｜第 ${currentPage} 页` : '洞见｜AI 研究与 Agent 安全',
-  description: 'LeoOne 发布有来源、标明适用范围的 AI Agent 安全情报与前沿 AI 研究分析。',
+  title: currentPage > 1 ? `公开文章｜第 ${currentPage} 页` : '公开文章｜LeoOne',
+  ignoreTitleTemplate: true,
+  description: 'LeoOne 已公开发布的中文文章，标注来源、日期和适用条件；它们不是客户案例，也不代表制造业服务成果。',
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
@@ -37,8 +38,10 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline subtitle="围绕 AI Agent 安全与前沿 AI 研究的中文内容；每篇标明发布日期、来源和适用范围。">
-      洞见
+    <Headline
+      subtitle="这里收录 LeoOne 已公开发布的中文文章。文章展示我们的研究和写作方法，并标注来源、日期和适用条件；它们不是客户案例，也不代表制造业服务成果。"
+    >
+      公开文章
     </Headline>
     {
       categories.length > 0 && (
@@ -63,7 +66,7 @@ const metadata = {
         </>
       ) : (
         <p class="text-lg text-muted dark:text-slate-400 text-center">
-          公开洞见正在整理中。本站不会用模板文章补足内容。
+          公开文章正在整理中。本站不会用模板文章补足内容。
         </p>
       )
     }

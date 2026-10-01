@@ -4,67 +4,69 @@ import Layout from '~/layouts/PageLayout.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: '制造业 AI 转型咨询｜服务与交付物',
+  title: '制造业 AI 试点咨询｜服务与交付物｜LeoOne',
+  ignoreTitleTemplate: true,
   description:
-    'LeoOne 为中国制造企业提供 AI 工作流诊断、试点准备与共创工作坊，从一个具体流程形成优先级、试点范围与有边界的行动路线图。',
+    'LeoOne 面向中国制造企业提供 AI 工作流诊断、试点准备与共创工作坊，帮助团队明确优先级、试点范围和准备条件。',
 };
 
 const packages = [
   {
     id: 'workflow-roadmap',
-    label: '主服务',
+    label: '首选入口',
     title: '制造业 AI 工作流诊断与试点路线图',
-    summary: '围绕一个工厂、业务单元或一组紧密相关的流程，建立从流程现状到试点准备的共同决策依据。',
-    fit: '处于探索或早期试点阶段，需要在投入采购、开发或规模化推广前选定第一个流程的中国制造企业。',
-    inputs: '一个明确的业务流程或流程组、可参与的业务负责人和 IT/数据负责人，以及经过批准的流程材料。',
+    summary: '围绕一个工厂、业务单元或一组相关流程，梳理现状、比较候选场景，为首个试点准备决策材料。',
+    fit: '还没决定先做哪个流程，且希望在采购、开发或扩大试点前先统一判断的制造团队。',
+    inputs: '一个明确的业务流程或流程组；可参与的业务负责人和 IT/数据负责人；以及可以用于讨论的流程资料。',
     steps: [
-      '界定业务问题与非目标',
-      '走查实际流程与证据缺口',
+      '明确业务问题和不做什么',
+      '走查实际流程，找出信息缺口',
       '比较不超过 3 个候选场景',
-      '设计人工复核与控制点',
-      '形成试点说明与管理层复盘',
+      '设计人工复核和控制点',
+      '形成试点说明，供管理层审阅和决定下一步',
     ],
     outputs: [
       '流程现状图',
-      'AI 机会清单与优先级矩阵',
-      '试点范围说明书',
-      '数据、系统与治理准备清单',
+      '候选 AI 场景与优先级',
+      '试点范围说明',
+      '数据、系统和治理准备清单',
       '工作流行动路线图',
       '管理层决策简报',
     ],
-    exclusions: '不包括软件开发、生产部署、MES/ERP 集成、模型训练、运行试点、采购代理、长期运维或商业结果保证。',
+    exclusions: '软件开发、生产部署、MES/ERP 集成、模型训练、运行试点、采购代理、长期运维和商业结果保证。',
   },
   {
     id: 'pilot-readiness',
-    label: '支持服务',
+    label: '配套服务',
     title: 'AI 试点准备与治理设计',
-    summary: '为已经选定方向的试点补齐范围、责任、人工复核、数据与评估设计，让业务与 IT 在启动前对边界达成一致。',
-    fit: '已有具体试点想法，但责任、人工复核、数据范围、评估方式或上线门槛尚未对齐的制造团队。',
+    summary:
+      '试点方向已经确定时，把范围、责任、人工复核、数据边界和评估方式提前写清楚，让业务与 IT 在启动前形成一致意见。',
+    fit: '已有具体试点想法，但责任、数据范围、人工复核、评估方式或启动条件还没对齐的制造团队。',
     inputs: '已选定的试点方向、具名业务负责人、相关 IT/数据参与者，以及允许用于讨论的非敏感或已授权材料。',
     steps: [
-      '确认目标、非目标与责任人',
-      '梳理输入输出及人工复核点',
+      '确认目标、不做什么和责任人',
+      '梳理输入、输出和人工复核点',
       '列出数据、权限和系统假设',
-      '定义评估标准、异常升级与复盘节奏',
+      '明确评估标准、异常处理的建议路径和复盘方式',
     ],
-    outputs: ['试点章程', 'RACI/责任分工草案', '人工在环与异常升级流程', '数据与权限确认清单', '试点评估与复盘模板'],
-    exclusions: '不包括开发、集成、模型训练、渗透测试、安全审计、合规认证、法律审查、上线批准或 24/7 运维。',
+    outputs: ['试点章程', '责任分工草案', '人工复核要点与异常处理建议', '数据与权限确认清单', '试点评估与复盘模板'],
+    exclusions: '开发、集成、模型训练、渗透测试、安全审计、合规认证、法律审查、上线批准和 24/7 运维。',
   },
   {
     id: 'workshop',
-    label: '支持服务',
+    label: '配套服务',
     title: '制造团队 AI 工作流共创工作坊',
-    summary: '以客户提供的一个真实主题为输入，通过结构化共创识别流程问题、排序候选场景并明确下一步责任。',
-    fit: '需要让业务、运营与 IT 围绕同一批真实流程建立共同语言，而不是再听一场泛化 AI 趋势介绍的团队。',
-    inputs: '一个明确主题、具名组织者、相关参与者、经过批准的示例或流程材料，以及现有工具与信息边界。',
+    summary: '围绕客户提出的一个具体流程问题，组织业务、运营和 IT 一起梳理流程问题、比较候选场景，并定下下一步责任。',
+    fit: '需要让业务、运营和 IT 围绕同一流程问题达成共识，而不是再听一场泛泛 AI 趋势介绍的团队。',
+    inputs: '一个明确主题；具名组织者；相关参与者；可以用于讨论的示例或流程资料；以及现有工具和信息边界。',
     steps: [
-      '确认主题、参与者与讨论边界',
-      '梳理流程摩擦与关键判断点',
-      '生成并比较候选场景',
-      '记录风险、依赖与下一步责任人',
+      '确认主题、参与者和讨论边界',
+      '梳理流程中的摩擦点和关键判断点',
+      '提出并比较候选场景',
+      '记录风险、依赖和下一步责任人',
     ],
-    outputs: ['一致确认的流程问题陈述', '候选场景卡片', '优先级排序', '风险与依赖事项清单', '会后行动清单与责任人草案'],
-    exclusions: '不把工作坊当成保证落地的培训；不包括可运行软件、生产部署、节省金额或特定生产指标承诺。',
+    outputs: ['已确认的流程问题陈述', '候选场景卡片', '优先级排序', '风险与依赖事项清单', '会后行动清单和责任人草案'],
+    exclusions: '软件开发、生产部署、采购执行，以及节省金额或特定生产指标承诺。',
   },
 ];
 ---
@@ -74,11 +76,11 @@ const packages = [
     <div class="max-w-4xl">
       <p class="font-semibold text-primary dark:text-blue-500">服务与交付物</p>
       <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-        从一个具体制造流程开始设计 AI 试点
+        从一个具体流程开始，做好 AI 试点准备
       </h1>
       <p class="mt-5 text-xl text-muted dark:text-slate-300">
-        LeoOne 提供固定范围的咨询工作，帮助企业在采购、开发或规模化推广前，把“要不要做
-        AI”转化为“先验证哪个流程、需要哪些条件、谁负责、如何复盘”。服务范围、输入与责任须经书面确认。
+        LeoOne
+        围绕明确范围开展咨询，帮助团队在采购、开发或扩大试点前，把要验证的流程、需要的条件和负责人说清楚，再决定下一步。具体范围、可用信息和责任在开始前书面确认。
       </p>
     </div>
 
@@ -131,7 +133,7 @@ const packages = [
           </div>
           <details class="mt-4 rounded-xl border border-gray-200 dark:border-slate-700 p-5 md:p-6 max-w-5xl">
             <summary class="cursor-pointer font-semibold text-primary dark:text-blue-500">
-              查看输入、过程与不包含内容
+              查看需要准备什么、怎么推进和不包含什么
             </summary>
             <div class="mt-5 grid gap-6 lg:grid-cols-2">
               <div>
@@ -151,7 +153,7 @@ const packages = [
               </div>
             </div>
             <div class="mt-6 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 p-5">
-              <h3 class="text-lg font-bold font-heading">不包含什么</h3>
+              <h3 class="text-lg font-bold font-heading">不在本服务范围内</h3>
               <p class="mt-2 text-muted dark:text-slate-300">{exclusions}</p>
             </div>
           </details>
@@ -163,10 +165,11 @@ const packages = [
   <section class="border-t border-gray-200 dark:border-slate-800">
     <div class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12">
       <p class="text-muted dark:text-slate-300">
-        服务范围、允许的信息和责任须在开始前书面确认。完整限制集中列于
+        服务范围、可用信息和交付物须在开始前书面确认。LeoOne
+        提供分析、共创和试点准备材料；客户负责业务决策、采购、实施和生产运营。
         <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/safeguards')}
-          >范围与边界</a
-        >。
+          >查看服务边界 →</a
+        >
       </p>
     </div>
   </section>

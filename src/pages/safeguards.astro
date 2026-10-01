@@ -4,21 +4,22 @@ import Layout from '~/layouts/PageLayout.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: '服务范围与信息边界',
-  description: 'LeoOne 制造业 AI 工作流咨询的适用范围、不包含内容、信息提交边界与公开材料证据边界。',
+  title: '服务边界｜LeoOne 制造业 AI 试点咨询',
+  ignoreTitleTemplate: true,
+  description: '了解 LeoOne 制造业 AI 试点咨询的服务范围、信息限制、责任划分与公开材料说明。',
 };
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
     <div class="max-w-4xl">
-      <p class="font-semibold text-primary dark:text-blue-500">范围与边界</p>
+      <p class="font-semibold text-primary dark:text-blue-500">服务边界</p>
       <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-        交付可审阅的决策材料，不承诺无法验证的结果
+        提供决策材料；实施和经营结果由客户负责
       </h1>
       <p class="mt-5 text-xl text-muted dark:text-slate-300">
         LeoOne 的公开服务聚焦制造业 AI
-        工作流诊断、试点准备与共创。我们会写明问题、输入、交付物、假设和未决项；客户保留业务决策、工程实施、访问批准与生产运营责任。
+        工作流诊断、试点准备与共创。我们会写清问题、输入、交付物、假设和未决项；客户负责业务决策、采购、实施、访问授权和生产运营。
       </p>
     </div>
 
@@ -32,7 +33,7 @@ const metadata = {
               '实时安全监控、事件响应、漏洞扫描、渗透测试或攻击复现。',
               '安全审计、合规认证、法律意见、跨境数据结论或财务判断。',
               '客户采购、上线审批、生产控制、人员决策或经营责任。',
-              '固定 ROI、降本、提效、良率、交期、上线时间或转型完成保证。',
+              'ROI、降本、提效、良率、交期、上线时间或转型完成保证。',
             ].map((item) => (
               <li class="flex gap-3">
                 <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
@@ -51,7 +52,7 @@ const metadata = {
               '在书面确认允许的信息范围前，只使用公开、合成或客户已脱敏并授权的材料。',
               '不接收密码、访问密钥、生产凭据、完整生产日志或不必要的个人与敏感数据。',
               '如请求转向受限数据、生产系统操作、安全测试或高影响自动化，相关工作暂停并重新评估。',
-              '网站当前不收集线索；任何未来入口必须先有真实目的地、责任人和一致的数据处理说明。',
+              '网站目前不接收项目申请或信息提交。',
             ].map((item) => (
               <li class="flex gap-3">
                 <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
@@ -64,11 +65,10 @@ const metadata = {
     </div>
 
     <section class="mt-8 rounded-xl bg-gray-50 dark:bg-slate-800 p-6 md:p-8 max-w-5xl">
-      <h2 class="text-2xl font-bold font-heading">公开材料的证据边界</h2>
+      <h2 class="text-2xl font-bold font-heading">公开材料说明</h2>
       <p class="mt-4 text-muted dark:text-slate-300">
-        公开文章可以证明 LeoOne 的研究与写作方法；Agent Command Center
-        公开仓库可以证明一个工程原型存在。它们不能证明已服务客户、已有制造业部署、实现
-        ROI、通过认证，或构成可购买产品、生产服务与客户成果。
+        公开文章展示我们的研究和写作方法，不是客户案例或服务成果。Agent Command Center
+        公开仓库展示一个工程原型存在，不代表已服务客户、已有制造业部署、实现商业结果，或提供可购买产品和生产服务。
       </p>
     </section>
 
@@ -77,7 +77,7 @@ const metadata = {
         >查看三项服务 →</a
       >
       <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/contact')}
-        >查看项目联系状态 →</a
+        >查看联系状态 →</a
       >
     </div>
   </section>

@@ -4,35 +4,31 @@ import Layout from '~/layouts/PageLayout.astro';
 import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: '项目联系状态',
-  description: 'LeoOne 当前的项目联系与信息提交边界；公开联系目的地尚未获批，本站不接收项目申请或敏感信息。',
+  title: '联系状态｜LeoOne',
+  ignoreTitleTemplate: true,
+  description: 'LeoOne 目前不开放项目咨询，不通过网站接收项目申请、敏感信息或紧急支持请求。',
 };
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
     <div class="max-w-3xl">
-      <p class="font-semibold text-primary dark:text-blue-500">透明状态</p>
+      <p class="font-semibold text-primary dark:text-blue-500">联系状态</p>
       <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-        项目联系渠道尚未开放
+        目前不开放项目咨询
       </h1>
       <p class="mt-5 text-xl text-muted dark:text-slate-300">
-        LeoOne 已公开说明三项固定范围的咨询服务，但公开联系目的地、收件责任人以及与实际行为一致的数据处理说明尚未获得
-        CEO 批准。因此，本站当前不接收项目申请，也不提供预约、报价、表单、电话、邮箱或即时消息入口。
+        LeoOne
+        当前不通过本网站接收项目申请、敏感信息或紧急支持请求。请勿发送凭据、生产日志、客户机密、个人敏感信息或漏洞利用细节。
       </p>
     </div>
 
     <div class="mt-10 grid gap-6 lg:grid-cols-2 max-w-5xl">
       <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-        <h2 class="text-xl md:text-2xl font-bold font-heading">开放前必须具备</h2>
+        <h2 class="text-xl md:text-2xl font-bold font-heading">联系渠道开放后会公布什么</h2>
         <ul class="mt-5 space-y-3">
           {
-            [
-              '可持续监控的真实公开联系目的地',
-              '明确的收件责任人与升级路径',
-              '与实际处理一致的隐私及数据说明',
-              '非紧急、非敏感的服务适配边界',
-            ].map((item) => (
+            ['稳定可用的联系渠道', '明确的收件负责人', '与实际处理方式一致的信息说明'].map((item) => (
               <li class="flex gap-3">
                 <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
                 <span>{item}</span>
@@ -42,9 +38,9 @@ const metadata = {
         </ul>
       </div>
       <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-        <h2 class="text-xl md:text-2xl font-bold font-heading">请勿发送</h2>
+        <h2 class="text-xl md:text-2xl font-bold font-heading">请勿通过本站提交</h2>
         <p class="mt-4 text-muted dark:text-slate-300">
-          凭据、生产日志、客户机密、个人敏感信息、完整数据集、漏洞利用细节或紧急事件请求。本站不是安全事件、生产故障或全天候支持入口。
+          项目申请、密码或访问密钥、生产数据或完整生产日志、客户机密、个人敏感信息、漏洞利用细节、紧急事件或生产故障请求。
         </p>
       </div>
     </div>
@@ -54,10 +50,10 @@ const metadata = {
         >查看服务与交付物 →</a
       >
       <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/safeguards')}
-        >查看范围与边界 →</a
+        >查看服务边界 →</a
       >
       <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getBlogPermalink()}
-        >阅读公开洞见 →</a
+        >阅读公开文章 →</a
       >
     </div>
   </section>
