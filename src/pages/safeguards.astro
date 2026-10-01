@@ -1,100 +1,88 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
-import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: '安全与编辑边界',
-  description: 'LeoOne 的公开内容范围、来源与更正原则，以及不提供的安全服务和不发布的内容。',
+  title: '服务范围与信息边界',
+  description: 'LeoOne 制造业 AI 工作流咨询的适用范围、不包含内容、信息提交边界与公开材料证据边界。',
 };
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-        安全信息需要边界，不需要夸大
+    <div class="max-w-4xl">
+      <p class="font-semibold text-primary dark:text-blue-500">范围与边界</p>
+      <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
+        交付可审阅的决策材料，不承诺无法验证的结果
       </h1>
-      <p class="mt-4 text-xl text-muted dark:text-slate-300">
-        LeoOne 提供面向理解与决策的公开信息整理，不替代内部安全团队、专业顾问、厂商支持或法律意见。
+      <p class="mt-5 text-xl text-muted dark:text-slate-300">
+        LeoOne 的公开服务聚焦制造业 AI
+        工作流诊断、试点准备与共创。我们会写明问题、输入、交付物、假设和未决项；客户保留业务决策、工程实施、访问批准与生产运营责任。
       </p>
     </div>
 
-    <!-- 内容安全规则 -->
+    <div class="mt-12 grid gap-8 lg:grid-cols-2">
+      <section class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+        <h2 class="text-2xl font-bold font-heading">服务不包含</h2>
+        <ul class="mt-6 space-y-4">
+          {
+            [
+              '生产软件开发、系统部署、MES/ERP/PLC 集成、模型训练或长期运维。',
+              '实时安全监控、事件响应、漏洞扫描、渗透测试或攻击复现。',
+              '安全审计、合规认证、法律意见、跨境数据结论或财务判断。',
+              '客户采购、上线审批、生产控制、人员决策或经营责任。',
+              '固定 ROI、降本、提效、良率、交期、上线时间或转型完成保证。',
+            ].map((item) => (
+              <li class="flex gap-3">
+                <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
 
-    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">内容安全规则</h2>
-    <ul class="mt-8 space-y-4 text-lg">
-      {
-        [
-          '以原始来源为优先；二手报道必须明确标为二手，并尽可能回链原始材料。',
-          '明确区分已利用、已披露、研究演示、供应商声明和推测。',
-          '说明影响成立所需的版本、权限、配置或部署条件；信息不足时写明未知。',
-          '不发布利用载荷、绕过步骤、窃取/破坏指令或其他会显著降低攻击门槛的细节。',
-        ].map((item) => (
-          <li class="flex gap-3">
-            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
-            <span>{item}</span>
-          </li>
-        ))
-      }
-    </ul>
+      <section class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+        <h2 class="text-2xl font-bold font-heading">信息边界</h2>
+        <ul class="mt-6 space-y-4">
+          {
+            [
+              '在书面确认允许的信息范围前，只使用公开、合成或客户已脱敏并授权的材料。',
+              '不接收密码、访问密钥、生产凭据、完整生产日志或不必要的个人与敏感数据。',
+              '如请求转向受限数据、生产系统操作、安全测试或高影响自动化，相关工作暂停并重新评估。',
+              '网站当前不收集线索；任何未来入口必须先有真实目的地、责任人和一致的数据处理说明。',
+            ].map((item) => (
+              <li class="flex gap-3">
+                <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
 
-    <!-- 我们不做什么 -->
+    <section class="mt-8 rounded-xl bg-gray-50 dark:bg-slate-800 p-6 md:p-8 max-w-5xl">
+      <h2 class="text-2xl font-bold font-heading">公开材料的证据边界</h2>
+      <p class="mt-4 text-muted dark:text-slate-300">
+        公开文章可以证明 LeoOne 的研究与写作方法；Agent Command Center
+        公开仓库可以证明一个工程原型存在。它们不能证明已服务客户、已有制造业部署、实现
+        ROI、通过认证，或构成可购买产品、生产服务与客户成果。
+      </p>
+      <a
+        class="inline-flex mt-5 font-semibold text-primary hover:underline dark:text-blue-500"
+        href={getPermalink('/#proof')}>查看公开原型说明 →</a
+      >
+    </section>
 
-    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">我们不做什么</h2>
-    <ul class="mt-8 space-y-4 text-lg">
-      {
-        [
-          '不监控读者环境，不承诺发现所有威胁，也不发送实时告警。',
-          '不扫描、测试、修复或代管任何系统。',
-          '不提供 SLA、全天候支持、合规认证、法律意见或投资建议。',
-          '不接受凭据、生产日志、客户机密、个人敏感信息或漏洞利用细节。',
-          '不基于尚未批准的内部产品能力提供账户、工作区或团队协作功能。',
-        ].map((item) => (
-          <li class="flex gap-3">
-            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
-            <span>{item}</span>
-          </li>
-        ))
-      }
-    </ul>
-
-    <!-- 更正与反馈 -->
-
-    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">更正与反馈</h2>
-    <ul class="mt-8 space-y-4 text-lg">
-      <li class="flex gap-3">
-        <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
-        <span>
-          更正格式：文章页的“更新记录”含日期、原表述摘要、修改原因；不悄然改写实质结论。详见<a
-            class="underline"
-            href={getPermalink('/corrections')}>更正与来源政策</a
-          >。
-        </span>
-      </li>
-      <li class="flex gap-3">
-        <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
-        <span>
-          非敏感的事实纠正可通过<a class="underline" href={getPermalink('/contact')}>联系与关注</a
-          >页所列的经批准渠道提交。
-        </span>
-      </li>
-      <li class="flex gap-3">
-        <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
-        <span
-          >安全漏洞报告不通过普通联系入口处理；只有在真实安全联系渠道、处理人和披露规则获批准后，才链接其专页或
-          security.txt。</span
-        >
-      </li>
-    </ul>
+    <div class="mt-10 flex flex-wrap gap-5">
+      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/services')}
+        >查看三项服务 →</a
+      >
+      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/contact')}
+        >查看项目联系状态 →</a
+      >
+    </div>
   </section>
-
-  <CallToAction
-    title="继续了解"
-    actions={[
-      { text: '查看编辑方法', href: getPermalink('/services') },
-      { variant: 'primary', text: '阅读洞见', href: getBlogPermalink() },
-    ]}
-  />
 </Layout>

@@ -1,194 +1,205 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import HeroText from '~/components/widgets/HeroText.astro';
-import Note from '~/components/widgets/Note.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
-import { findLatestPosts } from '~/utils/blog';
 import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
-import { getFormattedDate } from '~/utils/utils';
-
-const posts = (await findLatestPosts({ count: 3 })).slice(0, 3);
 
 const metadata = {
-  title: 'LeoOne｜有来源的 AI 研究与 Agent 安全洞见',
+  title: 'LeoOne｜制造业 AI 工作流诊断与试点路线图',
   ignoreTitleTemplate: true,
-  description: '面向中文技术从业者的 AI 研究与 AI Agent 安全洞见，区分已证实事实、主张与不确定性，并链接原始来源。',
+  description:
+    'LeoOne 面向中国制造企业提供固定范围的 AI 工作流诊断、试点准备与共创工作坊，从一个具体流程形成优先级、试点范围和行动路线图。',
 };
+
+const serviceCards = [
+  {
+    eyebrow: '主服务',
+    title: '制造业 AI 工作流诊断与试点路线图',
+    description: '围绕一个工厂、业务单元或紧密相关的流程组，筛选 AI 适用点，识别前提与风险，形成共同决策依据。',
+    deliverable: '流程现状图、机会优先级矩阵、试点范围说明书、准备清单、30 天路线图与管理层决策简报。',
+    href: getPermalink('/services#workflow-roadmap'),
+  },
+  {
+    eyebrow: '支持服务',
+    title: 'AI 试点准备与治理设计',
+    description: '为已经选定方向的试点补齐范围、责任、人工复核、数据边界、评估方式和升级路径。',
+    deliverable: '试点章程、RACI 草案、人工在环流程、数据与权限确认清单、评估与复盘模板。',
+    href: getPermalink('/services#pilot-readiness'),
+  },
+  {
+    eyebrow: '支持服务',
+    title: '制造团队 AI 工作流共创工作坊',
+    description: '让业务、运营与 IT 围绕一个真实流程建立共同语言，比较候选场景并明确下一步责任。',
+    deliverable: '问题陈述、候选场景卡片、优先级排序、风险与依赖清单、行动清单草案。',
+    href: getPermalink('/services#workshop'),
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero -->
-
   <HeroText
-    tagline="中文优先的 AI 研究与安全情报"
-    title={'把 AI Agent 的新风险与前沿研究，<br class="hidden md:inline" />放回可核验的证据里'}
-    subtitle="LeoOne 整理公开的一手来源与研究材料，说明哪些变化值得关注、适用条件是什么，以及哪些结论仍不确定。"
-    callToAction={{ variant: 'primary', text: '阅读最新洞见', href: getBlogPermalink(), icon: 'tabler:chevron-right' }}
-    callToAction2={{ variant: 'secondary', text: '了解方法与范围', href: getPermalink('/services') }}
+    tagline="面向中国制造企业的 AI 转型咨询"
+    title={'先找对一个工作流，<br class="hidden md:inline" />再启动 AI 试点。'}
+    subtitle="LeoOne 帮助处于探索或早期试点阶段的制造企业，识别值得优先处理的业务流程，厘清数据、人员与系统边界，并形成可进入内部决策与试点准备的路线图。我们从一个具体流程开始，而不是推销一套万能 AI 平台。"
+    callToAction={{
+      variant: 'primary',
+      text: '查看服务与交付物',
+      href: getPermalink('/services'),
+      icon: 'tabler:chevron-right',
+    }}
   />
 
-  <Note title="当前为公开内容与方向验证阶段；" description="不提供实时告警、扫描或托管安全服务。" />
-
-  <!-- 读者与任务 -->
-
-  <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
-    <div class="max-w-3xl">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">当你需要判断“这项变化是否影响我们”</h2>
+  <section class="border-y border-gray-200 dark:border-slate-800" aria-label="当前联系状态">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-5 text-sm md:text-base text-muted dark:text-slate-300">
+      公开项目联系渠道尚未获批，本站目前不接收项目申请、敏感信息或紧急支持请求。
     </div>
-    <div class="mt-8 md:mt-12 grid gap-6 md:grid-cols-3">
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20" id="services">
+    <div class="max-w-3xl">
+      <p class="font-semibold text-primary dark:text-blue-500">三项有明确边界的咨询服务</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight font-heading">把 AI 讨论变成一个可做决定的试点</h2>
+      <p class="mt-4 text-lg text-muted dark:text-slate-300">
+        主服务用于从流程中选择第一个试点；两项支持服务用于补齐已有试点或建立跨部门共识。实际范围、周期、输入和费用须经书面确认。
+      </p>
+    </div>
+    <div class="mt-8 md:mt-12 grid gap-6 lg:grid-cols-3">
       {
-        [
-          {
-            title: 'AI Agent 安全',
-            description: '识别公开披露中的受影响条件、版本与缓解动作。',
-          },
-          {
-            title: '前沿 AI',
-            description: '区分研究结果、公司主张与尚待验证的能力判断。',
-          },
-          {
-            title: '决策沟通',
-            description: '带回原始来源、日期和限制，而不是只转述结论。',
-          },
-        ].map(({ title, description }) => (
-          <div class="rounded-lg border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-            <h3 class="text-xl md:text-2xl font-bold font-heading">{title}</h3>
-            <p class="mt-3 text-muted dark:text-slate-400">{description}</p>
-          </div>
+        serviceCards.map(({ eyebrow, title, description, deliverable, href }) => (
+          <article class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8 flex flex-col">
+            <p class="text-sm font-semibold text-primary dark:text-blue-500">{eyebrow}</p>
+            <h3 class="mt-2 text-xl md:text-2xl font-bold font-heading">{title}</h3>
+            <p class="mt-4 text-muted dark:text-slate-300">{description}</p>
+            <div class="mt-5 pt-5 border-t border-gray-200 dark:border-slate-700 flex-grow">
+              <p class="text-sm font-semibold">你将获得</p>
+              <p class="mt-2 text-sm text-muted dark:text-slate-400">{deliverable}</p>
+            </div>
+            <a
+              class="inline-flex items-center mt-6 font-semibold text-primary hover:underline dark:text-blue-500"
+              href={href}
+            >
+              查看范围与交付物{' '}
+              <span aria-hidden="true" class="ml-1">
+                →
+              </span>
+            </a>
+          </article>
         ))
       }
     </div>
-    <a
-      class="inline-flex items-center mt-8 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
-      href={getBlogPermalink()}
-    >
-      浏览全部洞见 <span aria-hidden="true">→</span>
-    </a>
   </section>
 
-  <!-- 编辑方法预览 -->
-
-  <section class="border-t border-gray-200 dark:border-slate-800">
+  <section class="border-t border-gray-200 dark:border-slate-800" id="deliverables">
     <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
       <div class="max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">每篇内容遵循同一套可检查的方法</h2>
+        <p class="font-semibold text-primary dark:text-blue-500">主服务的工作结果</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight font-heading">
+          一次诊断，形成六份可审阅的工作材料
+        </h2>
       </div>
-      <ol class="mt-8 md:mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <ol class="mt-8 md:mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
-          ['确定时间范围', '优先原始来源', '标出证据状态', '说明适用范围与未知项'].map((step, index) => (
-            <li class="flex gap-4">
-              <span class="flex-none font-bold text-2xl text-primary dark:text-blue-500">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <span class="text-lg font-medium leading-snug">{step}</span>
+          [
+            ['01', '流程现状图', '记录角色、输入、判断点、系统接点、等待与返工。'],
+            ['02', '机会优先级矩阵', '比较业务价值、可行性、数据条件、变更负担与风险。'],
+            ['03', '试点范围说明书', '写明目标、用户、输入输出、人工复核点、成功判据与非目标。'],
+            ['04', '数据与治理准备清单', '列出待确认的数据、权限、系统假设、责任人和升级路径。'],
+            ['05', '30 天工作流路线图', '拆解负责人、关键决策、验证动作、依赖、风险与复盘节点。'],
+            ['06', '管理层决策简报', '支持内部决定推进、补齐条件、调整范围或暂停。'],
+          ].map(([number, title, description]) => (
+            <li class="rounded-lg bg-gray-50 dark:bg-slate-800 p-6">
+              <span class="text-sm font-bold text-primary dark:text-blue-500">{number}</span>
+              <h3 class="mt-2 text-xl font-bold font-heading">{title}</h3>
+              <p class="mt-2 text-muted dark:text-slate-300">{description}</p>
             </li>
           ))
         }
       </ol>
-      <a
-        class="inline-flex items-center mt-8 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
-        href={getPermalink('/services')}
-      >
-        查看完整方法与范围 <span aria-hidden="true">→</span>
-      </a>
+      <p class="mt-8 text-sm text-muted dark:text-slate-400 max-w-4xl">
+        30 天描述的是在客户及时提供人员、流程材料与决策参与前提下的推荐工作节奏，不是上线、降本、ROI 或转型完成保证。
+      </p>
     </div>
   </section>
 
-  <!-- 最新洞见 -->
-
-  <section class="border-t border-gray-200 dark:border-slate-800">
-    <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+  <section class="border-t border-gray-200 dark:border-slate-800" id="proof">
+    <div
+      class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start"
+    >
       <div class="max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">最新洞见</h2>
-      </div>
-      {
-        posts.length > 0 ? (
-          <div class="mt-8 md:mt-12 grid gap-6 md:grid-cols-3">
-            {posts.map((post) => (
-              <article class="rounded-lg border border-gray-200 dark:border-slate-700 p-6 md:p-8 flex flex-col">
-                {post.category && (
-                  <p class="text-sm">
-                    <a class="hover:underline" href={getPermalink(post.category.slug, 'category')}>
-                      {post.category.title}
-                    </a>
-                  </p>
-                )}
-                <h3 class="mt-2 text-xl md:text-2xl font-bold leading-tight font-heading">
-                  <a
-                    class="hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
-                    href={getPermalink(post.permalink, 'post')}
-                  >
-                    {post.title}
-                  </a>
-                </h3>
-                <p class="mt-2 text-sm text-muted dark:text-slate-400">
-                  <time datetime={String(post.publishDate)}>{getFormattedDate(post.publishDate)}</time>
-                  {post.readingTime ? ` · 阅读约 ${post.readingTime} 分钟` : ''}
-                </p>
-                {post.excerpt && <p class="mt-3 flex-grow text-muted dark:text-slate-400">{post.excerpt}</p>}
-                <a
-                  class="inline-flex items-center mt-4 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
-                  href={getPermalink(post.permalink, 'post')}
-                >
-                  阅读全文 <span aria-hidden="true">→</span>
-                </a>
-              </article>
-            ))}
-          </div>
-        ) : (
-          <p class="mt-8 text-lg text-muted dark:text-slate-400">内容正在整理中。本站不会用模板文章补足内容。</p>
-        )
-      }
-      {
-        posts.length > 0 && (
+        <p class="font-semibold text-primary dark:text-blue-500">公开证据，而不是客户案例</p>
+        <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight font-heading">可检查的工程探索与研究方法</h2>
+        <p class="mt-4 text-lg text-muted dark:text-slate-300">
+          LeoOne 公开发布带来源与适用范围说明的中文洞见；团队也维护 Agent Command Center
+          公开代码仓库，用于展示对任务状态、来源追溯与决策记录的工程探索。
+        </p>
+        <div class="mt-6 flex flex-wrap gap-5">
           <a
-            class="inline-flex items-center mt-8 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
-            href={getBlogPermalink()}
+            class="font-semibold text-primary hover:underline dark:text-blue-500"
+            href="https://github.com/forkbombruler/agent-command-center"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            全部洞见 <span aria-hidden="true">→</span>
+            查看 Agent Command Center 公开仓库 <span aria-hidden="true">↗</span>
           </a>
-        )
-      }
+          <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getBlogPermalink()}>
+            阅读公开洞见 <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+      <aside class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+        <h3 class="text-xl font-bold font-heading">证据边界</h3>
+        <p class="mt-3 text-muted dark:text-slate-300">
+          Agent Command Center
+          是公开工程原型，不是可购买的客户产品、生产系统、托管平台、客户成果证明或本服务的交付承诺。公开文章也不构成制造业实施案例或客户背书。
+        </p>
+      </aside>
     </div>
   </section>
-
-  <!-- 安全与责任边界 -->
 
   <section class="border-t border-gray-200 dark:border-slate-800">
     <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
       <div class="max-w-3xl">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">我们会说明，也会明确不说明什么</h2>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">我们会明确不做什么</h2>
         <ul class="mt-8 space-y-4 text-lg">
-          <li class="flex gap-3">
-            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
-            <span>不把未证实披露写成已发生攻击。</span>
-          </li>
-          <li class="flex gap-3">
-            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
-            <span>不提供可操作的攻击复现内容。</span>
-          </li>
-          <li class="flex gap-3">
-            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500"></span>
-            <span>发现错误时保留更正记录。</span>
-          </li>
+          {
+            [
+              '不承诺替客户完成全厂 AI 转型、上线生产系统或实现特定 ROI。',
+              '不代替软件供应商做开发、MES/ERP 集成、模型训练或长期运维。',
+              '不提供安全审计、渗透测试、合规认证、法律意见或跨境数据合规结论。',
+              '不接收密码、生产凭据、完整生产日志或不必要的个人与敏感数据。',
+            ].map((item) => (
+              <li class="flex gap-3">
+                <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
+                <span>{item}</span>
+              </li>
+            ))
+          }
         </ul>
         <a
-          class="inline-flex items-center mt-8 font-semibold text-primary hover:text-blue-700 dark:text-blue-500"
+          class="inline-flex mt-8 font-semibold text-primary hover:underline dark:text-blue-500"
           href={getPermalink('/safeguards')}
         >
-          阅读安全与编辑边界 <span aria-hidden="true">→</span>
+          查看完整范围与边界 <span aria-hidden="true" class="ml-1">→</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 低风险结尾 -->
-
-  <CallToAction
-    title="先阅读，再决定是否继续关注"
-    subtitle="本站目前不提供账户、付费订阅或实时服务。若希望了解后续公开内容或提供非敏感反馈，请先阅读联系与关注说明。"
-    actions={[{ variant: 'primary', text: '联系与关注说明', href: getPermalink('/contact') }]}
-  />
+  <section class="border-t border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/40">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold font-heading">项目联系渠道尚未开放</h2>
+      <p class="mt-4 mx-auto max-w-2xl text-muted dark:text-slate-300">
+        在公开联系方式、收件责任人及与实际行为一致的数据处理说明获得批准前，LeoOne
+        不通过本站接收项目申请。你仍可查看完整服务范围与公开材料。
+      </p>
+      <div class="mt-6 flex flex-wrap justify-center gap-5">
+        <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/services')}
+          >查看三项服务 →</a
+        >
+        <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getBlogPermalink()}
+          >阅读公开洞见 →</a
+        >
+      </div>
+    </div>
+  </section>
 </Layout>

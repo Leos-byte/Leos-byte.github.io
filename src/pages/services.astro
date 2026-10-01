@@ -1,106 +1,194 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
 import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: '方法与范围',
-  description: 'LeoOne 如何筛选公开 AI 研究与 AI Agent 安全信息、标注证据状态，并说明当前不覆盖的范围。',
+  title: '制造业 AI 转型咨询｜服务与交付物',
+  description:
+    'LeoOne 为中国制造企业提供 AI 工作流诊断、试点准备与共创工作坊，从一个具体流程形成优先级、试点范围与有边界的行动路线图。',
 };
+
+const packages = [
+  {
+    id: 'workflow-roadmap',
+    label: '主服务',
+    title: '制造业 AI 工作流诊断与试点路线图',
+    summary: '围绕一个工厂、业务单元或一组紧密相关的流程，建立从流程现状到试点准备的共同决策依据。',
+    fit: '处于探索或早期试点阶段，需要在投入采购、开发或规模化推广前选定第一个流程的中国制造企业。',
+    inputs: '一个明确的业务流程或流程组、可参与的业务负责人和 IT/数据负责人，以及经过批准的流程材料。',
+    steps: [
+      '界定业务问题与非目标',
+      '走查实际流程与证据缺口',
+      '比较不超过 3 个候选场景',
+      '设计人工复核与控制点',
+      '形成试点说明与管理层复盘',
+    ],
+    outputs: [
+      '流程现状图',
+      'AI 机会清单与优先级矩阵',
+      '试点范围说明书',
+      '数据、系统与治理准备清单',
+      '30 天工作流路线图',
+      '管理层决策简报',
+    ],
+    exclusions: '不包括软件开发、生产部署、MES/ERP 集成、模型训练、运行试点、采购代理、长期运维或商业结果保证。',
+  },
+  {
+    id: 'pilot-readiness',
+    label: '支持服务',
+    title: 'AI 试点准备与治理设计',
+    summary: '为已经选定方向的试点补齐范围、责任、人工复核、数据与评估设计，让业务与 IT 在启动前对边界达成一致。',
+    fit: '已有具体试点想法，但责任、人工复核、数据范围、评估方式或上线门槛尚未对齐的制造团队。',
+    inputs: '已选定的试点方向、具名业务负责人、相关 IT/数据参与者，以及允许用于讨论的非敏感或已授权材料。',
+    steps: [
+      '确认目标、非目标与责任人',
+      '梳理输入输出及人工复核点',
+      '列出数据、权限和系统假设',
+      '定义评估标准、异常升级与复盘节奏',
+    ],
+    outputs: ['试点章程', 'RACI/责任分工草案', '人工在环与异常升级流程', '数据与权限确认清单', '试点评估与复盘模板'],
+    exclusions: '不包括开发、集成、模型训练、渗透测试、安全审计、合规认证、法律审查、上线批准或 24/7 运维。',
+  },
+  {
+    id: 'workshop',
+    label: '支持服务',
+    title: '制造团队 AI 工作流共创工作坊',
+    summary: '以客户提供的一个真实主题为输入，通过结构化共创识别流程问题、排序候选场景并明确下一步责任。',
+    fit: '需要让业务、运营与 IT 围绕同一批真实流程建立共同语言，而不是再听一场泛化 AI 趋势介绍的团队。',
+    inputs: '一个明确主题、具名组织者、相关参与者、经过批准的示例或流程材料，以及现有工具与信息边界。',
+    steps: [
+      '确认主题、参与者与讨论边界',
+      '梳理流程摩擦与关键判断点',
+      '生成并比较候选场景',
+      '记录风险、依赖与下一步责任人',
+    ],
+    outputs: ['一致确认的流程问题陈述', '候选场景卡片', '优先级排序', '风险与依赖事项清单', '会后行动清单与责任人草案'],
+    exclusions: '不把工作坊当成保证落地的培训；不包括可运行软件、生产部署、节省金额或特定生产指标承诺。',
+  },
+];
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-        我们如何处理公开 AI 研究与 Agent 安全信息
+    <div class="max-w-4xl">
+      <p class="font-semibold text-primary dark:text-blue-500">服务与交付物</p>
+      <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
+        从一个具体制造流程开始设计 AI 试点
       </h1>
-      <p class="mt-4 text-xl text-muted dark:text-slate-300">
-        本页描述 LeoOne 的公开编辑方法，不是咨询、监控或安全服务承诺。
+      <p class="mt-5 text-xl text-muted dark:text-slate-300">
+        LeoOne 提供固定范围的咨询工作，帮助企业在采购、开发或规模化推广前，把“要不要做
+        AI”转化为“先验证哪个流程、需要哪些条件、谁负责、如何复盘”。所有范围、输入、周期和费用须经书面确认。
       </p>
     </div>
 
-    <!-- 覆盖主题 -->
-
-    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">覆盖主题</h2>
-    <div class="mt-8 grid gap-6 md:grid-cols-2">
+    <nav class="mt-10 flex flex-wrap gap-3" aria-label="服务目录">
       {
-        [
-          {
-            title: 'AI Agent 安全',
-            description: '公开披露、更新、研究与缓解信息；重点是受影响条件和行动优先级。',
-          },
-          {
-            title: '前沿 AI 研究',
-            description: '能力、世界模型、推理、Agent 等争议中的证据与可检验问题。',
-          },
-        ].map(({ title, description }) => (
-          <div class="rounded-lg border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-            <h3 class="text-xl md:text-2xl font-bold font-heading">{title}</h3>
-            <p class="mt-3 text-muted dark:text-slate-400">{description}</p>
-          </div>
+        packages.map(({ id, title }) => (
+          <a
+            class="rounded-full border border-gray-300 dark:border-slate-600 px-4 py-2 text-sm font-semibold hover:border-primary hover:text-primary"
+            href={`#${id}`}
+          >
+            {title}
+          </a>
         ))
       }
-    </div>
-    <p class="mt-6 text-muted dark:text-slate-400">不承诺固定频率；每篇按实际发布日期更新。</p>
-
-    <!-- 固定处理流程 -->
-
-    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">固定处理流程</h2>
-    <ol class="mt-8 space-y-4 text-lg">
-      {
-        [
-          '定义问题与时间窗口。',
-          '采集并优先链接原始公告、论文、代码库、机构材料或直接记录。',
-          '交叉检查发布日期、受影响前提、版本/配置与已知限制。',
-          '用标签区分：已证实、机构/作者主张、早期研究、未决问题。',
-          '发布前审校；后续发现实质错误则更正并记录日期与原因。',
-        ].map((step, index) => (
-          <li class="flex gap-4">
-            <span class="flex-none font-bold text-2xl text-primary dark:text-blue-500">
-              {String(index + 1).padStart(2, '0')}
-            </span>
-            <span class="leading-snug">{step}</span>
-          </li>
-        ))
-      }
-    </ol>
-
-    <!-- 单篇文章的最低内容结构 -->
-
-    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">单篇文章的最低内容结构</h2>
-    <ul class="mt-8 space-y-4 text-lg">
-      {
-        [
-          '发生了什么 / 核心问题',
-          '对谁/什么环境可能相关',
-          '证据状态与时间范围',
-          '可考虑的下一步（不替代安全/法律意见）',
-          '原始来源与更新记录',
-        ].map((item) => (
-          <li class="flex gap-3">
-            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
-            <span>{item}</span>
-          </li>
-        ))
-      }
-    </ul>
-
-    <!-- 当前不做 -->
-
-    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">当前不做</h2>
-    <p class="mt-6 text-lg text-muted dark:text-slate-400">
-      与<a class="underline" href={getPermalink('/safeguards')}>安全与编辑边界</a
-      >一致：不提供实时预警、系统扫描、事件处置、攻击指导、合规/法律意见，也不承诺付费或定制交付。
-    </p>
+    </nav>
   </section>
 
-  <CallToAction
-    title="继续阅读"
-    actions={[
-      { variant: 'primary', text: '阅读已发布洞见', href: getBlogPermalink() },
-      { text: '阅读安全与边界', href: getPermalink('/safeguards') },
-    ]}
-  />
+  {
+    packages.map(({ id, label, title, summary, fit, inputs, steps, outputs, exclusions }, index) => (
+      <section
+        id={id}
+        class:list={[
+          'border-t border-gray-200 dark:border-slate-800 scroll-mt-24',
+          index === 0 && 'bg-gray-50/60 dark:bg-slate-900/30',
+        ]}
+      >
+        <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
+          <div class="max-w-4xl">
+            <p class="font-semibold text-primary dark:text-blue-500">{label}</p>
+            <h2 class="mt-2 text-3xl md:text-4xl font-bold tracking-tight font-heading">{title}</h2>
+            <p class="mt-4 text-lg text-muted dark:text-slate-300">{summary}</p>
+          </div>
+
+          <div class="mt-10 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+              <h3 class="text-xl font-bold font-heading">适合谁</h3>
+              <p class="mt-3 text-muted dark:text-slate-300">{fit}</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+              <h3 class="text-xl font-bold font-heading">你需要提供</h3>
+              <p class="mt-3 text-muted dark:text-slate-300">{inputs}</p>
+            </div>
+            <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+              <h3 class="text-xl font-bold font-heading">我们如何工作</h3>
+              <ol class="mt-4 space-y-3">
+                {steps.map((step, stepIndex) => (
+                  <li class="flex gap-3">
+                    <span class="flex-none font-bold text-primary dark:text-blue-500">{stepIndex + 1}.</span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+            <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+              <h3 class="text-xl font-bold font-heading">你会收到</h3>
+              <ul class="mt-4 space-y-3">
+                {outputs.map((output) => (
+                  <li class="flex gap-3">
+                    <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
+                    <span>{output}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-xl border-l-4 border-primary bg-blue-50 dark:bg-slate-800 p-6 md:p-8 max-w-5xl">
+            <h3 class="text-lg font-bold font-heading">不包含什么</h3>
+            <p class="mt-2 text-muted dark:text-slate-300">{exclusions}</p>
+          </div>
+        </div>
+      </section>
+    ))
+  }
+
+  <section class="border-t border-gray-200 dark:border-slate-800" id="conditions">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 grid gap-10 lg:grid-cols-2">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">共同适用条件</h2>
+        <ul class="mt-8 space-y-4 text-lg">
+          {
+            [
+              '每项工作以一个具名负责人、书面范围、允许的信息边界和明确决策关口为前提。',
+              '建议和工件用于内部决策与试点准备，不能替代工程、信息安全、法律、合规或财务判断。',
+              '如需开发、集成、上线、培训、数据处理、驻场或持续支持，必须另行评估能力、范围、责任与合同。',
+              '请勿提交密码、访问密钥、生产凭据、完整敏感数据集或紧急安全事件材料。',
+            ].map((item) => (
+              <li class="flex gap-3">
+                <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+        <h2 class="text-2xl font-bold font-heading">当前联系状态</h2>
+        <p class="mt-4 text-muted dark:text-slate-300">
+          公开项目联系目的地、收件责任人和与实际行为一致的数据处理说明尚未获 CEO 批准，因此本站不显示咨询
+          CTA，也不接收项目申请。可先查看公开材料；这不代表项目已开放承接。
+        </p>
+        <div class="mt-6 flex flex-wrap gap-5">
+          <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/#proof')}
+            >查看公开工程原型 →</a
+          >
+          <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getBlogPermalink()}
+            >阅读公开洞见 →</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
