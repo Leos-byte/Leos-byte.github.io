@@ -1,7 +1,7 @@
 ---
 publishDate: 2026-10-01
 updateDate: 2026-10-01
-draft: true
+draft: false
 title: '跨过两道 GitHub 门槛的 AI 项目'
 excerpt: '按 ai 主题、星标超过 24 万、fork 超过 5 万筛选后，只剩两个项目：OpenClaw 与 Hermes Agent。本文比较它们各自解决的智能体运行问题，不把热度当作选型结论。'
 category: 前沿 AI 研究
