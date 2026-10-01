@@ -6,7 +6,7 @@ import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 const metadata = {
   title: '联系状态｜LeoOne',
   ignoreTitleTemplate: true,
-  description: 'LeoOne 目前不开放项目咨询，不通过网站接收项目申请、敏感信息或紧急支持请求。',
+  description: 'LeoOne 当前不通过网站接收项目申请、联系方式、项目资料或敏感信息。',
 };
 ---
 
@@ -15,46 +15,24 @@ const metadata = {
     <div class="max-w-3xl">
       <p class="font-semibold text-primary dark:text-blue-500">联系状态</p>
       <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-        目前不开放项目咨询
+        本站目前不接收项目申请或资料
       </h1>
       <p class="mt-5 text-xl text-muted dark:text-slate-300">
         LeoOne
-        当前不通过本网站接收项目申请、敏感信息或紧急支持请求。请勿发送凭据、生产日志、客户机密、个人敏感信息或漏洞利用细节。
+        当前不通过本网站接收项目申请、联系方式、项目资料或敏感信息。请勿发送密码、访问密钥、生产数据、客户机密、个人敏感信息或紧急事件信息。
       </p>
     </div>
 
-    <div class="mt-10 grid gap-6 lg:grid-cols-2 max-w-5xl">
-      <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-        <h2 class="text-xl md:text-2xl font-bold font-heading">联系渠道开放后会公布什么</h2>
-        <ul class="mt-5 space-y-3">
-          {
-            ['稳定可用的联系渠道', '明确的收件负责人', '与实际处理方式一致的信息说明'].map((item) => (
-              <li class="flex gap-3">
-                <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
-                <span>{item}</span>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-      <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-        <h2 class="text-xl md:text-2xl font-bold font-heading">请勿通过本站提交</h2>
-        <p class="mt-4 text-muted dark:text-slate-300">
-          项目申请、密码或访问密钥、生产数据或完整生产日志、客户机密、个人敏感信息、漏洞利用细节、紧急事件或生产故障请求。
-        </p>
-      </div>
-    </div>
-
-    <div class="mt-10 flex flex-wrap gap-5">
-      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/services')}
-        >查看服务与交付物 →</a
-      >
-      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/safeguards')}
-        >查看服务边界 →</a
-      >
-      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getBlogPermalink()}
-        >阅读公开文章 →</a
-      >
-    </div>
+    <nav class="mt-10 flex flex-wrap gap-5" aria-label="相关说明">
+      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/services')}>
+        了解 AI 转型咨询 →
+      </a>
+      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/safeguards')}>
+        查看服务边界 →
+      </a>
+      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getBlogPermalink()}>
+        阅读公开文章 →
+      </a>
+    </nav>
   </section>
 </Layout>

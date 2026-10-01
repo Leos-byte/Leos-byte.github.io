@@ -28,7 +28,7 @@ const categories = [
 const metadata = {
   title: currentPage > 1 ? `公开文章｜第 ${currentPage} 页` : '公开文章｜LeoOne',
   ignoreTitleTemplate: true,
-  description: 'LeoOne 已公开发布的中文文章，标注来源、日期和适用条件；它们不是客户案例，也不代表制造业服务成果。',
+  description: 'LeoOne 已公开发布的中文文章，标注来源、日期和适用条件；它们是研究与写作材料，不是客户案例或服务成果。',
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
@@ -39,7 +39,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
     <Headline
-      subtitle="这里收录 LeoOne 已公开发布的中文文章。文章展示我们的研究和写作方法，并标注来源、日期和适用条件；它们不是客户案例，也不代表制造业服务成果。"
+      subtitle="这里收录 LeoOne 已公开发布的中文文章。文章展示我们的研究和写作方法，并标注来源、日期和适用条件；它们不是客户案例，也不代表服务成果。"
     >
       公开文章
     </Headline>
