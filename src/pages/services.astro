@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: '制造业 AI 转型咨询｜服务与交付物',
@@ -29,7 +29,7 @@ const packages = [
       'AI 机会清单与优先级矩阵',
       '试点范围说明书',
       '数据、系统与治理准备清单',
-      '30 天工作流路线图',
+      '工作流行动路线图',
       '管理层决策简报',
     ],
     exclusions: '不包括软件开发、生产部署、MES/ERP 集成、模型训练、运行试点、采购代理、长期运维或商业结果保证。',
@@ -78,7 +78,7 @@ const packages = [
       </h1>
       <p class="mt-5 text-xl text-muted dark:text-slate-300">
         LeoOne 提供固定范围的咨询工作，帮助企业在采购、开发或规模化推广前，把“要不要做
-        AI”转化为“先验证哪个流程、需要哪些条件、谁负责、如何复盘”。所有范围、输入、周期和费用须经书面确认。
+        AI”转化为“先验证哪个流程、需要哪些条件、谁负责、如何复盘”。服务范围、输入与责任须经书面确认。
       </p>
     </div>
 
@@ -112,25 +112,10 @@ const packages = [
             <p class="mt-4 text-lg text-muted dark:text-slate-300">{summary}</p>
           </div>
 
-          <div class="mt-10 grid gap-6 lg:grid-cols-2">
+          <div class="mt-8 grid gap-4 lg:grid-cols-2">
             <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
               <h3 class="text-xl font-bold font-heading">适合谁</h3>
               <p class="mt-3 text-muted dark:text-slate-300">{fit}</p>
-            </div>
-            <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-              <h3 class="text-xl font-bold font-heading">你需要提供</h3>
-              <p class="mt-3 text-muted dark:text-slate-300">{inputs}</p>
-            </div>
-            <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-              <h3 class="text-xl font-bold font-heading">我们如何工作</h3>
-              <ol class="mt-4 space-y-3">
-                {steps.map((step, stepIndex) => (
-                  <li class="flex gap-3">
-                    <span class="flex-none font-bold text-primary dark:text-blue-500">{stepIndex + 1}.</span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
             </div>
             <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
               <h3 class="text-xl font-bold font-heading">你会收到</h3>
@@ -144,51 +129,45 @@ const packages = [
               </ul>
             </div>
           </div>
-
-          <div class="mt-6 rounded-xl border-l-4 border-primary bg-blue-50 dark:bg-slate-800 p-6 md:p-8 max-w-5xl">
-            <h3 class="text-lg font-bold font-heading">不包含什么</h3>
-            <p class="mt-2 text-muted dark:text-slate-300">{exclusions}</p>
-          </div>
+          <details class="mt-4 rounded-xl border border-gray-200 dark:border-slate-700 p-5 md:p-6 max-w-5xl">
+            <summary class="cursor-pointer font-semibold text-primary dark:text-blue-500">
+              查看输入、过程与不包含内容
+            </summary>
+            <div class="mt-5 grid gap-6 lg:grid-cols-2">
+              <div>
+                <h3 class="text-lg font-bold font-heading">你需要提供</h3>
+                <p class="mt-2 text-muted dark:text-slate-300">{inputs}</p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold font-heading">我们如何工作</h3>
+                <ol class="mt-2 space-y-2">
+                  {steps.map((step, stepIndex) => (
+                    <li class="flex gap-3">
+                      <span class="flex-none font-bold text-primary dark:text-blue-500">{stepIndex + 1}.</span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+            <div class="mt-6 border-l-4 border-primary bg-blue-50 dark:bg-slate-800 p-5">
+              <h3 class="text-lg font-bold font-heading">不包含什么</h3>
+              <p class="mt-2 text-muted dark:text-slate-300">{exclusions}</p>
+            </div>
+          </details>
         </div>
       </section>
     ))
   }
 
-  <section class="border-t border-gray-200 dark:border-slate-800" id="conditions">
-    <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 grid gap-10 lg:grid-cols-2">
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">共同适用条件</h2>
-        <ul class="mt-8 space-y-4 text-lg">
-          {
-            [
-              '每项工作以一个具名负责人、书面范围、允许的信息边界和明确决策关口为前提。',
-              '建议和工件用于内部决策与试点准备，不能替代工程、信息安全、法律、合规或财务判断。',
-              '如需开发、集成、上线、培训、数据处理、驻场或持续支持，必须另行评估能力、范围、责任与合同。',
-              '请勿提交密码、访问密钥、生产凭据、完整敏感数据集或紧急安全事件材料。',
-            ].map((item) => (
-              <li class="flex gap-3">
-                <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
-                <span>{item}</span>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-      <div class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-        <h2 class="text-2xl font-bold font-heading">当前联系状态</h2>
-        <p class="mt-4 text-muted dark:text-slate-300">
-          公开项目联系目的地、收件责任人和与实际行为一致的数据处理说明尚未获 CEO 批准，因此本站不显示咨询
-          CTA，也不接收项目申请。可先查看公开材料；这不代表项目已开放承接。
-        </p>
-        <div class="mt-6 flex flex-wrap gap-5">
-          <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/#proof')}
-            >查看公开工程原型 →</a
-          >
-          <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getBlogPermalink()}
-            >阅读公开洞见 →</a
-          >
-        </div>
-      </div>
+  <section class="border-t border-gray-200 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12">
+      <p class="text-muted dark:text-slate-300">
+        服务范围、允许的信息和责任须在开始前书面确认。完整限制集中列于
+        <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/safeguards')}
+          >范围与边界</a
+        >。
+      </p>
     </div>
   </section>
 </Layout>
