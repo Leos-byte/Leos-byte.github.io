@@ -8,9 +8,9 @@ export const headerData = {
       href: getPermalink('/services'),
     },
     {
-      text: '制造业重点',
-      textZh: '制造业重点',
-      href: getPermalink('/services#manufacturing'),
+      text: '场景档案',
+      textZh: '场景档案',
+      href: getPermalink('/services#scenarios'),
     },
     {
       text: '公开文章',
@@ -32,7 +32,7 @@ export const footerData = {
       title: '网站导航',
       links: [
         { text: 'AI 转型咨询', href: getPermalink('/services') },
-        { text: '制造业重点', href: getPermalink('/services#manufacturing') },
+        { text: '场景档案', href: getPermalink('/services#scenarios') },
         { text: '公开文章', href: getBlogPermalink() },
         { text: '服务边界', href: getPermalink('/safeguards') },
         { text: '联系状态', href: getPermalink('/contact') },

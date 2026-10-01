@@ -4,31 +4,50 @@ import Layout from '~/layouts/PageLayout.astro';
 import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: 'LeoOne｜面向个人和企业的 AI 转型咨询',
+  title: 'LeoOne｜先把一件具体工作说清，再决定怎么用 AI',
   ignoreTitleTemplate: true,
   description:
-    'LeoOne 是一家 AI 驱动的咨询公司，面向个人和企业，帮助判断 AI 应用在哪里、如何开始，以及试点前需要准备什么。',
+    'LeoOne 是一家 AI 驱动的咨询公司，面向个人和企业提供 AI 转型咨询。从一件具体工作开始，澄清 AI 的用途、人工判断和下一步标准；行业不设限。',
 };
 
-const focusAreas = [
-  '应把 AI 用在什么问题上',
-  '第一步从哪里开始',
-  '需要补齐哪些能力和治理准备',
-  '如何组织试点与后续变化',
+const situations = [
+  {
+    title: '不知道先改哪件工作',
+    description:
+      'AI 能帮忙的地方很多，但真正值得先处理的，通常是一项高频、有人负责、又确实卡住的工作。先选对问题，比先选工具更重要。',
+  },
+  {
+    title: '团队已经在用，做法却不稳定',
+    description: '同一件事有人会用、有人不会用；资料怎么准备、结果怎么核对、异常怎么处理，都没有共同做法。',
+  },
+  {
+    title: '想扩大使用，却不知道边界在哪里',
+    description:
+      '哪些内容可以交给 AI 起草或整理，哪些不能输入、不能外发，哪些必须由人查证、签核或决定？这些问题需要先落到具体场景。',
+  },
+];
+
+const taskQuestions = [
+  '这项工作要完成什么，当前卡在哪里？',
+  '需要哪些材料，哪些信息不能使用或不能外发？',
+  '产出应是什么，谁对它负责？',
+  '哪些步骤可由 AI 协助，哪些必须人工核对或决定？',
+  '用哪些少量观察项判断继续、调整还是停止？',
 ];
 ---
 
 <Layout metadata={metadata}>
   <section class="mx-auto max-w-7xl px-4 md:px-6 pt-12 pb-10 md:pt-16 md:pb-12 text-center">
-    <p class="font-semibold text-primary dark:text-blue-500">AI 驱动的咨询公司</p>
-    <h1 class="mt-3 mx-auto max-w-5xl text-4xl md:text-6xl font-bold leading-tight tracking-tighter font-heading">
-      为个人和企业梳理 AI 转型的下一步。
+    <p class="font-semibold text-primary dark:text-blue-500">从一件具体工作开始</p>
+    <h1 class="mt-3 mx-auto max-w-6xl text-4xl md:text-5xl font-bold leading-tight tracking-tighter font-heading">
+      AI 已经在用，眼前这件事该怎么做才更清楚？
     </h1>
     <p class="mt-5 mx-auto max-w-4xl text-lg md:text-xl text-muted dark:text-slate-300">
-      LeoOne 是一家 AI 驱动的咨询公司，为个人和企业提供 AI 转型咨询服务。我们结合
-      AI、自动化和专业判断，支持研究、分析、方案设计与交付；AI
-      驱动是我们的工作方式，不以自动化替代专业判断，也不承诺特定结果。
+      你可能已经试过工具，也看到了它能帮上一些忙。但一项重要工作还没有说清：AI
+      在哪一步参与、材料是否合适、哪些内容必须由人判断，以及怎样知道该继续、调整还是停止。LeoOne
+      从这样的具体问题出发，帮助个人和企业梳理 AI 转型中的任务、流程和使用边界。
     </p>
+    <p class="mt-4 text-sm text-muted dark:text-slate-300">行业不设限；具体范围以实际问题和书面确认为准。</p>
     <a
       class="inline-flex mt-6 rounded-md bg-primary px-6 py-3 font-semibold text-white hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
       href={getPermalink('/services')}
@@ -39,84 +58,105 @@ const focusAreas = [
 
   <section class="border-y border-gray-200 dark:border-slate-800">
     <div class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">先把要判断的问题说清楚</h2>
-      <div class="mt-8 grid gap-4 md:grid-cols-2">
-        <article class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-          <h3 class="text-2xl font-bold font-heading">面向个人</h3>
-          <p class="mt-3 text-muted dark:text-slate-300">
-            当你在职业、学习、创作或日常工作中考虑使用 AI，先把“我该如何使用 AI”梳理成目标、现状和需要进一步判断的事项。
-          </p>
-        </article>
-        <article class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-          <h3 class="text-2xl font-bold font-heading">面向企业</h3>
-          <p class="mt-3 text-muted dark:text-slate-300">
-            当团队准备推进
-            AI，先判断应用应从哪里开始，并明确试点前需要准备的能力、责任和治理安排。具体项目范围以书面确认为准。
-          </p>
-        </article>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">你可能正卡在这里</h2>
+      <div class="mt-8 grid gap-4 lg:grid-cols-3">
+        {
+          situations.map(({ title, description }) => (
+            <article class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+              <h3 class="text-2xl font-bold font-heading">{title}</h3>
+              <p class="mt-3 text-muted dark:text-slate-300">{description}</p>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
 
   <section class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12">
-    <div class="max-w-4xl">
-      <p class="font-semibold text-primary dark:text-blue-500">当前企业重点</p>
-      <h2 class="mt-2 text-3xl md:text-4xl font-bold tracking-tight font-heading">从制造业的真实流程开始</h2>
-      <p class="mt-4 text-lg text-muted dark:text-slate-300">
-        制造业 AI 工作流诊断与试点准备，是 LeoOne 当前已公开的企业重点入口。现有材料帮助制造团队围绕真实流程，明确首个
-        AI 试点的优先级、范围和必要控制点。
-      </p>
-      <a
-        class="inline-block mt-5 font-semibold text-primary hover:underline dark:text-blue-500"
-        href={getPermalink('/services#manufacturing')}
-      >
-        查看制造业重点 →
-      </a>
-    </div>
+    <p class="font-semibold text-primary dark:text-blue-500">先把问题说清</p>
+    <h2 class="mt-2 text-3xl md:text-4xl font-bold tracking-tight font-heading">围绕一项真实任务，厘清五件事</h2>
+    <ol class="mt-8 grid gap-4 md:grid-cols-2">
+      {
+        taskQuestions.map((item, index) => (
+          <li class="flex gap-4 rounded-lg bg-gray-50 dark:bg-slate-800 p-5">
+            <span aria-hidden="true" class="font-bold text-primary dark:text-blue-500">
+              {index + 1}.
+            </span>
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="mt-6 max-w-4xl text-sm text-muted dark:text-slate-300">
+      这些问题用于定义讨论范围，不代表效果、ROI、上线时间、安全、合规或服务可用性承诺。
+    </p>
   </section>
 
   <section class="border-y border-gray-200 dark:border-slate-800 bg-gray-50/60 dark:bg-slate-900/30">
     <div class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">AI 转型咨询关注什么</h2>
-      <ul class="mt-8 grid gap-4 md:grid-cols-2">
-        {
-          focusAreas.map((item) => (
-            <li class="flex gap-3 rounded-lg bg-white dark:bg-slate-800 p-5">
-              <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
-              <span>{item}</span>
-            </li>
-          ))
-        }
-      </ul>
-      <p class="mt-6 text-muted dark:text-slate-300">实际工作范围、可用信息和责任，在项目开始前书面确认。</p>
+      <p class="font-semibold text-primary dark:text-blue-500">LeoOne 的咨询方向</p>
+      <h2 class="mt-2 max-w-4xl text-3xl md:text-4xl font-bold tracking-tight font-heading">
+        把 AI 的用途、人工判断和下一步标准摆到桌面上
+      </h2>
+      <p class="mt-4 max-w-4xl text-lg text-muted dark:text-slate-300">
+        LeoOne 是一家 AI 驱动的咨询公司，为个人和企业提供 AI
+        转型咨询。我们可围绕一个指定任务或流程，协助厘清输入、产出、检查点、责任人和待确认条件，并用少量练习或记录检验做法能否被复用。AI
+        驱动是工作方式：结合
+        AI、自动化和专业判断支持研究、分析、方案设计与交付；不以自动化替代专业判断，也不承诺特定结果。
+      </p>
+      <p class="mt-4 max-w-4xl text-sm text-muted dark:text-slate-300">
+        这段内容说明咨询方向，不构成服务目录、价格、项目开放状态或申请入口。实际范围、责任、可用信息和交付安排均须书面确认。
+      </p>
     </div>
   </section>
 
   <section class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12">
-    <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">公开文章</h2>
-    <p class="mt-3 max-w-3xl text-muted dark:text-slate-300">
-      LeoOne 已公开发布中文文章，说明我们如何区分事实、假设和下一步判断。文章不是客户案例，也不代表服务成果。
+    <p class="font-semibold text-primary dark:text-blue-500">公司级定位</p>
+    <h2 class="mt-2 text-3xl md:text-4xl font-bold tracking-tight font-heading">面向个人和企业，行业不设限</h2>
+    <p class="mt-4 max-w-4xl text-lg text-muted dark:text-slate-300">
+      无论你是在处理工作、学习、创作或组织中的一项业务流程，LeoOne 关注的都是：如何把 AI
+      放进一件真实的事，同时保留需要由人承担的判断与责任。具体服务对象、服务入口、交付形式和开放状态将按阶段确定；本站不据此作出可购买或可联系的承诺。
     </p>
-    <a
-      class="inline-block mt-5 font-semibold text-primary hover:underline dark:text-blue-500"
-      href={getBlogPermalink()}
-    >
-      阅读公开文章 →
-    </a>
   </section>
 
-  <section class="border-t border-gray-200 dark:border-slate-800 bg-gray-50/60 dark:bg-slate-900/30">
-    <div class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">服务边界</h2>
-      <p class="mt-3 max-w-3xl text-muted dark:text-slate-300">
-        本站当前用于说明公开信息，不接收项目申请、联系方式、项目资料或敏感信息。
-      </p>
-      <a
-        class="inline-block mt-5 font-semibold text-primary hover:underline dark:text-blue-500"
-        href={getPermalink('/safeguards')}
-      >
-        查看服务边界 →
-      </a>
+  <section class="border-y border-gray-200 dark:border-slate-800 bg-gray-50/60 dark:bg-slate-900/30">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12 grid gap-8 lg:grid-cols-3">
+      <article>
+        <h2 class="text-3xl font-bold tracking-tight font-heading">场景档案</h2>
+        <p class="mt-3 text-muted dark:text-slate-300">
+          以下材料记录曾经公开的具体场景，用来说明如何从一项流程梳理条件、人工复核和待确认问题；它们不是客户案例，也不代表现有服务范围或结果。
+        </p>
+        <a
+          class="inline-block mt-5 font-semibold text-primary hover:underline dark:text-blue-500"
+          href={getPermalink('/services#scenarios')}
+        >
+          查看场景档案 →
+        </a>
+      </article>
+      <article>
+        <h2 class="text-3xl font-bold tracking-tight font-heading">公开文章</h2>
+        <p class="mt-3 text-muted dark:text-slate-300">
+          这里收录研究和写作材料，帮助区分已知事实、待验证假设和下一步判断。文章不是客户案例，也不代表服务成果。
+        </p>
+        <a
+          class="inline-block mt-5 font-semibold text-primary hover:underline dark:text-blue-500"
+          href={getBlogPermalink()}
+        >
+          阅读公开文章 →
+        </a>
+      </article>
+      <article>
+        <h2 class="text-3xl font-bold tracking-tight font-heading">服务边界</h2>
+        <p class="mt-3 text-muted dark:text-slate-300">
+          本站目前仅用于说明公开信息，不接收项目申请、联系方式、项目资料或敏感信息。
+        </p>
+        <a
+          class="inline-block mt-5 font-semibold text-primary hover:underline dark:text-blue-500"
+          href={getPermalink('/safeguards')}
+        >
+          查看服务边界 →
+        </a>
+      </article>
     </div>
   </section>
 </Layout>

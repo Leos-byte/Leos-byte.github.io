@@ -6,24 +6,32 @@ import { getPermalink } from '~/utils/permalinks';
 const metadata = {
   title: 'AI 转型咨询｜LeoOne',
   ignoreTitleTemplate: true,
-  description: '了解 LeoOne 如何面向个人和企业梳理 AI 应用问题；制造业 AI 工作流诊断与试点准备是当前公开的重点入口。',
+  description: '围绕一个真实任务，说明输入、输出、人工判断、使用边界和观察项。具体范围须书面确认。',
 };
+
+const taskQuestions = [
+  '任务的目标、频率和当前困难是什么？',
+  '输入材料来自哪里，哪些信息可以使用、哪些不能使用？',
+  '需要的输出是什么，谁负责复核和最终决定？',
+  '哪些步骤适合让 AI 协助，哪些必须保留人工判断？',
+  '以什么观察项判断继续、调整还是停止？',
+];
 
 const manufacturingMaterials = [
   {
     id: 'workflow-roadmap',
-    title: '制造业 AI 工作流诊断与试点路线图',
-    description: '围绕真实流程梳理现状、比较候选场景，并形成首个试点的优先级、范围与准备事项。',
+    title: 'AI 工作流诊断与试点路线图',
+    description: '围绕真实流程整理现状，比较候选场景，并列出首个验证需要确认的优先级、范围与准备事项。',
   },
   {
     id: 'pilot-readiness',
-    title: 'AI 试点准备与治理设计',
-    description: '围绕已选方向梳理责任、数据边界、人工复核、评估方式和启动前需要确认的条件。',
+    title: 'AI 试点准备与使用边界设计',
+    description: '围绕已选方向梳理责任、允许场景、禁止输入类别、人工复核、评估方式和启动前需要确认的条件。',
   },
   {
     id: 'workshop',
-    title: '制造团队 AI 工作流共创工作坊',
-    description: '围绕一个真实流程，记录候选场景、风险、依赖和需要进一步确认的责任事项。',
+    title: '团队 AI 工作流共创工作坊',
+    description: '围绕一个真实流程，记录候选场景、风险、依赖和待确认的责任事项。',
   },
 ];
 ---
@@ -33,62 +41,81 @@ const manufacturingMaterials = [
     <div class="max-w-4xl">
       <p class="font-semibold text-primary dark:text-blue-500">AI 转型咨询</p>
       <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-        先判断 AI 应用在哪里，再决定如何开始
+        先把一件真实工作说清
       </h1>
       <p class="mt-5 text-xl text-muted dark:text-slate-300">
-        LeoOne 面向个人和企业提供 AI 转型咨询。我们关注 AI
-        的应用切入点、起步方式、所需能力和治理准备，以及试点和后续变化如何组织。具体项目范围以书面确认为准。
+        LeoOne 面向个人和企业提供 AI
+        转型咨询，不限定行业。开始讨论时，不必先谈一套宏大的转型方案；先看一项真实任务，澄清 AI
+        的用途、人工判断与下一步标准。具体项目范围以书面确认为准。
       </p>
-    </div>
-
-    <div class="mt-10 grid gap-4 md:grid-cols-2 max-w-5xl">
-      <section class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-        <h2 class="text-2xl font-bold font-heading">面向个人</h2>
-        <p class="mt-3 text-muted dark:text-slate-300">
-          如果你正在考虑如何在职业、学习、创作或日常工作中使用
-          AI，可以先把模糊问题梳理为目标、现状和需要进一步判断的事项。这里不提供个人服务目录、预约或项目申请入口。
-        </p>
-      </section>
-      <section class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-        <h2 class="text-2xl font-bold font-heading">面向企业</h2>
-        <p class="mt-3 text-muted dark:text-slate-300">
-          如果团队准备推进
-          AI，可以先围绕真实业务流程判断优先场景、试点范围、责任、数据边界、人工复核和评估方式。网站不据此承诺任何行业服务的开放状态或项目可用性。
-        </p>
-      </section>
     </div>
   </section>
 
+  <section class="border-y border-gray-200 dark:border-slate-800 bg-gray-50/60 dark:bg-slate-900/30">
+    <div class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">一项任务要先说明什么</h2>
+      <ol class="mt-8 grid gap-4 md:grid-cols-2">
+        {
+          taskQuestions.map((item, index) => (
+            <li class="flex gap-4 rounded-lg bg-white dark:bg-slate-800 p-5">
+              <span aria-hidden="true" class="font-bold text-primary dark:text-blue-500">
+                {index + 1}.
+              </span>
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="mt-6 max-w-4xl text-sm text-muted dark:text-slate-300">
+        这些问题帮助界定一个可讨论的场景，不构成对准确性、效率、ROI、上线日期、安全、合规或服务可用性的保证。
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12 grid gap-6 lg:grid-cols-2">
+    <article class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+      <h2 class="text-2xl font-bold font-heading">LeoOne 可说明的有限帮助</h2>
+      <p class="mt-4 text-muted dark:text-slate-300">
+        围绕一个已有任务或流程，协助把输入、预期产出、检查点、责任人、使用边界和待确认前提列清；在项目获得确认的前提下，可用少量练习或记录检验做法能否被复用。重点是让开始前必须回答的问题可见，而不是替客户接管系统、业务决策或专业责任。
+      </p>
+    </article>
+    <article class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
+      <h2 class="text-2xl font-bold font-heading">LeoOne 不替代什么</h2>
+      <p class="mt-4 text-muted dark:text-slate-300">
+        LeoOne
+        不替代法务、隐私、安全、行业监管或其他专业判断；不承诺实现合规、数据不泄露、系统安全、输出无误、降本增收或固定上线时间。具体的信息处理与责任安排必须书面确认。
+      </p>
+    </article>
+  </section>
+
   <section
-    id="manufacturing"
+    id="scenarios"
     class="border-y border-gray-200 dark:border-slate-800 bg-gray-50/60 dark:bg-slate-900/30 scroll-mt-24"
   >
     <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
       <div class="max-w-4xl">
-        <p class="font-semibold text-primary dark:text-blue-500">当前企业重点</p>
+        <p class="font-semibold text-primary dark:text-blue-500">场景档案</p>
         <h2 class="mt-2 text-3xl md:text-4xl font-bold tracking-tight font-heading">制造业 AI 工作流诊断与试点准备</h2>
         <p class="mt-4 text-lg text-muted dark:text-slate-300">
-          制造业是 LeoOne 当前已公开的重点场景。现有材料聚焦制造团队如何围绕真实流程，明确首个 AI
-          试点的优先级、范围和必要控制点；它不是 LeoOne 的唯一业务身份，也不代表其他企业服务已经开放。
+          既有公开场景材料。它展示如何从一个具体流程梳理条件与人工复核，不代表 LeoOne 只服务或优先服务制造业。
         </p>
       </div>
 
-      <h3 class="mt-10 text-2xl font-bold font-heading">已公开的制造业材料</h3>
-      <div class="mt-6 grid gap-4 lg:grid-cols-3">
+      <div class="mt-10 grid gap-4 lg:grid-cols-3">
         {
           manufacturingMaterials.map(({ id, title, description }) => (
             <article
               id={id}
               class="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 scroll-mt-24"
             >
-              <h4 class="text-xl font-bold font-heading">{title}</h4>
+              <h3 class="text-xl font-bold font-heading">{title}</h3>
               <p class="mt-3 text-muted dark:text-slate-300">{description}</p>
             </article>
           ))
         }
       </div>
       <p class="mt-8 max-w-4xl text-sm text-muted dark:text-slate-300">
-        以上为当前公开的制造业内容。是否接受新咨询、通过何种渠道联系、何时报价或启动，均不由本页推定。
+        以上为既有公开场景材料，不是可购买套餐、已开放服务或项目申请入口；不代表任何行业的客户成果、实施能力或服务优先级。
       </p>
     </div>
   </section>
