@@ -11,7 +11,7 @@ metadata:
   title:
     default: LeoOne
     template: '%s｜LeoOne'
-  description: 面向中文技术从业者的 AI 研究与 AI Agent 安全洞见，区分已证实事实、主张与不确定性，并链接原始来源。
+  description: 面向个人和企业的 AI 转型咨询。从真实任务出发，厘清 AI 的用途、人工判断与下一步标准；分享 AI 研究与安全洞见。
   robots:
     index: true
     follow: true
