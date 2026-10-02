@@ -100,3 +100,14 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+.prose .comparison-table-scroll {
+  margin-block: 2em;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.prose .comparison-table {
+  min-width: 46rem;
+  margin-block: 0;
+}
