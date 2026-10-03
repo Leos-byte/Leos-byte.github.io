@@ -13,31 +13,25 @@ metadata:
   description: '筛选 2026 年 9 月 27 日至 10 月 3 日前沿机构的一手多 Agent 资料，区分产品声明、实践案例、证据缺口与可执行验证。'
 ---
 
-这周没有足够证据支持一篇“多 Agent 大爆发”式盘点。[1][3]
+本期把“在窗口内发布”和“真正讨论多 Agent 协作”设为两道门槛：我按发布者声明日期检查了 **2026 年 9 月 27 日至 10 月 3 日**的一手资料，只纳入实质涉及 Agent 协作、协调、委派或团队机制的内容。[2][3]
 
-我按发布者声明日期筛选了 **2026 年 9 月 27 日至 10 月 3 日**的一手资料。[2][4][5]
+公司来源包括 OpenAI、Anthropic 与 Google DeepMind / Google Research 的官方页面或归档。[2][4][5]
 
-公司来源第一组是 OpenAI、Anthropic 与 Google DeepMind / Google Research 的官方页面和归档。[2][4][5]
+我也检查了 Meta AI、Microsoft Research 与 Mistral。[7][10][11]
 
-第二组是 Meta AI、Microsoft Research 与 Mistral。[7][10][11]
+独立研究机构选取 Mila 与 Vector Institute。[13][14]
 
-xAI 的官方新闻页也在来源集内，但自动化访问受限。[12]
+检索截至 2026 年 10 月 3 日，日期以发布者页面或官方 feed 为准。xAI 官方新闻页受自动化访问限制，因此它只算覆盖缺口，不算完整核验。[12]
 
-独立研究机构中，本轮选取 Mila 和 Vector Institute；检索截至 2026 年 10 月 3 日，日期以发布者页面或官方 feed 的声明为准。[13][14]
+严格筛选后，只留下两份：OpenAI 的产品发布汇总中有关 Agents API 的一节，以及 Anthropic 发布的科学研究实践复盘。[1][2][3]
 
-只纳入实质讨论 Agent 协作、协调、委派、团队或网络安全的文章与论文；产品页、研究博客和论文分开判断，不以公司名气代替证据。
-
-严格筛选后，合格资料只有两份：OpenAI 的产品发布汇总，以及 Anthropic 发布的科学研究实践复盘。[1][2][3]
-
-这不是穷尽所有 AI 研究的普查，也不能证明本周整个领域只有两项进展。[1][2][3]
-
-它只说明：在上述公开来源和时间窗口内，我没有找到第三份同时满足日期与主题要求的一手资料。[1][2][3]
+这不是对所有 AI 研究的穷尽性普查，也不能证明整个领域本周只有两项进展；它只说明，在上述公开来源和时间窗口内，我没有找到第三份同时满足日期与主题要求的一手资料。
 
 <section class="article-summary" aria-labelledby="weekly-answer-title">
   <p class="article-summary__label">本周判断</p>
   <h2 id="weekly-answer-title">多 Agent 的重点正从“多开几个模型”转向可验证的委派与状态管理</h2>
   <ul>
-    <li><strong>产品层：</strong>并行 subagent 和共享协作界面正在成为现成功能，但发布说明没有证明它们在同预算下优于单 Agent。[1]</li>
+    <li><strong>产品层：</strong>OpenAI 正把 Codex 的 multi-agent 能力带入 Agents API，但发布说明没有解释委派机制，也没有证明它在同预算下优于单 Agent。[1]</li>
     <li><strong>实践层：</strong>复杂研究依赖主控 session、独立工作目录、持久化中间结果和人工验证，而不是 Agent 数量本身。[3]</li>
     <li><strong>工程层：</strong>下一步应测任务边界、恢复能力、结果谱系和失败传播，不能只测最终答案。</li>
   </ul>
@@ -56,7 +50,7 @@ xAI 的官方新闻页也在来源集内，但自动化访问受限。[12]
           <td>9 月 29 日</td>
           <td>OpenAI《DevDay 2026 Recap》</td>
           <td>产品发布说明</td>
-          <td>Agents API 把 Codex 的 multi-agent 能力带入 API；主 Agent 可把独立子任务交给并行 subagent，再汇总结果。[1][2]</td>
+          <td>Agents API 把 Codex 的 multi-agent 能力、工具搜索、工具调用和上下文压缩带入应用。[1][2]</td>
           <td>没有同预算单 Agent 对照，不能证明质量、成本或可靠性更好。[1]</td>
         </tr>
         <tr>
@@ -71,15 +65,15 @@ xAI 的官方新闻页也在来源集内，但自动化访问受限。[12]
   </div>
 </figure>
 
-## 主题一：委派成为产品能力，但“能并行”不等于“更可靠”
+## 主题一：multi-agent 进入产品能力清单，但不等于“更可靠”
 
-OpenAI 在 DevDay 汇总中把 multi-agent 支持放进 Agents API：系统可把复杂任务拆成相互独立的部分，交给并行 subagent；每个 subagent 保留自己的上下文，再由主 Agent 协调并汇总。[1]
+OpenAI 在 DevDay 汇总中说明，Agents API 将 Codex 的 multi-agent 能力、工具搜索、工具调用和上下文压缩带入应用。[1]
 
 OpenAI 的官方 RSS 将这篇汇总的发布日期记为 2026 年 9 月 29 日。[2]
 
 OpenAI 将它作为产品能力发布，而不是论文结果。[1]
 
-这是**产品发布说明**，不是多 Agent 评测。[1] 页面说明了功能和使用方式，却没有给出单 Agent 对照、固定 token 预算、失败率、尾延迟或恢复测试。[1] 它能证明“开发者现在可以调用这种委派模式”，不能证明“这种模式已经更好”。[1]
+这是**产品发布说明**，不是多 Agent 评测。[1] 页面只点明能力组合，没有解释 Agent 如何分工、通信和合并结果，也没有给出单 Agent 对照、固定 token 预算、失败率、尾延迟或恢复测试。[1] 它能证明 OpenAI 正在把 multi-agent 能力产品化，不能证明具体委派机制或效果已经得到验证。[1]
 
 对工程团队而言，最直接的测试不是把并发数开大，而是先固定一组真实任务，再比较：
 
