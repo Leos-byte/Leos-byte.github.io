@@ -1,194 +1,156 @@
 ---
 publishDate: 2026-10-01
-updateDate: 2026-10-01
+updateDate: 2026-10-02
 draft: false
-title: 'OpenClaw vs Hermes Agent：该怎样比较两类 Agent 运行系统？'
-excerpt: '不比功能数量，也不先选赢家。本文沿着控制面、执行位置、状态、权限、隔离和运行证据，比较两种不同的 Agent 运行结构。'
+title: 'OpenClaw vs Hermes Agent：架构怎么选'
+excerpt: 'OpenClaw 以 Gateway 连接渠道和设备；Hermes 让多种入口复用 Agent 核心。先看两张图，再用五项测试验证。'
 category: 前沿 AI 研究
 tags:
   - AI 智能体
   - 开源软件
 metadata:
-  description: '从控制面与运行拓扑、渠道和设备节点、工具后端、记忆、技能、调度、权限、隔离及运行证据比较 OpenClaw 与 Hermes Agent。'
+  description: '用架构图、选型路径和五项运行测试，比较 OpenClaw 与 Hermes Agent 的控制面、执行位置、状态、权限和隔离。'
 ---
 
-比较 Agent 系统，最容易犯的错是数渠道、工具和模型。真正会改变部署结果的，是消息经过哪些常驻进程，动作最终在哪台机器上执行，状态由谁保存，权限在哪里收紧，以及失败后能否看见、停止和恢复。
+如果你正在两者之间选型，先别数功能。先回答一个问题：**你要解决的是多渠道与设备连接，还是多入口与多种执行后端？**
 
-OpenClaw 与 Hermes Agent 都把模型接到消息渠道、工具和真实执行环境，但公开文档呈现出两种不同的运行结构：OpenClaw 围绕常驻 Gateway 组织渠道、客户端和设备节点；Hermes Agent 让 CLI、消息 Gateway、ACP、批处理和 API 等入口复用同一个 Agent 核心，再由工具注册表和终端后端决定动作去哪里执行。[3][10][14]
+<section class="article-summary" aria-labelledby="quick-answer-title">
+  <p class="article-summary__label">30 秒结论</p>
+  <h2 id="quick-answer-title">先按核心问题选择试点起点</h2>
+  <ul>
+    <li><strong>重点是渠道、客户端和设备节点：</strong>可先试 OpenClaw，重点验证 Gateway 信任域、节点配对与撤销。</li>
+    <li><strong>重点是 CLI、消息、API 共用一套 Agent 能力：</strong>可先试 Hermes Agent，重点验证 profile、工具集和执行后端。</li>
+    <li><strong>还不能判断：</strong>让两套系统执行同一批任务。比较拒绝、追踪、故障、恢复和运营数据，不凭功能表决定。</li>
+  </ul>
+</section>
 
-这不是一场“谁更强”的评选。本文把两套系统放进同一张边界图，帮助读者决定先问什么、必须测什么。
+公开文档显示，OpenClaw 围绕常驻 Gateway 组织渠道、客户端和设备节点；Hermes Agent 让 CLI、消息 Gateway、ACP、批处理和 API 等入口复用同一个 Agent 核心，再由工具注册表和终端后端决定动作去哪里执行。[3][10][14]
 
-## 先画边界，不先看功能表
+这是根据公开文档中的架构重心给出的**启发式试点顺序**，不是适配性证明或赢家结论。两套系统的能力有重叠，最终选择必须由同任务试点数据决定。本文没有部署两套系统做对照实验。
 
-<div class="comparison-table-scroll" role="region" aria-label="OpenClaw 与 Hermes Agent 技术比较" tabindex="0">
-  <table class="comparison-table">
-    <thead>
-      <tr>
-        <th>比较轴</th>
-        <th>OpenClaw 的文档重心</th>
-        <th>Hermes Agent 的文档重心</th>
-        <th>选型时要验证</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>控制面</td>
-        <td>单个长期运行的 Gateway 连接渠道、客户端、自动化和节点</td>
-        <td>多种入口汇入 <code>AIAgent</code> 核心，Gateway 是其中一个入口</td>
-        <td>哪个进程持有路由、会话、凭据和停止权</td>
-      </tr>
-      <tr>
-        <td>动作出口</td>
-        <td>Gateway 宿主机、已配对设备节点或 sandbox</td>
-        <td>本机、容器、SSH 主机或云端 sandbox 等终端后端</td>
-        <td>每个工具最终使用哪台主机、哪个 OS 账户、哪些凭据</td>
-      </tr>
-      <tr>
-        <td>状态</td>
-        <td>工作区文件、会话、技能和 Gateway 调度状态</td>
-        <td>profile 记忆、SQLite 会话、技能和 cron 状态</td>
-        <td>哪些状态跨会话，谁能读取、修改、备份和删除</td>
-      </tr>
-      <tr>
-        <td>隔离</td>
-        <td>一个 Gateway 是一个信任域；sandbox 只移动部分工具执行</td>
-        <td>profile 与工具策略分层；强隔离依赖容器或远端后端</td>
-        <td>配置限制能否被 shell 绕过，OS 和网络边界是否真实存在</td>
-      </tr>
-      <tr>
-        <td>运行证据</td>
-        <td>Gateway health、安全审计、sandbox 策略解释</td>
-        <td>工具调用、会话、cron、后台进程状态与诊断入口</td>
-        <td>能否复现一次失败，定位到入口、会话、工具和执行后端</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+## 一张图看懂架构差异
 
-这张表只概括文档设计，不证明任何实际部署已经正确配置，也不证明同名功能具有相同安全强度。
+<figure class="architecture-map" aria-labelledby="architecture-map-title architecture-map-caption">
+  <h3 id="architecture-map-title">消息如何到达真实执行环境</h3>
+  <div class="architecture-map__grid">
+    <section class="architecture-lane architecture-lane--openclaw" aria-label="OpenClaw 的 Gateway 中心结构">
+      <h4>OpenClaw</h4>
+      <p class="architecture-lane__focus">Gateway 是网络中心</p>
+      <ol class="architecture-flow">
+        <li><span>入口</span><strong>渠道 · CLI · Web UI</strong></li>
+        <li><span>控制面</span><strong>常驻 Gateway</strong></li>
+        <li><span>会话</span><strong>Agent 会话</strong></li>
+        <li><span>执行</span><strong>宿主工具 · sandbox · 设备节点</strong></li>
+      </ol>
+      <p class="architecture-lane__question">先问：Gateway 管了谁？节点如何配对、撤销和离线？</p>
+    </section>
+    <section class="architecture-lane architecture-lane--hermes" aria-label="Hermes Agent 的 Agent 核心结构">
+      <h4>Hermes Agent</h4>
+      <p class="architecture-lane__focus">Agent 核心被多个入口复用</p>
+      <ol class="architecture-flow">
+        <li><span>入口</span><strong>CLI · Gateway · ACP · API</strong></li>
+        <li><span>核心</span><strong>AIAgent</strong></li>
+        <li><span>分发</span><strong>工具注册表</strong></li>
+        <li><span>执行</span><strong>本机 · 容器 · SSH · 云端 sandbox</strong></li>
+      </ol>
+      <p class="architecture-lane__question">先问：本次运行加载了什么？终端后端实际指向哪里？</p>
+    </section>
+  </div>
+  <figcaption id="architecture-map-caption">图中只表示公开文档的结构重心。入口认证、工具授权、OS 权限和隔离仍是不同边界。[2][3][9][10][14]</figcaption>
+</figure>
 
-## 1. 控制面和运行拓扑
+OpenClaw 先回答“一个常驻控制面怎样连接多个入口和设备”。Hermes Agent 先回答“同一套 Agent 能力怎样出现在不同入口”。
 
-### OpenClaw：Gateway 是网络中心
+无论选哪一个，都要把**控制面、执行面和状态层**分开检查。入口完成用户认证，不代表下游工具已经最小授权；工具进入容器，也不代表控制面和凭据同时被隔离。
 
-OpenClaw 把一个长期运行的 Gateway 放在中心。消息渠道、CLI、Web UI、自动化与设备节点连接到它；Gateway 维护渠道连接，并通过带 schema 的 WebSocket API 接收请求和推送事件。远程客户端与节点需要认证和配对。[2][3]
+## 用这张检查图决定下一步
 
-可以把它简化为：
+<figure class="decision-map" aria-labelledby="decision-map-title decision-map-caption">
+  <h3 id="decision-map-title">从问题到证据，只走三步</h3>
+  <ol class="decision-steps">
+    <li>
+      <span class="decision-steps__number">1</span>
+      <div><strong>选试点起点</strong><p>按文档重心初筛：设备协同可先看 OpenClaw；多入口、多后端可先看 Hermes。</p></div>
+    </li>
+    <li>
+      <span class="decision-steps__number">2</span>
+      <div><strong>画清动作边界</strong><p>标出身份、会话、工具、OS 账户、主机、网络和凭据。</p></div>
+    </li>
+    <li>
+      <span class="decision-steps__number">3</span>
+      <div><strong>收集五类证据</strong><p>拒绝 · 追踪 · 故障 · 恢复 · 运营。</p></div>
+    </li>
+  </ol>
+  <div class="validation-grid" role="list" aria-label="试点必须通过的五项测试">
+    <section role="listitem"><strong>拒绝</strong><span>越权动作确实被阻止</span></section>
+    <section role="listitem"><strong>追踪</strong><span>动作能追到入口、会话、工具和后端</span></section>
+    <section role="listitem"><strong>故障</strong><span>断开节点或撤销凭据后状态可解释</span></section>
+    <section role="listitem"><strong>恢复</strong><span>重启后不重复产生副作用</span></section>
+    <section role="listitem"><strong>运营</strong><span>完成率、接管、耗时和成本可比较</span></section>
+  </div>
+  <figcaption id="decision-map-caption">只看到配置，不算通过。每项都要留下实际运行证据。</figcaption>
+</figure>
 
-`渠道 / 客户端 → Gateway → Agent 会话 → Gateway 工具、sandbox 或设备节点`
+> **利益披露：**LeoOne 当前使用 Hermes Agent，因此更熟悉它的实际操作方式。本文只以固定版本的公开文档支持架构比较，不把内部经验当作独立证据，也不为任一项目背书。完整适用范围见文末。
 
-这种结构先回答“一个常驻控制面怎样连接多个入口和设备”。但图中至少有三种不同信任关系：发消息的人、运行 Gateway 的主机、执行动作的节点。把它们统称为“Agent 权限”会掩盖风险。
+**只负责初筛的读者可以读到这里；做最终选型前仍应完成同任务试点。**下面是给实施和安全审查人员的细节。
 
-### Hermes Agent：入口复用 Agent 核心
+## 实施审查：盯住四个边界
 
-Hermes Agent 的公开架构把提示词组装、模型 provider、工具分发、上下文压缩和会话持久化放在 `AIAgent` 周围。CLI、消息 Gateway、ACP、批处理和 API 等入口最终调用这套核心；Gateway 会先处理发送者授权和会话定位，再创建带历史的 Agent 并回传结果。[9][10]
+OpenClaw 把设备节点当作一等对象。节点声明能力和命令，通过 Gateway 与会话协作，因此每个手机、桌面或远端设备都要单独认证、配对和撤销。[3]
 
-可以把它简化为：
+Hermes Agent 更强调统一工具注册表。终端、文件、浏览器、Web、MCP、记忆、子智能体和定时任务等工具按环境提供；终端可落在本机、容器、SSH 或云端 sandbox。[14]
 
-`CLI / Gateway / ACP / API → AIAgent → 工具注册表 → 本机、容器或远端后端`
+对每个真实任务，画出四条线：
 
-这种结构先回答“同一套 Agent 能力怎样出现在不同入口”。风险也随之变化：不能只看某个工具是否存在，还要看某个 profile、某个平台和某次运行实际加载了哪些工具，终端后端又指向哪里。[14]
+1. **身份线：**谁从哪个入口发起动作，身份怎样映射到会话和 profile；
+2. **工具线：**会话选中了哪个工具、设备能力或执行后端；
+3. **权限线：**动作使用哪个 OS 用户、主机、网络和凭据；
+4. **撤销线：**撤销用户、节点或凭据后，已有会话能否继续。
 
-两张图的共同要求是：控制面、执行面和状态层必须分开画。某个入口完成了用户认证，不代表下游工具已经最小授权；某个工具进入容器，也不代表控制面和凭据同时进入了容器。
+## 记忆、技能和调度要分开测
 
-## 2. 渠道、工具与设备节点
+- **记忆：**OpenClaw 以工作区 Markdown 文件作为基础事实来源，也可叠加检索；其文档明确说记忆不能执行权限策略。[4] Hermes Agent 在会话开始时注入 `MEMORY.md` 和 `USER.md`，用 SQLite/FTS5 保存会话，记忆按 profile 隔离。[10][11] 测试错误更正、过期、跨 profile 读取和敏感信息清除。
+- **技能：**两边都把技能做成可加载的知识包。OpenClaw 定义来源与覆盖顺序；Hermes Agent 按需加载，也允许 Agent 创建或更新技能。[5][12] 记录来源、版本、修改人、二进制、环境变量和凭据。安装成功不等于安全审查通过。
+- **调度：**OpenClaw 由 Gateway scheduler 持久化任务并投递结果。[6] Hermes Agent 的 cron 支持一次性、重复、新 Agent 会话和无 LLM 脚本任务。[10][13] 测试时区、重复执行、超时、并发、批准、投递、停止和重启恢复。
 
-OpenClaw 的设备节点是独立的一等对象：节点声明能力和命令，通过 Gateway 与会话协作。于是手机、桌面或远端设备不只是“一个工具”，而是需要单独认证、配对和撤销的动作出口。[3]
+## 权限配置不能代替隔离
 
-Hermes Agent 的公开文档更强调统一工具注册表。终端、文件、浏览器、Web、MCP、记忆、子智能体和定时任务等工具可按环境提供；终端执行可以落在本机、Docker、SSH、Singularity、Modal、Daytona 或 Vercel Sandbox。[14]
+OpenClaw 的工具可在 Gateway 宿主机、设备节点或 sandbox 中运行。渠道授权、节点配对、工具策略和 OS 权限是不同层。[3][7][8]
 
-这两种抽象不能只按数量横比。更有用的检查是：
+一个 OpenClaw Gateway 是一个信任域，不是互不信任用户之间的强多租户边界。混合信任场景应拆分 Gateway、凭据和 OS 用户或主机。sandbox 默认关闭，且主要隔离工具执行；Gateway 仍在宿主机。[7][8]
 
-1. 一个渠道身份如何映射到会话和 profile；
-2. 会话拿到的是工具名，还是某台设备上的具体能力；
-3. 设备或后端离线时，任务会失败、重试，还是改在别处执行；
-4. 撤销一个用户、节点或凭据后，已有会话是否仍能继续动作；
-5. 跨渠道发送、文件上传和浏览器操作是否有独立限制。
+Hermes Agent 的 `local` 终端后端使用启动 Hermes 的 OS 用户权限。文件写入保护不约束 shell，命令规则也不能替代 OS 隔离。强边界需要受限挂载、凭据和网络的容器或远端后端。[14][15]
 
-## 3. 记忆、技能和调度是三种状态
+批准提示只是决策点，不是隔离层。无人值守时，还要明确批准请求会拒绝、阻塞还是自动放行。
 
-### 记忆：给模型上下文，不负责授权
+## 验收只看运行证据
 
-OpenClaw 的基础记忆以工作区 Markdown 文件为事实来源，并可叠加关键词与向量检索。其文档明确提醒：记忆可以记录审批背景，但不能执行权限策略。[4]
+OpenClaw 提供 Gateway health、安全审计和 sandbox 策略解释等入口。[3][7][8] Hermes Agent 让工具调用可见、执行可中断，并保存会话、Gateway、cron 和后台进程状态；README 还提供 `hermes doctor`。[9][10][14]
 
-Hermes Agent 把有字符上限的 `MEMORY.md` 和 `USER.md` 在会话开始时注入提示词，把完整会话存入 SQLite/FTS5 供检索；记忆按 profile 隔离，运行中会话读取的是启动时快照。[10][11]
+这些入口不是可靠性证明。对照试点至少保存：
 
-因此，“记住了”不等于“允许了”，也不等于“这是最新事实”。试点要故意写入错误信息，再测试更正、过期、跨 profile 读取和敏感信息清除。
+- **拒绝证据：**越权用户、文件和命令被阻止；
+- **追踪证据：**动作能追到入口、会话、工具、后端和时间；
+- **故障证据：**断开节点或撤销凭据后，任务状态可解释；
+- **恢复证据：**控制面重启后按设计恢复，不重复副作用；
+- **运营证据：**同批任务的完成率、接管、错误、耗时和成本可比较。
 
-### 技能：可复用流程，也是供应链依赖
+固定版本，在隔离环境中运行同一批任务。再用这五类证据决定继续、调整或停止。
 
-两边都把技能做成带说明和配套文件的可加载知识包。OpenClaw 定义了不同技能来源及覆盖顺序；Hermes Agent 采用按需加载和逐级展开，技能也可以由 Agent 创建或更新。[5][12]
+## 为什么比较这两个项目
 
-技能会同时复用正确步骤和错误假设。团队应记录来源、版本和修改人，检查技能要求的二进制、环境变量、凭据与工具权限，并在升级后重跑验收任务。把一个技能装进系统，不能视为它已通过安全审查。
+两者来自一次严格 GitHub 查询：仓库带有 `ai` topic，stars > 240,000，forks > 50,000。2026-10-01 19:18:33 PDT（UTC-07:00）执行 `topic:ai stars:>240000 forks:>50000` 时，结果只有 OpenClaw 与 Hermes Agent。[1]
 
-### 调度：把有人值守变成无人值守
-
-OpenClaw 由 Gateway scheduler 持久化任务、按时唤醒 Agent，并可把结果投递到聊天渠道、Webhook 或不投递；文档区分主会话、当前会话、隔离会话和自定义会话等执行方式。[6]
-
-Hermes Agent 的 cron 支持一次性和重复任务、附加技能、新 Agent 会话，以及不调用 LLM 的脚本任务。文档还列出模型凭据、技能依赖、投递目标和 MCP 工具等运行前检查，并禁止 cron 递归创建新 cron。[10][13]
-
-调度验收不能停在“准时启动”。还要测试时区、重复执行、超时、并发、凭据失效、人工批准、输出投递和停止开关，并确认重启后不会重复产生副作用。
-
-## 4. 执行位置和权限模型
-
-OpenClaw 的工具可以在 Gateway 宿主机、设备节点或配置的 sandbox 中运行。渠道授权、节点配对、工具策略和 OS 权限是不同层，任何一层放宽都会扩大动作范围。[3][7][8]
-
-Hermes Agent 的 `local` 终端后端使用启动 Hermes 的 OS 用户权限。文件写入保护约束 `write_file` 和 `patch`，却不是 shell 的 OS 能力边界；命令 deny 规则也只是命令策略。需要更强隔离时，文档建议使用受限挂载、凭据和网络的容器或远端后端。[14][15]
-
-所以，“每次危险命令都要批准”仍不足以回答安全问题。批准只是决策点，不是隔离层。真正需要记录的是：
-
-- 哪个身份发起动作；
-- 哪个会话选择了哪个工具；
-- 工具在哪个 OS 用户、容器或远端账户下执行；
-- 能访问哪些文件、套接字、网络和密钥；
-- 无人值守时遇到批准请求会拒绝、阻塞还是自动放行；
-- 谁能修改这些规则，修改后何时生效。
-
-## 5. 隔离和安全边界
-
-OpenClaw 的安全文档把一个 Gateway 定义为一个信任域，不把同一 Gateway 视为互不信任用户之间的强多租户边界。混合信任场景应拆分 Gateway 和凭据，最好再拆分 OS 用户或主机。其 sandbox 默认关闭，而且主要把工具执行移入隔离后端，Gateway 仍留在宿主机；文档也明确说 sandbox 只能缩小影响范围，不是完美安全边界。[7][8]
-
-Hermes Agent 提供发送者 allowlist、DM 配对、危险命令批准、文件写入保护、profile 隔离与容器后端。不过官方文档同样写明：本地终端与 Hermes 进程使用同一 OS 用户，文件工具的写入保护不约束 shell，命令规则不能替代 OS 隔离。[15]
-
-两边的文档都足以说明“可以配置哪些防护”，却不能证明你的部署已形成强边界。最小验证应同时覆盖入口、工具、宿主、网络、凭据和状态，不能只截图一页配置。
-
-## 6. 可观测性、失败处理和运行证据
-
-OpenClaw 提供 Gateway health、安全审计、sandbox 列表和生效策略解释等操作入口。[3][7][8]
-
-Hermes Agent 的公开架构强调工具调用可见、执行可中断，并为会话、Gateway、cron 和后台进程保存状态；README 还提供 `hermes doctor` 诊断入口。[9][10][14]
-
-这些入口是检查工具，不是可靠性证明。一次合格对照试点至少要留下五组证据：
-
-1. **拒绝证据**：未授权用户、越权文件和越权命令确实被阻止；
-2. **定位证据**：一项动作能追到入口身份、会话、工具、后端和时间；
-3. **故障证据**：杀掉执行后端、断开节点或撤销凭据后，任务进入可解释状态；
-4. **恢复证据**：控制面重启后，会话与调度按设计恢复，不重复副作用；
-5. **运营证据**：同一批真实任务的完成率、人工接管、错误类型、运行时间和成本可比较。
-
-如果只能证明配置文件里写了什么，就还没有证明系统运行时会怎样做。
-
-## 两种架构分别帮你先回答什么
-
-OpenClaw 的公开架构适合先追问：一个常驻 Gateway 如何连接多种消息渠道、客户端和设备节点？节点怎样配对、撤销和离线？一个信任域应该在哪里拆开？[3][7]
-
-Hermes Agent 的公开架构适合先追问：多个入口如何复用同一个 Agent 核心？profile、工具、记忆、技能和 cron 怎样组合？同一个任务切换本机、容器和远端执行后，权限与证据怎样变化？[10][14][15]
-
-这只是审查起点，不是适用性结论。团队若主要面对设备协同问题，应把节点生命周期和 Gateway 信任域测深；若主要面对多入口、多工具后端和可编排执行，应把 profile、toolset、后端切换与无人值守策略测深。两种场景都必须做越权和失败测试。
-
-## 为什么选这两个项目
-
-两者最初来自一次严格 GitHub 查询：仓库带有 `ai` topic，stars > 240,000，forks > 50,000。2026-10-01 19:18:33 PDT（UTC-07:00）查询 `topic:ai stars:>240000 forks:>50000` 时，结果只有 OpenClaw 与 Hermes Agent。[1]
-
-这条查询只解释样本来源。star 和 fork 不能证明架构合理、代码安全、部署可靠或适合你的任务，因此本文没有按热度排序，也不据此宣布赢家。
+这只解释样本来源。star 和 fork 不能证明架构合理、代码安全、部署可靠或适合你的任务。
 
 ## 利益披露与适用范围
 
-LeoOne 当前使用 Hermes Agent。我们因此更熟悉它的实际操作方式，但本文没有把内部使用经验当作独立证据，也不为任一项目的安全性、性能、适配性或商业价值背书。
+LeoOne 当前使用 Hermes Agent。我们更熟悉它的实际操作方式，但本文没有把内部使用经验当作独立证据，也不为任一项目的安全性、性能、适配性或商业价值背书。
 
-本文引用 GitHub API，以及两个项目固定 commit 上的 README、架构、功能与安全文档。它们能支持对公开设计和作者声明的比较，但没有提供独立代码审计、渗透测试、漏洞响应统计、生产故障率、性能基准或单位任务成本，也不能证明文档与所有发行版本完全一致。本文没有部署两套系统做对照实验。
+本文引用 GitHub API，以及两个项目固定 commit 上的 README、架构、功能与安全文档。它们能支持对公开设计和作者声明的比较，但没有提供独立代码审计、渗透测试、漏洞响应统计、生产故障率、性能基准或单位任务成本，也不能证明文档与所有发行版本完全一致。
 
-读者应在隔离环境中固定版本，用自己的渠道、模型、插件、权限和数据完成上述测试。只有运行证据符合目标任务和威胁模型，才有继续、调整或停止的依据。
+读者应在隔离环境中固定版本，用自己的渠道、模型、插件、权限和数据完成测试。只有运行证据符合目标任务和威胁模型，才有继续、调整或停止的依据。
 
 ## Sources
 

@@ -101,13 +101,209 @@
   margin-top: 0;
 }
 
-.prose .comparison-table-scroll {
-  margin-block: 2em;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
+.prose .article-summary,
+.prose .architecture-map,
+.prose .decision-map {
+  margin-block: 2rem;
+  border: 1px solid color-mix(in srgb, var(--aw-color-primary) 28%, transparent);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--aw-color-primary) 5%, transparent);
+  padding: clamp(1rem, 3vw, 1.5rem);
 }
 
-.prose .comparison-table {
-  min-width: 46rem;
-  margin-block: 0;
+.prose .article-summary h2,
+.prose .architecture-map h3,
+.prose .decision-map h3 {
+  margin: 0.25rem 0 1rem;
+}
+
+.prose .article-summary__label {
+  margin: 0;
+  color: var(--aw-color-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.prose .article-summary ul {
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+}
+
+.prose .article-summary li + li {
+  margin-top: 0.75rem;
+}
+
+.prose .architecture-map__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.prose .architecture-lane {
+  min-width: 0;
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  border-radius: 0.85rem;
+  background: color-mix(in srgb, var(--aw-color-bg-page) 94%, transparent);
+  padding: 1rem;
+}
+
+.prose .architecture-lane h4,
+.prose .architecture-lane p {
+  margin-top: 0;
+}
+
+.prose .architecture-lane__focus {
+  color: var(--aw-color-text-muted);
+  font-size: 0.9rem;
+}
+
+.prose .architecture-flow {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prose .architecture-flow li {
+  position: relative;
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--aw-color-primary) 22%, transparent);
+  border-radius: 0.65rem;
+  background: var(--aw-color-bg-page);
+  padding: 0.65rem 0.75rem;
+}
+
+.prose .architecture-flow li + li {
+  margin-top: 1.25rem;
+}
+
+.prose .architecture-flow li + li::before {
+  position: absolute;
+  top: -1.1rem;
+  left: 50%;
+  color: var(--aw-color-primary);
+  content: '↓';
+  font-weight: 700;
+  transform: translateX(-50%);
+}
+
+.prose .architecture-flow span,
+.prose .architecture-flow strong {
+  display: block;
+}
+
+.prose .architecture-flow span {
+  color: var(--aw-color-text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.prose .architecture-flow strong {
+  margin-top: 0.15rem;
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+
+.prose .architecture-lane__question {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.prose .decision-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prose .decision-steps li {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0;
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--aw-color-bg-page) 94%, transparent);
+  padding: 0.85rem;
+}
+
+.prose .decision-steps__number {
+  display: grid;
+  flex: 0 0 1.6rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--aw-color-primary);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.prose .decision-steps strong,
+.prose .decision-steps p {
+  display: block;
+  margin: 0;
+}
+
+.prose .decision-steps p {
+  margin-top: 0.35rem;
+  color: var(--aw-color-text-muted);
+  font-size: 0.85rem;
+}
+
+.prose .validation-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.prose .validation-grid section {
+  min-width: 0;
+  border-top: 3px solid var(--aw-color-primary);
+  border-radius: 0.35rem;
+  background: var(--aw-color-bg-page);
+  padding: 0.7rem;
+}
+
+.prose .validation-grid strong,
+.prose .validation-grid span {
+  display: block;
+}
+
+.prose .validation-grid span {
+  margin-top: 0.25rem;
+  color: var(--aw-color-text-muted);
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.prose .architecture-map figcaption,
+.prose .decision-map figcaption {
+  margin-top: 1rem;
+  color: var(--aw-color-text-muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 48rem) {
+  .prose .architecture-map__grid,
+  .prose .decision-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .prose .validation-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prose .article-summary,
+  .prose .architecture-map,
+  .prose .decision-map {
+    margin-inline: -0.5rem;
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
 }
