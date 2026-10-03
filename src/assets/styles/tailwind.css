@@ -103,7 +103,8 @@
 
 .prose .article-summary,
 .prose .architecture-map,
-.prose .decision-map {
+.prose .decision-map,
+.prose .file-map {
   margin-block: 2rem;
   border: 1px solid color-mix(in srgb, var(--aw-color-primary) 28%, transparent);
   border-radius: 1rem;
@@ -283,10 +284,56 @@
 }
 
 .prose .architecture-map figcaption,
-.prose .decision-map figcaption {
+.prose .decision-map figcaption,
+.prose .file-map figcaption {
   margin-top: 1rem;
   color: var(--aw-color-text-muted);
   font-size: 0.82rem;
+}
+
+.prose .file-map h3 {
+  margin: 0 0 1rem;
+}
+
+.prose .file-map__scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  outline-offset: 0.25rem;
+}
+
+.prose .file-map table {
+  width: 100%;
+  min-width: 42rem;
+  margin: 0;
+  border-collapse: collapse;
+  background: var(--aw-color-bg-page);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.prose .file-map th,
+.prose .file-map td {
+  border: 1px solid color-mix(in srgb, currentColor 13%, transparent);
+  padding: 0.7rem;
+  vertical-align: top;
+}
+
+.prose .file-map thead th {
+  background: color-mix(in srgb, var(--aw-color-primary) 10%, var(--aw-color-bg-page));
+  text-align: left;
+}
+
+.prose .file-map tbody th {
+  white-space: nowrap;
+  text-align: left;
+}
+
+.prose .article-summary code::before,
+.prose .article-summary code::after,
+.prose .file-map code::before,
+.prose .file-map code::after {
+  content: none;
 }
 
 @media (max-width: 48rem) {
@@ -301,9 +348,69 @@
 
   .prose .article-summary,
   .prose .architecture-map,
-  .prose .decision-map {
+  .prose .decision-map,
+  .prose .file-map {
     margin-inline: -0.5rem;
     border-radius: 0.75rem;
     padding: 1rem;
+  }
+
+  .prose .file-map table,
+  .prose .file-map tbody,
+  .prose .file-map tr,
+  .prose .file-map th,
+  .prose .file-map td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .prose .file-map thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .prose .file-map tbody tr {
+    border: 1px solid color-mix(in srgb, currentColor 13%, transparent);
+    border-radius: 0.65rem;
+    background: var(--aw-color-bg-page);
+    padding: 0.75rem;
+  }
+
+  .prose .file-map tbody tr + tr {
+    margin-top: 0.75rem;
+  }
+
+  .prose .file-map tbody th,
+  .prose .file-map tbody td {
+    border: 0;
+    padding: 0;
+  }
+
+  .prose .file-map tbody th {
+    margin-bottom: 0.65rem;
+    color: var(--aw-color-primary);
+    font-size: 0.95rem;
+  }
+
+  .prose .file-map tbody td {
+    display: grid;
+    grid-template-columns: 6.2rem minmax(0, 1fr);
+    gap: 0.5rem;
+    font-size: 0.78rem;
+  }
+
+  .prose .file-map tbody td + td {
+    margin-top: 0.45rem;
+  }
+
+  .prose .file-map tbody td::before {
+    color: var(--aw-color-text-muted);
+    content: attr(data-label);
+    font-weight: 700;
   }
 }
