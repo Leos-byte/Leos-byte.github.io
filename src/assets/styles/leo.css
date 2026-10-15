@@ -1152,3 +1152,6 @@ footer .text-muted {
 .leo-editorial-notes{max-width:780px;border-color:#dfe6ef;color:#607087;background:#f5f7fb;border-radius:12px;padding:22px 26px;margin-top:55px}
 .leo-editorial-notes a{color:#2366c8}
 @media(max-width:640px){.leo-article-header{padding:52px 0 30px;margin-bottom:26px}.leo-article-header .leo-article-title{font-size:clamp(30px,8vw,40px)}.leo-article-prose{padding-left:20px;padding-right:20px;line-height:1.85}.leo-editorial-notes{margin-left:16px;margin-right:16px;padding:20px}}
+
+.leo-blog-return-link{display:inline-flex;align-items:center;gap:8px;border:1px solid #cad8ea!important;border-radius:9px!important;background:#fff!important;color:#2366c8!important;font-size:13px;font-weight:750;padding:12px 18px!important;transition:transform .2s,background .2s}
+.leo-blog-return-link:hover{transform:translateY(-2px);background:#f5f7fb!important}
