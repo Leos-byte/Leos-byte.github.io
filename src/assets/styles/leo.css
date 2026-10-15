@@ -1415,7 +1415,7 @@ body:has(.leo-blog-article) #main-content {
   --tw-prose-td-borders: #dfe6ef;
   overflow-wrap: anywhere;
 }
-.leo-article-prose :is(.article-summary,.architecture-map,.decision-map,.file-map) {
+.leo-article-prose :is(.article-summary, .architecture-map, .decision-map, .file-map) {
   border: 1px solid #d6e3f4;
   background: #f5f8fd;
   color: #26364b;
@@ -1434,7 +1434,15 @@ body:has(.leo-blog-article) #main-content {
   padding-left: 0;
   color: #142238;
 }
-.leo-article-prose :is(.file-map table,.file-map tbody tr,.architecture-lane,.architecture-flow li,.decision-steps li,.validation-grid section) {
+.leo-article-prose
+  :is(
+    .file-map table,
+    .file-map tbody tr,
+    .architecture-lane,
+    .architecture-flow li,
+    .decision-steps li,
+    .validation-grid section
+  ) {
   background: #fff;
   color: #26364b;
   border-color: #dfe6ef;
@@ -1444,7 +1452,7 @@ body:has(.leo-blog-article) #main-content {
   color: #142238;
   font-weight: 700;
 }
-.leo-article-prose .file-map :is(th,td) {
+.leo-article-prose .file-map :is(th, td) {
   border-color: #d6e3f4;
   overflow-wrap: break-word;
 }
@@ -1463,7 +1471,7 @@ body:has(.leo-blog-article) #main-content {
   background: #3979e5;
   color: #fff;
 }
-.leo-article-prose :is(a,code) {
+.leo-article-prose :is(a, code) {
   overflow-wrap: anywhere;
 }
 @media (max-width: 48rem) {
