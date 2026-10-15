@@ -1027,3 +1027,14 @@ footer .text-muted {
 .leo-page .leo-action-outline{background:transparent;color:#2366c8}
 .leo-page-hero .leo-action-outline{color:white;border-color:#8193ad}
 @media(max-width:600px){.leo-page-hero{padding:65px 0}.leo-page h1{font-size:39px}.leo-page-section{padding-top:65px;padding-bottom:65px}}
+
+/* Shared site chrome mirrors the first prototype's dark sticky navigation. */
+#header{position:sticky;top:0;z-index:40;background:rgba(11,21,38,.96)!important;border-bottom:1px solid #ffffff1c!important;backdrop-filter:blur(16px)}
+#header>div:first-child{background:transparent!important}
+#header nav,#header nav a,#header nav button,#header .text-default{color:#c7d6e9!important}
+#header nav a:hover,#header nav button:hover{color:#fff!important}
+#header .brand-mark{color:#fff!important}
+#header .brand-sub{color:#a6b9d0!important}
+#header [data-leo-lang]{color:#dce8f6}
+#header [data-leo-lang][aria-pressed=true]{background:#3979e5;color:#fff}
+#header a:focus-visible,#header button:focus-visible{outline:2px solid #8ed1ff;outline-offset:3px}
