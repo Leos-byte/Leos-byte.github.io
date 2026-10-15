@@ -1391,3 +1391,100 @@ body:has(.leo-blog-article) #main-content {
     border-radius: 12px;
   }
 }
+
+/* Shared reading treatment for every published blog post and future articles. */
+.leo-blog-article,
+.leo-blog-article .leo-reading-surface {
+  background: #fff;
+  color: #26364b;
+}
+.leo-article-prose {
+  --tw-prose-body: #26364b;
+  --tw-prose-headings: #142238;
+  --tw-prose-lead: #465c77;
+  --tw-prose-links: #2366c8;
+  --tw-prose-bold: #142238;
+  --tw-prose-counters: #607087;
+  --tw-prose-bullets: #3979e5;
+  --tw-prose-hr: #dfe6ef;
+  --tw-prose-quotes: #465c77;
+  --tw-prose-quote-borders: #3979e5;
+  --tw-prose-captions: #607087;
+  --tw-prose-code: #1b4f90;
+  --tw-prose-th-borders: #cad8ea;
+  --tw-prose-td-borders: #dfe6ef;
+  overflow-wrap: anywhere;
+}
+.leo-article-prose :is(.article-summary, .architecture-map, .decision-map, .file-map) {
+  border: 1px solid #d6e3f4;
+  background: #f5f8fd;
+  color: #26364b;
+  border-radius: 14px;
+}
+.leo-article-prose .article-summary {
+  border-left: 4px solid #3979e5;
+  background: #eef5ff;
+}
+.leo-article-prose .article-summary__label,
+.leo-article-prose .file-map tbody th {
+  color: #2366c8;
+}
+.leo-article-prose .article-summary h2 {
+  border: 0;
+  padding-left: 0;
+  color: #142238;
+}
+.leo-article-prose
+  :is(
+    .file-map table,
+    .file-map tbody tr,
+    .architecture-lane,
+    .architecture-flow li,
+    .decision-steps li,
+    .validation-grid section
+  ) {
+  background: #fff;
+  color: #26364b;
+  border-color: #dfe6ef;
+}
+.leo-article-prose .file-map thead th {
+  background: #e7f0fc;
+  color: #142238;
+  font-weight: 700;
+}
+.leo-article-prose .file-map :is(th, td) {
+  border-color: #d6e3f4;
+  overflow-wrap: break-word;
+}
+.leo-article-prose .file-map__scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-color: #8aa9d5 #eaf1fa;
+}
+.leo-article-prose .architecture-flow li + li::before,
+.leo-article-prose .architecture-lane__focus,
+.leo-article-prose .decision-steps p,
+.leo-article-prose .validation-grid span {
+  color: #607087;
+}
+.leo-article-prose .decision-steps__number {
+  background: #3979e5;
+  color: #fff;
+}
+.leo-article-prose :is(a, code) {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 48rem) {
+  .leo-article-prose .file-map::after {
+    content: '← 左右滑动查看完整表格 →';
+    display: block;
+    margin-top: 10px;
+    color: #607087;
+    font-size: 12px;
+    text-align: center;
+  }
+  .leo-article-prose .file-map table {
+    min-width: 42rem;
+    width: max-content;
+  }
+}
