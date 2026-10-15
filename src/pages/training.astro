@@ -1,0 +1,10 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+const metadata={title:'企业培训课程 | LEO Cybersecurity & AI',description:'网络安全意识、AI 安全基础、生成式 AI 安全应用与风险治理工作坊课程方向。'};
+const tracks=[
+{number:'01',title:'网络安全意识与风险识别',audience:'企业员工 / 业务团队',topics:['钓鱼邮件与社会工程风险','账号、设备与数据保护','安全事件的识别与上报'],outcome:'建议产出：团队安全行为清单与讨论记录'},
+{number:'02',title:'生成式 AI 安全使用',audience:'管理层 / 业务团队',topics:['生成式 AI 常见风险与局限','敏感信息与输入边界','输出核验与人工监督'],outcome:'建议产出：安全使用原则与场景清单'},
+{number:'03',title:'AI 安全与治理工作坊',audience:'IT / 安全 / 治理团队',topics:['AI 使用场景与风险识别','角色责任与审批流程','治理框架与优先行动'],outcome:'建议产出：初步风险清单与行动议题'},
+];
+---
+<Layout metadata={metadata}><main class="leo-page"><section class="leo-page-hero"><div class="leo-page-wrap"><p class="leo-eyebrow">TRAINING / 企业培训</p><h1>让团队理解风险，<br />也知道如何行动。</h1><p class="leo-intro">课程围绕网络安全、AI 安全和企业安全使用能力设计。以下是可讨论的课程方向，并非已确认的开班时间、价格或交付承诺。</p><div class="leo-actions"><a class="leo-action" href="/contact">了解合作与联系状态 ↗</a></div></div></section><section class="leo-page-wrap leo-page-section"><p class="leo-eyebrow">PROGRAMS</p><h2>课程方向</h2><div class="leo-training-list">{tracks.map(t=><article class="leo-training-card"><div><span class="leo-index">{t.number} / LEARNING TRACK</span><h3>{t.title}</h3><p>{t.audience}</p></div><div><ul>{t.topics.map(topic=><li>{topic}</li>)}</ul><p class="leo-small">{t.outcome}</p></div></article>)}</div></section><section class="leo-page-band"><div class="leo-page-wrap leo-page-section"><h2>课程设计原则</h2><div class="leo-page-grid"><article><h3>按受众分层</h3><p>管理层、业务团队与技术团队关注的决策与风险不同。</p></article><article><h3>以场景组织</h3><p>用工作流程、案例讨论和风险判断练习承载概念。</p></article><article><h3>明确使用边界</h3><p>培训材料不能替代法务、合规、安全审计或具体组织政策。</p></article></div></div></section><section class="leo-page-wrap leo-page-section"><h2>需要更详细的方向说明？</h2><p>可先阅读服务介绍及公开文章，了解 LEO 的研究与实践关注点。</p><div class="leo-actions"><a class="leo-action" href="/services">查看服务 ↗</a><a class="leo-action leo-action-outline" href="/blog">阅读文章 →</a></div></section></main></Layout>
