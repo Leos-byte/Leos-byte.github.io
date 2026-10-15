@@ -1,22 +1,6 @@
 ---
-import Layout from '~/layouts/Layout.astro';
+import Layout from '~/layouts/PageLayout.astro';
 import { getHomePermalink } from '~/utils/permalinks';
-
-const title = '页面未找到';
+const metadata={title:'页面未找到 | LEO Cybersecurity & AI',description:'您访问的页面不存在。'};
 ---
-
-<Layout metadata={{ title }}>
-  <section class="flex items-center h-full p-16">
-    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="max-w-md text-center">
-        <h1 class="mb-8 font-bold text-9xl">
-          <span class="sr-only">错误</span>
-          <span class="text-primary">404</span>
-        </h1>
-        <p class="text-3xl font-semibold md:text-3xl">抱歉，这个页面不存在或已被移除。</p>
-        <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">您可以从首页继续浏览已发布的内容。</p>
-        <a rel="noopener noreferrer" href={getHomePermalink()} class="btn ml-4">返回首页</a>
-      </div>
-    </div>
-  </section>
-</Layout>
+<Layout metadata={metadata}><main class="leo-page"><section class="leo-page-hero"><div class="leo-page-wrap"><p class="leo-eyebrow">404 / PAGE NOT FOUND</p><h1>这个页面暂时<br />不在这里。</h1><p class="leo-intro">链接可能已经更新。可以返回首页，继续探索网络安全与 AI 安全的内容。</p><div class="leo-actions"><a class="leo-action" href={getHomePermalink()}>返回首页 ↗</a><a class="leo-action leo-action-outline" href="/blog">阅读文章 →</a></div></div></section></main></Layout>
