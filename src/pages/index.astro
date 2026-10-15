@@ -78,12 +78,12 @@ const courses = [
       const button = event.target.closest('[data-leo-lang]');
       if (!button) return;
       const lang = button.dataset.leoLang;
-      try { localStorage.setItem('leo-language', lang); } catch (_) {}
+      try { localStorage.setItem('leo-language', lang); } catch { /* Storage may be unavailable in private browsing. */ }
       applyLanguage(lang);
     });
     function init() {
       let lang = 'zh';
-      try { lang = localStorage.getItem('leo-language') || 'zh'; } catch (_) {}
+      try { lang = localStorage.getItem('leo-language') || 'zh'; } catch { /* Storage may be unavailable in private browsing. */ }
       applyLanguage(lang);
     }
     document.addEventListener('DOMContentLoaded', init);
