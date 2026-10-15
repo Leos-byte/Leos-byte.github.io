@@ -1,196 +1,919 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 import { findLatestPosts } from '~/utils/blog';
+import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
 
 const posts = await findLatestPosts({ count: 3 });
 const metadata = {
-  title: 'LeoOne｜让 AI 走进真实工作',
+  title: 'LEO | 网络安全与 AI 安全培训咨询',
   ignoreTitleTemplate: true,
-  description: 'LeoOne 面向个人与企业提供 AI 转型咨询。从一项真实任务开始，厘清 AI 的用途、人工判断与下一步标准。',
+  description: 'LEO Cybersecurity & AI Security：面向企业与专业团队的网络安全培训、AI 安全风险治理与安全应用能力建设。',
 };
-const situations = [
+const services = [
   {
-    number: '01',
-    title: '从哪里开始？',
-    subtitle: '找到值得先做的一件事',
-    description: '工具很多，时间有限。从高频、有人负责、确实卡住的工作中，找到一个具体的起点。',
-    icon: '↗',
+    id: 'security',
+    n: '01',
+    zh: '网络安全培训',
+    en: 'Cybersecurity Training',
+    descZh: '面向企业员工、IT 与安全团队的分层培训，围绕安全意识、威胁识别及防护实践建立可执行的能力。',
+    descEn: 'Practical cybersecurity learning for employees, IT teams and security practitioners.',
+    tags: ['Security Awareness', 'Cyber Defense'],
   },
   {
-    number: '02',
-    title: '怎样一起用？',
-    subtitle: '让团队有共同的做法',
-    description: '把材料准备、结果核对与异常处理说清，让个人的尝试成为可以讨论、练习和复用的流程。',
-    icon: '◎',
+    id: 'advisory',
+    n: '02',
+    zh: 'AI 安全与风险治理',
+    en: 'AI Security Advisory',
+    descZh: '协助梳理企业生成式 AI 应用场景、数据使用边界、风险控制与治理路径。具体范围按项目确认。',
+    descEn: 'Practical guidance on AI use cases, data boundaries, risk controls and governance.',
+    tags: ['AI Risk', 'Governance'],
   },
   {
-    number: '03',
-    title: '边界在哪里？',
-    subtitle: '保留人的判断与责任',
-    description: '明确哪些步骤适合 AI 协助，哪些信息不能输入，哪些输出必须由人查证、签核或决定。',
-    icon: '⊞',
+    id: 'enablement',
+    n: '03',
+    zh: '企业 AI 应用培训',
+    en: 'Enterprise AI Enablement',
+    descZh: '结合真实业务流程，帮助团队在保留人工判断和安全边界的前提下有效使用 AI。',
+    descEn: 'Help teams apply AI to real workflows while keeping security and human oversight in focus.',
+    tags: ['GenAI', 'Workshops'],
   },
 ];
-const questions = [
-  ['目标', '要完成什么，当前卡在哪里？'],
-  ['输入', '材料来自哪里，哪些信息不能使用？'],
-  ['产出', '需要什么结果，谁对它负责？'],
-  ['判断', 'AI 参与哪一步，哪里需要人工复核？'],
-  ['验证', '如何判断继续、调整，还是停止？'],
+const courses = [
+  {
+    zh: 'AI 安全基础',
+    en: 'AI Security Essentials',
+    levelZh: '管理层 · 业务团队',
+    levelEn: 'Leaders · Business Teams',
+    descZh: '理解生成式 AI 风险、敏感信息保护和安全使用原则。',
+    descEn: 'Understand generative AI risks, sensitive data and safe-use fundamentals.',
+  },
+  {
+    zh: '企业生成式 AI 安全应用',
+    en: 'Secure Generative AI at Work',
+    levelZh: '企业员工 · 部门团队',
+    levelEn: 'Employees · Functional Teams',
+    descZh: '围绕实际工作任务建立 AI 使用流程、验证机制与责任边界。',
+    descEn: 'Build safe workflows, output validation habits and clear human accountability.',
+  },
+  {
+    zh: '网络安全与 AI 风险工作坊',
+    en: 'Cybersecurity & AI Risk Workshop',
+    levelZh: 'IT · 安全 · 治理团队',
+    levelEn: 'IT · Security · Governance',
+    descZh: '梳理技术与组织风险，形成优先事项及后续行动计划。',
+    descEn: 'Map technical and organizational risks and prioritize next steps.',
+  },
 ];
 ---
 
 <Layout metadata={metadata}>
-  <section class="leo-hero leo-container" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <p class="eyebrow"><span class="status-dot"></span> AI 转型咨询 · 面向个人与企业</p>
-      <h1 id="hero-title">让 AI 走进<br />真实的<span class="hero-emphasis">工作。</span></h1>
-      <p class="hero-description">先把一件具体的事说清，<br />再决定怎么用 AI。</p>
-      <p class="hero-detail">从任务、流程与使用边界出发，让 AI 的用途、人的判断，以及下一步的标准，都更清楚。</p>
-      <div class="hero-actions">
-        <a class="leo-button" href={getPermalink('/services')}>了解咨询方向 <span aria-hidden="true">↗</span></a>
-        <a class="text-link" href="#approach">探索我们的方法 <span aria-hidden="true">↓</span></a>
+  <div class="leo-site">
+    <section class="leo-hero" id="top">
+      <div class="leo-wrap hero-grid">
+        <div class="hero-copy">
+          <p
+            class="overline"
+            data-aw-i18n
+            data-aw-i18n-zh="CYBERSECURITY × AI SECURITY"
+            data-aw-i18n-en="CYBERSECURITY × AI SECURITY"
+          >
+            CYBERSECURITY × AI SECURITY
+          </p>
+          <h1 data-aw-i18n data-aw-i18n-zh="守护 AI 时代的数字安全。" data-aw-i18n-en="Securing the Future of AI.">
+            守护 AI 时代的<br />数字安全。
+          </h1>
+          <p
+            class="hero-lead"
+            data-aw-i18n
+            data-aw-i18n-zh="让 AI 应用更安全，让网络安全更智能。"
+            data-aw-i18n-en="Secure AI adoption. Stronger cyber resilience."
+          >
+            让 AI 应用更安全，让网络安全更智能。
+          </p>
+          <p
+            class="hero-desc"
+            data-aw-i18n
+            data-aw-i18n-zh="LEO 聚焦网络安全与人工智能安全的融合，为企业与专业团队提供实用导向的培训、风险治理咨询及能力建设。"
+            data-aw-i18n-en="LEO connects cybersecurity and AI security through practical training, risk advisory and capability-building for organizations and professional teams."
+          >
+            LEO 聚焦网络安全与人工智能安全的融合，为企业与专业团队提供实用导向的培训、风险治理咨询及能力建设。
+          </p>
+          <div class="hero-cta">
+            <a
+              class="leo-btn primary"
+              href="#contact"
+              data-aw-i18n
+              data-aw-i18n-zh="了解合作方式 ↗"
+              data-aw-i18n-en="Explore Collaboration ↗">了解合作方式 ↗</a
+            >
+            <a
+              class="leo-btn ghost"
+              href="#services"
+              data-aw-i18n
+              data-aw-i18n-zh="探索专业服务 ↓"
+              data-aw-i18n-en="Explore Services ↓">探索专业服务 ↓</a
+            >
+          </div>
+          <p
+            class="hero-fine"
+            data-aw-i18n
+            data-aw-i18n-zh="Cybersecurity · AI Security · Training · Advisory"
+            data-aw-i18n-en="Cybersecurity · AI Security · Training · Advisory"
+          >
+            Cybersecurity · AI Security · Training · Advisory
+          </p>
+        </div>
+        <div class="ai-visual" role="img" aria-label="Abstract AI security network illustration">
+          <div class="visual-top"><span>LEO / SECURITY INTELLIGENCE</span><span>01—03</span></div>
+          <div class="visual-glow"></div><div class="ring ring-a"></div><div class="ring ring-b"></div><div
+            class="ring ring-c"
+          >
+          </div>
+          <div class="visual-cross cross-a"></div><div class="visual-cross cross-b"></div>
+          <div class="core"><span>AI</span><small>SECURITY</small></div>
+          <div class="node node-a">RISK <b>01</b></div><div class="node node-b">TRUST <b>02</b></div><div
+            class="node node-c"
+          >
+            HUMAN <b>03</b>
+          </div>
+          <div class="visual-bottom"><span>SECURE · ASSESS · ENABLE</span><span>↗</span></div>
+        </div>
       </div>
-      <p class="hero-note">行业不设限 · 具体项目范围须书面确认</p>
+    </section>
+    <div class="value-bar">
+      <div class="leo-wrap">
+        <span>SECURING AI. EMPOWERING PEOPLE.</span><span
+          data-aw-i18n
+          data-aw-i18n-zh="风险意识 / 实际应用 / 人的判断"
+          data-aw-i18n-en="Risk Awareness / Practical Adoption / Human Judgment">风险意识 / 实际应用 / 人的判断</span
+        >
+      </div>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="art-top"><span>LEOONE / WORK IN FOCUS</span><span>01 — 05</span></div>
-      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
-      <div class="art-axis axis-horizontal"></div><div class="art-axis axis-vertical"></div>
-      <div class="focus-core"><span>从一件事开始</span><strong>清晰</strong><small>CLARITY FIRST</small></div>
-      <div class="orbit-label label-input"><span class="tiny-dot"></span>真实任务</div>
-      <div class="orbit-label label-human"><span class="tiny-dot"></span>人工判断</div>
-      <div class="orbit-label label-ai"><span class="tiny-dot"></span>AI 协助</div>
-      <div class="art-bottom"><span>问题 → 方法 → 下一步</span><span class="art-cross">＋</span></div>
-    </div>
-  </section>
 
-  <div class="principle-strip">
-    <div class="leo-container">
-      <span>TECHNOLOGY WITH INTENTION</span><p>从真实问题出发 <i>/</i> 让判断保持可见 <i>/</i> 用观察决定下一步</p>
-    </div>
-  </div>
+    <section id="about" class="leo-section leo-wrap about-grid">
+      <div>
+        <p class="section-kicker">01 / ABOUT LEO</p><h2
+          data-aw-i18n
+          data-aw-i18n-zh="技术不断变化。安全与判断始终重要。"
+          data-aw-i18n-en="Technology evolves. Trust and judgment remain."
+        >
+          技术不断变化。<br />安全与判断始终重要。
+        </h2>
+      </div>
+      <div class="about-copy">
+        <p
+          data-aw-i18n
+          data-aw-i18n-zh="LEO 关注网络安全、AI 安全与组织能力建设之间的连接：从理解新兴风险，到设计培训和治理路径，强调把复杂技术转化为可理解、可讨论、可执行的实践。"
+          data-aw-i18n-en="LEO works at the intersection of cybersecurity, AI security and organizational learning — translating complex risks into practical guidance, training and governance conversations."
+        >
+          LEO 关注网络安全、AI
+          安全与组织能力建设之间的连接：从理解新兴风险，到设计培训和治理路径，强调把复杂技术转化为可理解、可讨论、可执行的实践。
+        </p><p
+          class="about-caveat"
+          data-aw-i18n
+          data-aw-i18n-zh="个人履历、专业认证与项目经历将在核实后补充；本站不使用虚构背书。"
+          data-aw-i18n-en="Verified biography, certifications and project experience will be added when available; no fabricated credentials."
+        >
+          个人履历、专业认证与项目经历将在核实后补充；本站不使用虚构背书。
+        </p><a
+          class="leo-text-link"
+          href={getPermalink('/safeguards')}
+          data-aw-i18n
+          data-aw-i18n-zh="了解工作原则与边界 ↗"
+          data-aw-i18n-en="Working Principles & Boundaries ↗">了解工作原则与边界 ↗</a
+        >
+      </div>
+    </section>
 
-  <section class="leo-container leo-section" aria-labelledby="situations-title">
-    <div class="section-heading">
-      <div><p class="eyebrow">01 / 找到起点</p><h2 id="situations-title">你可能，正卡在这里。</h2></div><p
-        class="section-intro"
-      >
-        不必先谈一套宏大的转型方案。<br />先看眼前的一项工作。
-      </p>
-    </div>
-    <div class="situation-grid">
-      {
-        situations.map((item) => (
-          <article class="situation-card">
-            <>
-              <div class="card-top">
+    <section id="services" class="leo-section pale">
+      <div class="leo-wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">02 / SERVICES</p><h2
+              data-aw-i18n
+              data-aw-i18n-zh="聚焦三项核心服务。"
+              data-aw-i18n-en="Three Areas of Focus."
+            >
+              聚焦三项核心服务。
+            </h2>
+          </div><p
+            data-aw-i18n
+            data-aw-i18n-zh="从安全基础到 AI 治理，以实际业务需求决定服务范围。"
+            data-aw-i18n-en="From cyber foundations to AI governance, scoped around real business needs."
+          >
+            从安全基础到 AI 治理，以实际业务需求决定服务范围。
+          </p>
+        </div><div class="service-grid">
+          {
+            services.map((s) => (
+              <article class="service-card">
                 <>
-                  <span>{item.number}</span>
-                  <span class="card-symbol" aria-hidden="true">
-                    {item.icon}
-                  </span>
+                  <div class="service-number">
+                    {s.n} <span>↗</span>
+                  </div>
+                  <h3 data-aw-i18n data-aw-i18n-zh={s.zh} data-aw-i18n-en={s.en}>
+                    {s.zh}
+                  </h3>
+                  <p data-aw-i18n data-aw-i18n-zh={s.descZh} data-aw-i18n-en={s.descEn}>
+                    {s.descZh}
+                  </p>
+                  <div class="tag-row">
+                    {s.tags.map((t) => (
+                      <span>{t}</span>
+                    ))}
+                  </div>
+                  <a
+                    href={getPermalink('/services')}
+                    class="leo-text-link"
+                    data-aw-i18n
+                    data-aw-i18n-zh="了解服务内容 ↗"
+                    data-aw-i18n-en="View Service Details ↗"
+                  >
+                    了解服务内容 ↗
+                  </a>
                 </>
-              </div>
-              <h3>{item.title}</h3>
-              <h4>{item.subtitle}</h4>
-              <p>{item.description}</p>
-            </>
-          </article>
-        ))
-      }
-    </div>
-  </section>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-  <section id="approach" class="approach-section" aria-labelledby="approach-title">
-    <div class="leo-container approach-grid">
-      <div class="approach-copy">
-        <p class="eyebrow">02 / 我们的方法</p><h2 id="approach-title">一个真实任务。<br />五个关键问题。</h2><p>
-          把抽象的「AI 转型」落到输入、产出、检查点与责任人上。先厘清，再尝试；用少量练习或记录，检验做法能否复用。
-        </p><a class="text-link" href={getPermalink('/services')}
-          >进一步了解咨询方向 <span aria-hidden="true">↗</span></a
-        ><div class="method-caption"><span aria-hidden="true">↳</span> 清楚的起点，才有可讨论的下一步。</div>
-      </div><ol class="question-list">
+    <section class="leo-section leo-wrap" id="training">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">03 / TRAINING</p><h2
+            data-aw-i18n
+            data-aw-i18n-zh="从知识到行动的培训。"
+            data-aw-i18n-en="Learning That Leads to Action."
+          >
+            从知识到行动的培训。
+          </h2>
+        </div><p
+          data-aw-i18n
+          data-aw-i18n-zh="培训主题示例；具体大纲、时长与交付形式按需求确定。"
+          data-aw-i18n-en="Illustrative programs; syllabus, duration and delivery are tailored by agreement."
+        >
+          培训主题示例；具体大纲、时长与交付形式按需求确定。
+        </p>
+      </div><div class="course-list">
         {
-          questions.map(([label, question], index) => (
-            <li>
+          courses.map((c, i) => (
+            <div class="course-item">
               <>
-                <span class="question-number">0{index + 1}</span>
+                <span class="course-index">0{i + 1}</span>
                 <div>
                   <>
-                    <h3>{label}</h3>
-                    <p>{question}</p>
+                    <p class="course-meta" data-aw-i18n data-aw-i18n-zh={c.levelZh} data-aw-i18n-en={c.levelEn}>
+                      {c.levelZh}
+                    </p>
+                    <h3 data-aw-i18n data-aw-i18n-zh={c.zh} data-aw-i18n-en={c.en}>
+                      {c.zh}
+                    </h3>
+                    <p data-aw-i18n data-aw-i18n-zh={c.descZh} data-aw-i18n-en={c.descEn}>
+                      {c.descZh}
+                    </p>
                   </>
                 </div>
-                <span class="question-arrow" aria-hidden="true">
+                <a href="#contact" aria-label="View collaboration options">
                   ↗
-                </span>
+                </a>
               </>
-            </li>
+            </div>
           ))
         }
-      </ol>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <section class="leo-container leo-section" aria-labelledby="research-title">
-    <div class="section-heading">
-      <div><p class="eyebrow">03 / 公开研究</p><h2 id="research-title">保持好奇，也保持判断。</h2></div><a
-        class="text-link"
-        href={getBlogPermalink()}>所有文章 <span aria-hidden="true">↗</span></a
-      >
-    </div>
-    <div class="research-grid">
-      {
-        posts.map((post, index) => (
-          <a class="research-card" href={getPermalink(post.permalink, 'post')}>
-            <>
-              <div class:list={['research-art', `research-art-${index}`]} aria-hidden="true">
+    <section id="insights" class="leo-section pale">
+      <div class="leo-wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">04 / INSIGHTS</p><h2
+              data-aw-i18n
+              data-aw-i18n-zh="持续研究，审慎判断。"
+              data-aw-i18n-en="Research with Perspective."
+            >
+              持续研究，审慎判断。
+            </h2>
+          </div><a
+            href={getBlogPermalink()}
+            class="leo-text-link"
+            data-aw-i18n
+            data-aw-i18n-zh="浏览所有文章 ↗"
+            data-aw-i18n-en="Explore All Articles ↗">浏览所有文章 ↗</a
+          >
+        </div><div class="insight-grid">
+          {
+            posts.map((p, i) => (
+              <a href={getPermalink(p.permalink, 'post')} class="insight-card">
                 <>
-                  <span class="research-art-label">LEOONE NOTES / 0{index + 1}</span>
-                  <div class="research-glyph">{['↗', '◎', '⌘'][index]}</div>
-                  <span class="research-art-caption">{post.category?.title || '研究与观察'}</span>
-                </>
-              </div>
-              <div class="research-body">
-                <>
-                  <div class="research-meta">
+                  <div class="insight-cover">
                     <>
-                      <time datetime={post.publishDate.toISOString()}>
-                        {post.publishDate.toISOString().slice(0, 10).replaceAll('-', '.')}
-                      </time>
-                      <span>研究笔记</span>
+                      <span>LEO / INSIGHTS</span>
+                      <strong>{['⌘', '◎', '↗'][i]}</strong>
+                      <small>SECURITY × INTELLIGENCE</small>
                     </>
                   </div>
-                  <h3>{post.title}</h3>
-                  <p>{post.excerpt}</p>
-                  <span class="research-read">
-                    阅读全文 <span aria-hidden="true">↗</span>
-                  </span>
+                  <div class="insight-body">
+                    <>
+                      <time datetime={p.publishDate.toISOString()}>{p.publishDate.toISOString().slice(0, 10)}</time>
+                      <h3>{p.title}</h3>
+                      <p>{p.excerpt}</p>
+                      <span
+                        class="leo-text-link"
+                        data-aw-i18n
+                        data-aw-i18n-zh="阅读全文 ↗"
+                        data-aw-i18n-en="Read Article ↗"
+                      >
+                        阅读全文 ↗
+                      </span>
+                    </>
+                  </div>
                 </>
-              </div>
-            </>
-          </a>
-        ))
-      }
-    </div>
-    <p class="section-note">公开研究与写作材料，用于区分事实、假设与待确认问题；不代表客户案例或服务成果。</p>
-  </section>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-  <section class="leo-container closing-section">
-    <div class="closing-panel">
-      <div>
-        <p class="eyebrow">从理解，到下一步</p><h2>先让问题变清楚。</h2><p>
-          了解我们的咨询方向、场景材料，以及工作中的责任与边界。
-        </p>
-      </div><a class="leo-button light-button" href={getPermalink('/services#scenarios')}
-        >查看场景档案 <span aria-hidden="true">↗</span></a
-      >
-    </div><p class="closing-note">
-      本站目前仅说明公开信息，不接收项目申请、联系方式、项目资料或敏感信息。<a href={getPermalink('/safeguards')}
-        >查看服务边界 ↗</a
-      >
-    </p>
-  </section>
+    <section id="contact" class="contact-section">
+      <div class="leo-wrap contact-grid">
+        <div>
+          <p class="section-kicker">05 / COLLABORATION</p><h2
+            data-aw-i18n
+            data-aw-i18n-zh="一起探讨更安全的 AI 未来。"
+            data-aw-i18n-en="Let's Shape a More Secure AI Future."
+          >
+            一起探讨更安全的<br />AI 未来。
+          </h2><p
+            data-aw-i18n
+            data-aw-i18n-zh="无论是安全培训、AI 风险治理，还是跨团队能力建设，都可以从明确业务需求与安全边界开始。"
+            data-aw-i18n-en="For security learning, AI risk governance or team enablement, start by clarifying your needs and boundaries."
+          >
+            无论是安全培训、AI 风险治理，还是跨团队能力建设，都可以从明确业务需求与安全边界开始。
+          </p>
+        </div><div class="contact-panel">
+          <p class="panel-label" data-aw-i18n data-aw-i18n-zh="当前联系状态" data-aw-i18n-en="Current Contact Status">
+            当前联系状态
+          </p><h3 data-aw-i18n data-aw-i18n-zh="咨询渠道准备中" data-aw-i18n-en="Consultation Channel Coming Soon">
+            咨询渠道准备中
+          </h3><p
+            data-aw-i18n
+            data-aw-i18n-zh="本站目前不接收项目申请、联系方式、项目文件或敏感数据。正式咨询渠道启用后将在此公布。"
+            data-aw-i18n-en="This website does not currently collect project requests, contact details, files or sensitive data. Official contact options will be published here when available."
+          >
+            本站目前不接收项目申请、联系方式、项目文件或敏感数据。正式咨询渠道启用后将在此公布。
+          </p><a
+            href={getPermalink('/contact')}
+            class="leo-btn primary"
+            data-aw-i18n
+            data-aw-i18n-zh="查看联系状态 ↗"
+            data-aw-i18n-en="View Contact Status ↗">查看联系状态 ↗</a
+          >
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
+<script is:inline>
+  (function () {
+    function applyLanguage(language) {
+      const lang = language === 'en' ? 'en' : 'zh';
+      document.querySelectorAll('[data-aw-i18n]').forEach((element) => {
+        const text = element.getAttribute('data-aw-i18n-' + lang);
+        if (text !== null) element.textContent = text;
+      });
+      document.querySelectorAll('[data-leo-lang]').forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.leoLang === lang));
+      });
+      document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+    }
+    document.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-leo-lang]');
+      if (!button) return;
+      const lang = button.dataset.leoLang;
+      try {
+        localStorage.setItem('leo-language', lang);
+      } catch {
+        /* Storage may be unavailable in private browsing. */
+      }
+      applyLanguage(lang);
+    });
+    function init() {
+      let lang = 'zh';
+      try {
+        lang = localStorage.getItem('leo-language') || 'zh';
+      } catch {
+        /* Storage may be unavailable in private browsing. */
+      }
+      applyLanguage(lang);
+    }
+    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('astro:after-swap', init);
+    if (document.readyState !== 'loading') init();
+  })();
+</script>
+<style>
+  .leo-site {
+    font-family: Inter, 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif;
+    color: #14233a;
+  }
+  .leo-wrap {
+    max-width: 1180px;
+    margin: auto;
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+  .leo-hero {
+    background: radial-gradient(ellipse at 85% 34%, #1b3e6c 0%, transparent 46%), #0b1526;
+    color: #f7fbff;
+    padding: 108px 0 116px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.06fr 0.94fr;
+    align-items: center;
+    gap: 70px;
+  }
+  .overline,
+  .section-kicker {
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 0.17em;
+    color: #4789eb;
+  }
+  .leo-hero .overline {
+    color: #87b9ff;
+  }
+  .hero-copy h1 {
+    font-size: clamp(44px, 5.2vw, 75px);
+    letter-spacing: -0.055em;
+    line-height: 1.17;
+    margin: 20px 0 24px;
+    font-weight: 750;
+  }
+  .hero-lead {
+    font-size: clamp(19px, 2vw, 26px);
+    font-weight: 600;
+    color: #e2edfc;
+    margin: 0 0 18px;
+  }
+  .hero-desc {
+    max-width: 540px;
+    line-height: 1.9;
+    color: #a9bdd6;
+    font-size: 16px;
+  }
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 36px;
+  }
+  .leo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    padding: 14px 23px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      transform 0.2s,
+      background 0.2s;
+  }
+  .leo-btn:hover {
+    transform: translateY(-2px);
+  }
+  .leo-btn.primary {
+    background: #3979e5;
+    color: white;
+  }
+  .leo-btn.ghost {
+    color: white;
+    border: 1px solid #57718d;
+  }
+  .hero-fine {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: #8ba3c1;
+    margin-top: 34px;
+  }
+  .ai-visual {
+    position: relative;
+    aspect-ratio: 1/1.02;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #164e87 0%, #0c2240 38%, #081525 74%);
+    border: 1px solid #355377;
+    border-radius: 18px;
+    box-shadow: 0 30px 100px #0004;
+  }
+  .visual-top,
+  .visual-bottom {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: space-between;
+    color: #89aacf;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    z-index: 5;
+  }
+  .visual-top {
+    top: 24px;
+  }
+  .visual-bottom {
+    bottom: 24px;
+  }
+  .visual-glow {
+    position: absolute;
+    inset: 27%;
+    border-radius: 50%;
+    background: #2d91f5;
+    filter: blur(75px);
+    opacity: 0.4;
+  }
+  .ring {
+    position: absolute;
+    border: 1px solid #5ca8ee66;
+    border-radius: 50%;
+    inset: 17%;
+  }
+  .ring-b {
+    inset: 27%;
+    border-style: dashed;
+    transform: rotate(28deg);
+  }
+  .ring-c {
+    inset: 7%;
+    border-color: #4779a633;
+  }
+  .visual-cross {
+    position: absolute;
+    background: #77bdf522;
+  }
+  .cross-a {
+    height: 1px;
+    width: 100%;
+    top: 50%;
+  }
+  .cross-b {
+    width: 1px;
+    height: 100%;
+    left: 50%;
+  }
+  .core {
+    position: absolute;
+    inset: 38%;
+    background: #102c4c;
+    border: 1px solid #78bdf5;
+    box-shadow: 0 0 50px #3a9bec77;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .core span {
+    font-size: clamp(26px, 4vw, 54px);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    color: #e8f7ff;
+  }
+  .core small {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: #9cd2ff;
+  }
+  .node {
+    position: absolute;
+    padding: 9px 12px;
+    border: 1px solid #5487b477;
+    background: #0b2038;
+    color: #c6e6ff;
+    font-size: 11px;
+    border-radius: 5px;
+    letter-spacing: 0.1em;
+  }
+  .node b {
+    color: #64a6ee;
+    margin-left: 8px;
+  }
+  .node-a {
+    left: 8%;
+    top: 32%;
+  }
+  .node-b {
+    right: 6%;
+    top: 26%;
+  }
+  .node-c {
+    right: 9%;
+    bottom: 28%;
+  }
+  .value-bar {
+    background: #132f51;
+    color: #bfd5eb;
+    padding: 18px 0;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+  .value-bar .leo-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .leo-section {
+    padding-top: 105px;
+    padding-bottom: 105px;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+  .leo-section h2,
+  .contact-section h2 {
+    font-size: clamp(32px, 3.7vw, 52px);
+    letter-spacing: -0.055em;
+    line-height: 1.27;
+    font-weight: 750;
+    margin: 16px 0 0;
+  }
+  .about-copy {
+    padding-top: 30px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #43556d;
+  }
+  .about-caveat {
+    font-size: 13px;
+    color: #718095;
+    margin-top: 16px;
+  }
+  .leo-text-link {
+    font-size: 14px;
+    font-weight: 750;
+    color: #286ac8;
+    display: inline-block;
+    margin-top: 18px;
+    text-decoration: none;
+  }
+  .pale {
+    background: #f3f7fb;
+  }
+  .section-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 38px;
+  }
+  .section-head > p {
+    max-width: 360px;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .service-grid,
+  .insight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .service-card {
+    padding: 32px;
+    background: white;
+    border: 1px solid #e1e9f2;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+  }
+  .service-number {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #3278d4;
+    font-weight: 700;
+  }
+  .service-card h3 {
+    font-size: 23px;
+    line-height: 1.4;
+    font-weight: 750;
+    margin: 38px 0 12px;
+  }
+  .service-card > p {
+    color: #5d6d80;
+    font-size: 14px;
+    line-height: 1.85;
+    flex: 1;
+  }
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 21px;
+  }
+  .tag-row span {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    padding: 7px 10px;
+    background: #edf4fd;
+    color: #2c629f;
+    border-radius: 30px;
+  }
+  .course-list {
+    border-top: 1px solid #d9e2ed;
+  }
+  .course-item {
+    display: grid;
+    grid-template-columns: 70px 1fr 40px;
+    gap: 16px;
+    align-items: center;
+    border-bottom: 1px solid #d9e2ed;
+    padding: 28px 0;
+  }
+  .course-index {
+    font-size: 13px;
+    color: #3280dd;
+  }
+  .course-meta {
+    font-size: 11px;
+    color: #467bb8;
+    margin: 0 0 6px;
+  }
+  .course-item h3 {
+    font-size: 22px;
+    font-weight: 720;
+    margin: 0 0 6px;
+  }
+  .course-item p:last-child {
+    color: #63748b;
+    font-size: 14px;
+    margin: 0;
+  }
+  .course-item > a {
+    font-size: 26px;
+    color: #326fc0;
+  }
+  .insight-card {
+    display: block;
+    background: white;
+    border: 1px solid #dfe8f1;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+  }
+  .insight-cover {
+    height: 175px;
+    background: radial-gradient(circle at 70% 55%, #246fb4, #132f52 55%, #0a1e36);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #a9d1ff;
+  }
+  .insight-cover span,
+  .insight-cover small {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+  .insight-cover strong {
+    align-self: center;
+    font-size: 68px;
+    font-weight: 400;
+    color: #93c8ff;
+  }
+  .insight-body {
+    padding: 24px;
+  }
+  .insight-body time {
+    font-size: 11px;
+    color: #6684a3;
+  }
+  .insight-body h3 {
+    font-size: 19px;
+    line-height: 1.4;
+    font-weight: 720;
+    margin: 10px 0;
+  }
+  .insight-body p {
+    font-size: 13px;
+    color: #66788d;
+    line-height: 1.7;
+    min-height: 64px;
+  }
+  .contact-section {
+    background: #0c1d34;
+    color: white;
+    padding: 95px 0;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 100px;
+    align-items: center;
+  }
+  .contact-section h2 {
+    margin: 18px 0 22px;
+  }
+  .contact-grid > div > p:last-child {
+    line-height: 1.9;
+    color: #bdcce0;
+  }
+  .contact-panel {
+    background: #153253;
+    border: 1px solid #325373;
+    border-radius: 12px;
+    padding: 38px;
+  }
+  .panel-label {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: #8dbfff;
+  }
+  .contact-panel h3 {
+    font-size: 25px;
+    margin: 16px 0;
+  }
+  .contact-panel p:not(.panel-label) {
+    font-size: 14px;
+    line-height: 1.85;
+    color: #b5cbe4;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 850px) {
+    .hero-grid,
+    .about-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .leo-hero {
+      padding: 75px 0;
+    }
+    .ai-visual {
+      max-width: 550px;
+      width: 100%;
+      margin: auto;
+    }
+    .service-grid,
+    .insight-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .leo-section {
+      padding-top: 75px;
+      padding-bottom: 75px;
+    }
+    .section-head {
+      align-items: start;
+      flex-direction: column;
+    }
+    .contact-grid {
+      gap: 38px;
+    }
+  }
+  @media (max-width: 560px) {
+    .leo-wrap {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .hero-copy h1 {
+      font-size: 46px;
+    }
+    .service-grid,
+    .insight-grid {
+      grid-template-columns: 1fr;
+    }
+    .service-card {
+      min-height: 0;
+    }
+    .leo-section {
+      padding-top: 65px;
+      padding-bottom: 65px;
+    }
+    .value-bar .leo-wrap {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .course-item {
+      grid-template-columns: 35px 1fr 24px;
+      gap: 8px;
+    }
+    .course-item h3 {
+      font-size: 19px;
+    }
+    .contact-panel {
+      padding: 25px;
+    }
+    .hero-cta .leo-btn {
+      width: 100%;
+    }
+  }
+</style>
