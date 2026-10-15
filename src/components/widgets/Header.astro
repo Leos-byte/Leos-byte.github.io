@@ -154,7 +154,11 @@ const i18nAttrs = (item: Link) => ({
       ]}
     >
       <div class="items-center flex justify-between w-full md:w-auto">
-        <div class="flex">
+        <div class="flex items-center gap-1">
+          <div class="inline-flex rounded-md border border-slate-300/50 p-0.5 text-xs font-semibold" role="group" aria-label="Website language">
+            <button type="button" data-leo-lang="zh" aria-pressed="true" class="px-2 py-1 rounded aria-pressed:bg-blue-600 aria-pressed:text-white">中文</button>
+            <button type="button" data-leo-lang="en" aria-pressed="false" class="px-2 py-1 rounded aria-pressed:bg-blue-600 aria-pressed:text-white">EN</button>
+          </div>
           {showToggleTheme && <ToggleTheme iconClass="w-6 h-6 md:w-5 md:h-5 md:inline-block" />}
           {
             showRssFeed && (
