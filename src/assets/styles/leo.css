@@ -1392,7 +1392,7 @@ body:has(.leo-blog-article) #main-content {
   }
 }
 
-/* Shared reading treatment for every published blog post. */
+/* Shared reading treatment for every published blog post and future articles. */
 .leo-blog-article,
 .leo-blog-article .leo-reading-surface {
   background: #fff;
