@@ -13,16 +13,22 @@ export const headerData = {
 
 export const footerData = {
   links: [
-    { title: '专业领域', links: [
-      { text: '网络安全与 AI 安全服务', href: getPermalink('/services') },
-      { text: '专业文章', href: getBlogPermalink() },
-      { text: '联系状态', href: getPermalink('/contact') },
-    ] },
-    { title: '网站说明', links: [
-      { text: '服务边界', href: getPermalink('/safeguards') },
-      { text: '隐私说明', href: getPermalink('/privacy') },
-      { text: '更正与来源政策', href: getPermalink('/corrections') },
-    ] },
+    {
+      title: '专业领域',
+      links: [
+        { text: '网络安全与 AI 安全服务', href: getPermalink('/services') },
+        { text: '专业文章', href: getBlogPermalink() },
+        { text: '联系状态', href: getPermalink('/contact') },
+      ],
+    },
+    {
+      title: '网站说明',
+      links: [
+        { text: '服务边界', href: getPermalink('/safeguards') },
+        { text: '隐私说明', href: getPermalink('/privacy') },
+        { text: '更正与来源政策', href: getPermalink('/corrections') },
+      ],
+    },
   ],
   secondaryLinks: [],
   socialLinks: [],
