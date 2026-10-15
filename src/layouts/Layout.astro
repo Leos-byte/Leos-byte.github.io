@@ -63,12 +63,20 @@ const { language, textDirection } = I18N;
           const button = event.target.closest('[data-leo-lang]');
           if (!button) return;
           const language = button.dataset.leoLang;
-          try { localStorage.setItem('leo-language', language); } catch { /* Local storage can be disabled. */ }
+          try {
+            localStorage.setItem('leo-language', language);
+          } catch {
+            /* Local storage can be disabled. */
+          }
           setLanguage(language);
         });
         function initializeLanguage() {
           let language = 'zh';
-          try { language = localStorage.getItem('leo-language') || 'zh'; } catch { /* Local storage can be disabled. */ }
+          try {
+            language = localStorage.getItem('leo-language') || 'zh';
+          } catch {
+            /* Local storage can be disabled. */
+          }
           setLanguage(language);
         }
         document.addEventListener('DOMContentLoaded', initializeLanguage);

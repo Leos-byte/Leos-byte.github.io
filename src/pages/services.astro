@@ -1,10 +1,96 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-const metadata={title:'专业服务 | LEO Cybersecurity & AI',description:'网络安全培训、AI 安全风险治理与企业 AI 安全应用能力建设。'};
-const offerings=[
-{id:'cybersecurity',index:'01',label:'CYBERSECURITY',title:'网络安全培训与意识建设',desc:'面向企业员工、业务部门和技术团队，围绕风险识别、安全行为与组织防护建立共同语言。',items:['安全意识与社会工程风险','账号、数据和日常工作防护','团队风险沟通与安全实践']},
-{id:'ai-security',index:'02',label:'AI SECURITY',title:'AI 安全与风险治理咨询',desc:'围绕生成式 AI 应用中的数据使用、人员责任、风险识别与治理流程，帮助组织澄清关键问题。',items:['AI 使用场景与风险梳理','数据输入边界与人工复核','治理框架和优先行动建议']},
-{id:'ai-training',index:'03',label:'ENTERPRISE AI',title:'企业 AI 安全应用培训',desc:'结合真实业务流程，讨论如何有效使用 AI，同时保留人工监督、结果验证和信息保护。',items:['生成式 AI 使用基础','安全工作流与输出核验','跨团队实践与工作坊设计']},
+const metadata = {
+  title: '专业服务 | LEO Cybersecurity & AI',
+  description: '网络安全培训、AI 安全风险治理与企业 AI 安全应用能力建设。',
+};
+const offerings = [
+  {
+    id: 'cybersecurity',
+    index: '01',
+    label: 'CYBERSECURITY',
+    title: '网络安全培训与意识建设',
+    desc: '面向企业员工、业务部门和技术团队，围绕风险识别、安全行为与组织防护建立共同语言。',
+    items: ['安全意识与社会工程风险', '账号、数据和日常工作防护', '团队风险沟通与安全实践'],
+  },
+  {
+    id: 'ai-security',
+    index: '02',
+    label: 'AI SECURITY',
+    title: 'AI 安全与风险治理咨询',
+    desc: '围绕生成式 AI 应用中的数据使用、人员责任、风险识别与治理流程，帮助组织澄清关键问题。',
+    items: ['AI 使用场景与风险梳理', '数据输入边界与人工复核', '治理框架和优先行动建议'],
+  },
+  {
+    id: 'ai-training',
+    index: '03',
+    label: 'ENTERPRISE AI',
+    title: '企业 AI 安全应用培训',
+    desc: '结合真实业务流程，讨论如何有效使用 AI，同时保留人工监督、结果验证和信息保护。',
+    items: ['生成式 AI 使用基础', '安全工作流与输出核验', '跨团队实践与工作坊设计'],
+  },
 ];
 ---
-<Layout metadata={metadata}><main class="leo-page"><section class="leo-page-hero"><div class="leo-page-wrap"><p class="leo-eyebrow">SERVICES / 专业服务</p><h1>连接网络安全<br />与 AI 应用的现实需求。</h1><p class="leo-intro">以培训、风险治理和组织能力建设为三个切入点。下列内容为专业服务方向，具体范围、可用性与交付安排须另行确认。</p><div class="leo-actions"><a class="leo-action" href="/contact">了解联系状态 ↗</a><a class="leo-action leo-action-outline" href="/training">查看培训课程 →</a></div></div></section><section class="leo-page-wrap leo-page-section"><p class="leo-eyebrow">WHAT WE FOCUS ON</p><h2>三大专业方向</h2><div class="leo-offerings">{offerings.map(o=><article class="leo-offering" id={o.id}><div><span class="leo-index">{o.index} / {o.label}</span><h3>{o.title}</h3><p>{o.desc}</p></div><ul>{o.items.map(item=><li>{item}</li>)}</ul></article>)}</div></section><section class="leo-page-band"><div class="leo-page-wrap leo-page-section"><p class="leo-eyebrow">ENGAGEMENT APPROACH</p><h2>先确认问题，再确定工作范围</h2><div class="leo-page-grid"><article><span class="leo-index">DISCOVER</span><h3>需求澄清</h3><p>了解受众、业务场景、风险问题和限制条件。</p></article><article><span class="leo-index">DESIGN</span><h3>范围设计</h3><p>明确拟议内容、责任边界和需进一步核实的条件。</p></article><article><span class="leo-index">REVIEW</span><h3>结果复核</h3><p>围绕培训或咨询目标设计适当的反馈与改进方式。</p></article></div></div></section><section class="leo-page-wrap leo-page-section"><h2>合作与服务边界</h2><p class="leo-intro">本站内容不构成对安全、合规、收益或交付日期的保证；不展示未经证实的客户案例或资质。网站目前没有开放项目资料提交入口。</p><div class="leo-actions"><a class="leo-action" href="/safeguards">阅读服务边界 ↗</a><a class="leo-action leo-action-outline" href="/contact">联系状态 →</a></div></section></main></Layout>
+
+<Layout metadata={metadata}
+  ><main class="leo-page">
+    <section class="leo-page-hero">
+      <div class="leo-page-wrap">
+        <p class="leo-eyebrow">SERVICES / 专业服务</p><h1>连接网络安全<br />与 AI 应用的现实需求。</h1><p
+          class="leo-intro"
+        >
+          以培训、风险治理和组织能力建设为三个切入点。下列内容为专业服务方向，具体范围、可用性与交付安排须另行确认。
+        </p><div class="leo-actions">
+          <a class="leo-action" href="/contact">了解联系状态 ↗</a><a
+            class="leo-action leo-action-outline"
+            href="/training">查看培训课程 →</a>
+        </div>
+      </div>
+    </section><section class="leo-page-wrap leo-page-section">
+      <p class="leo-eyebrow">WHAT WE FOCUS ON</p><h2>三大专业方向</h2><div class="leo-offerings">
+        {
+          offerings.map((o) => (
+            <article class="leo-offering" id={o.id}>
+              <>
+                <div>
+                  <>
+                    <span class="leo-index">
+                      {o.index} / {o.label}
+                    </span>
+                    <h3>{o.title}</h3>
+                    <p>{o.desc}</p>
+                  </>
+                </div>
+                <ul>
+                  {o.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </section><section class="leo-page-band">
+      <div class="leo-page-wrap leo-page-section">
+        <p class="leo-eyebrow">ENGAGEMENT APPROACH</p><h2>先确认问题，再确定工作范围</h2><div class="leo-page-grid">
+          <article>
+            <span class="leo-index">DISCOVER</span><h3>需求澄清</h3><p>了解受众、业务场景、风险问题和限制条件。</p>
+          </article><article>
+            <span class="leo-index">DESIGN</span><h3>范围设计</h3><p>明确拟议内容、责任边界和需进一步核实的条件。</p>
+          </article><article>
+            <span class="leo-index">REVIEW</span><h3>结果复核</h3><p>围绕培训或咨询目标设计适当的反馈与改进方式。</p>
+          </article>
+        </div>
+      </div>
+    </section><section class="leo-page-wrap leo-page-section">
+      <h2>合作与服务边界</h2><p class="leo-intro">
+        本站内容不构成对安全、合规、收益或交付日期的保证；不展示未经证实的客户案例或资质。网站目前没有开放项目资料提交入口。
+      </p><div class="leo-actions">
+        <a class="leo-action" href="/safeguards">阅读服务边界 ↗</a><a
+          class="leo-action leo-action-outline"
+          href="/contact">联系状态 →</a>
+      </div>
+    </section>
+  </main></Layout
+>

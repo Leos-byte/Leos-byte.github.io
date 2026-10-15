@@ -1,5 +1,43 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-const metadata={title:'更正与来源政策 | LEO Cybersecurity & AI',description:'LEO 的公开文章来源标准、事实更正与信息披露原则。'};
+const metadata = {
+  title: '更正与来源政策 | LEO Cybersecurity & AI',
+  description: 'LEO 的公开文章来源标准、事实更正与信息披露原则。',
+};
 ---
-<Layout metadata={metadata}><main class="leo-page"><section class="leo-page-hero"><div class="leo-page-wrap"><p class="leo-eyebrow">EDITORIAL POLICY / 编辑原则</p><h1>让观点有依据，<br />让更正有记录。</h1><p class="leo-intro">专业文章应区分事实、来源主张、研究推断与尚未确定的问题。已有博客文章正文保持不变。</p></div></section><section class="leo-page-wrap leo-page-section"><div class="leo-page-grid"><article class="leo-panel"><span class="leo-index">01 / SOURCES</span><h2>来源标准</h2><p>优先引用原始公告、论文、标准机构、代码仓库或直接记录；使用二手资料时尽可能回链原始来源。</p></article><article class="leo-panel"><span class="leo-index">02 / EVIDENCE</span><h2>证据状态</h2><p>区分已证实事实、机构或作者主张、早期研究与未决问题；信息不足时明确标记未知。</p></article><article class="leo-panel"><span class="leo-index">03 / CORRECTIONS</span><h2>更正机制</h2><p>实质性更正应记录日期、原表述摘要及修改原因，不悄然改写重要结论。</p></article></div></section><section class="leo-page-band"><div class="leo-page-wrap leo-page-section"><h2>反馈与安全披露</h2><p class="leo-intro">本站目前没有开放反馈表单或漏洞报告入口。未来只有在真实联系渠道、处理责任和披露规则确认后，才会公布对应方式。请勿通过公开评论提交敏感资料。</p><div class="leo-actions"><a class="leo-action" href="/safeguards">查看服务边界 ↗</a></div></div></section></main></Layout>
+
+<Layout metadata={metadata}
+  ><main class="leo-page">
+    <section class="leo-page-hero">
+      <div class="leo-page-wrap">
+        <p class="leo-eyebrow">EDITORIAL POLICY / 编辑原则</p><h1>让观点有依据，<br />让更正有记录。</h1><p
+          class="leo-intro"
+        >
+          专业文章应区分事实、来源主张、研究推断与尚未确定的问题。已有博客文章正文保持不变。
+        </p>
+      </div>
+    </section><section class="leo-page-wrap leo-page-section">
+      <div class="leo-page-grid">
+        <article class="leo-panel">
+          <span class="leo-index">01 / SOURCES</span><h2>来源标准</h2><p>
+            优先引用原始公告、论文、标准机构、代码仓库或直接记录；使用二手资料时尽可能回链原始来源。
+          </p>
+        </article><article class="leo-panel">
+          <span class="leo-index">02 / EVIDENCE</span><h2>证据状态</h2><p>
+            区分已证实事实、机构或作者主张、早期研究与未决问题；信息不足时明确标记未知。
+          </p>
+        </article><article class="leo-panel">
+          <span class="leo-index">03 / CORRECTIONS</span><h2>更正机制</h2><p>
+            实质性更正应记录日期、原表述摘要及修改原因，不悄然改写重要结论。
+          </p>
+        </article>
+      </div>
+    </section><section class="leo-page-band">
+      <div class="leo-page-wrap leo-page-section">
+        <h2>反馈与安全披露</h2><p class="leo-intro">
+          本站目前没有开放反馈表单或漏洞报告入口。未来只有在真实联系渠道、处理责任和披露规则确认后，才会公布对应方式。请勿通过公开评论提交敏感资料。
+        </p><div class="leo-actions"><a class="leo-action" href="/safeguards">查看服务边界 ↗</a></div>
+      </div>
+    </section>
+  </main></Layout
+>

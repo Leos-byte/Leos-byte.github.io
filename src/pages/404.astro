@@ -1,6 +1,21 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import { getHomePermalink } from '~/utils/permalinks';
-const metadata={title:'页面未找到 | LEO Cybersecurity & AI',description:'您访问的页面不存在。'};
+const metadata = { title: '页面未找到 | LEO Cybersecurity & AI', description: '您访问的页面不存在。' };
 ---
-<Layout metadata={metadata}><main class="leo-page"><section class="leo-page-hero"><div class="leo-page-wrap"><p class="leo-eyebrow">404 / PAGE NOT FOUND</p><h1>这个页面暂时<br />不在这里。</h1><p class="leo-intro">链接可能已经更新。可以返回首页，继续探索网络安全与 AI 安全的内容。</p><div class="leo-actions"><a class="leo-action" href={getHomePermalink()}>返回首页 ↗</a><a class="leo-action leo-action-outline" href="/blog">阅读文章 →</a></div></div></section></main></Layout>
+
+<Layout metadata={metadata}
+  ><main class="leo-page">
+    <section class="leo-page-hero">
+      <div class="leo-page-wrap">
+        <p class="leo-eyebrow">404 / PAGE NOT FOUND</p><h1>这个页面暂时<br />不在这里。</h1><p class="leo-intro">
+          链接可能已经更新。可以返回首页，继续探索网络安全与 AI 安全的内容。
+        </p><div class="leo-actions">
+          <a class="leo-action" href={getHomePermalink()}>返回首页 ↗</a><a
+            class="leo-action leo-action-outline"
+            href="/blog">阅读文章 →</a>
+        </div>
+      </div>
+    </section>
+  </main></Layout
+>
