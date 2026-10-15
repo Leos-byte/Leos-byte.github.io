@@ -21,7 +21,9 @@ const { post, url } = Astro.props;
 <section class="leo-blog-article py-8 sm:py-16 lg:py-20 mx-auto">
   <article class="leo-reading-surface">
     <header class="leo-article-header">
-      <div class="leo-article-meta flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
+      <div
+        class="leo-article-meta flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center"
+      >
         <p>
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
@@ -68,9 +70,7 @@ const { post, url } = Astro.props;
       >
         {post.title}
       </h1>
-      <p
-        class="leo-article-excerpt max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl"
-      >
+      <p class="leo-article-excerpt max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl">
         {post.excerpt}
       </p>
 
@@ -100,9 +100,7 @@ const { post, url } = Astro.props;
     >
       <slot />
     </div>
-    <div
-      class="leo-editorial-notes mx-auto px-6 sm:px-6 max-w-3xl mt-10 border-t pt-6 text-sm"
-    >
+    <div class="leo-editorial-notes mx-auto px-6 sm:px-6 max-w-3xl mt-10 border-t pt-6 text-sm">
       <p>
         <span class="font-semibold">适用范围与局限：</span
         >本文仅覆盖正文列出的时间范围与来源，证据状态以正文标注为准；未注明之处按“未知”处理。
