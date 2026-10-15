@@ -1289,3 +1289,30 @@ footer .text-muted {
   transform: translateY(-2px);
   background: #f5f7fb !important;
 }
+
+/* Blog pages must inherit the homepage's navy / cobalt / white palette,
+   not the legacy olive-green theme tokens. */
+body:has(.leo-blog-listing),body:has(.leo-blog-article){
+  --leo-ink:#142238;--leo-muted:#607087;--leo-paper:#fff;
+  --leo-line:#dfe6ef;--leo-soft:#f5f7fb;--leo-accent:#3979e5;
+  background:#fff!important;color:#142238!important;
+}
+body:has(.leo-blog-listing) #main-content{background:#f5f7fb;color:#142238}
+body:has(.leo-blog-article) #main-content{background:#fff;color:#142238}
+.leo-blog-listing{max-width:1080px;background:transparent}
+.leo-blog-listing>header{background:radial-gradient(ellipse at 82% 35%,#173e70 0%,#0b1526 68%);color:#fff;border-radius:18px;padding:52px 30px;margin-bottom:40px}
+.leo-blog-listing>header h1{color:#fff;letter-spacing:-.035em;font-size:clamp(32px,4vw,52px)}
+.leo-blog-listing>header div{color:#c0cfe2!important;font-weight:400;line-height:1.75;font-size:clamp(15px,1.5vw,18px)}
+.leo-blog-listing>p{text-align:center;color:#607087}
+.leo-blog-listing>p a{color:#2366c8;font-weight:650}
+.leo-blog-listing ul>li{background:#fff;border:1px solid #dfe6ef;border-radius:16px;padding:28px;box-shadow:0 10px 30px #13253a09;margin-bottom:22px}
+.leo-blog-listing ul>li article{max-width:none}
+.leo-blog-listing ul>li article>div{min-width:0}
+.leo-blog-listing ul>li article header span{color:#607087}
+.leo-blog-listing ul>li article h2{color:#142238;line-height:1.35;letter-spacing:-.02em}
+.leo-blog-listing ul>li article h2 a:hover{color:#2366c8!important}
+.leo-blog-listing ul>li article p{color:#607087!important;line-height:1.8;font-size:16px}
+.leo-blog-listing ul>li article a.text-primary{color:#2366c8!important}
+.leo-blog-listing ul>li article img{border-radius:12px}
+.leo-blog-listing a:focus-visible,.leo-blog-article a:focus-visible{outline-color:#3979e5}
+@media(max-width:640px){.leo-blog-listing>header{padding:36px 20px;border-radius:12px}.leo-blog-listing ul>li{padding:20px;border-radius:12px}}
