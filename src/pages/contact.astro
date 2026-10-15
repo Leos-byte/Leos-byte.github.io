@@ -1,38 +1,42 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import { getBlogPermalink, getPermalink } from '~/utils/permalinks';
-
 const metadata = {
-  title: '联系状态｜LeoOne',
-  ignoreTitleTemplate: true,
-  description: 'LeoOne 当前不通过网站接收项目申请、联系方式、项目资料或敏感信息。',
+  title: '联系与合作 | LEO Cybersecurity & AI',
+  description: 'LEO Cybersecurity & AI 联系与合作说明，了解当前联系渠道和敏感信息保护要求。',
 };
 ---
 
-<Layout metadata={metadata}>
-  <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
-    <div class="max-w-3xl">
-      <p class="font-semibold text-primary dark:text-blue-500">联系状态</p>
-      <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-        本站目前不接收项目申请或资料
-      </h1>
-      <p class="mt-5 text-xl text-muted dark:text-slate-300">
-        LeoOne
-        当前不通过本网站接收项目申请、联系方式、项目资料或敏感信息。请勿发送密码、访问密钥、生产数据、客户机密、个人敏感信息或紧急事件信息。
-      </p>
-    </div>
-
-    <nav class="mt-10 flex flex-wrap gap-5" aria-label="相关说明">
-      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/services')}>
-        了解 AI 转型咨询 →
-      </a>
-      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/safeguards')}>
-        查看服务边界 →
-      </a>
-      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getBlogPermalink()}>
-        阅读公开文章 →
-      </a>
-    </nav>
-  </section>
-</Layout>
+<Layout metadata={metadata}
+  ><main class="leo-page">
+    <section class="leo-page-hero">
+      <div class="leo-page-wrap">
+        <p class="leo-eyebrow">CONTACT / 联系与合作</p><h1>从清晰的问题开始，<br />探索安全的可能性。</h1><p
+          class="leo-intro"
+        >
+          LEO 关注网络安全培训、AI 安全风险治理及企业 AI
+          能力建设。正式咨询渠道尚未在本网站开放，当前页面提供公开信息和联系状态说明。
+        </p>
+      </div>
+    </section><section class="leo-page-wrap leo-page-section">
+      <div class="leo-page-grid leo-contact-grid">
+        <article class="leo-panel">
+          <p class="leo-eyebrow">CURRENT STATUS</p><h2>当前联系状态</h2><p>
+            本站暂不接收项目申请、个人联系方式或项目资料，也没有启用在线预约表单。正式渠道确认后将在此公开。
+          </p>
+        </article><article class="leo-panel">
+          <p class="leo-eyebrow">INFORMATION SECURITY</p><h2>请勿提交敏感信息</h2><p>
+            请勿通过公开页面、评论或非正式渠道发送密码、密钥、生产数据、客户机密、个人敏感信息或安全事件详情。
+          </p>
+        </article>
+      </div>
+    </section><section class="leo-page-band">
+      <div class="leo-page-wrap leo-page-section">
+        <h2>在此之前，可以先了解</h2><div class="leo-actions">
+          <a class="leo-action" href="/services">专业服务 ↗</a><a class="leo-action leo-action-outline" href="/training"
+            >培训课程 →</a
+          ><a class="leo-action leo-action-outline" href="/blog">公开文章 →</a>
+        </div>
+      </div>
+    </section>
+  </main></Layout
+>

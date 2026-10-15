@@ -1,131 +1,98 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import { getPermalink } from '~/utils/permalinks';
-
 const metadata = {
-  title: 'AI 转型咨询｜LeoOne',
-  ignoreTitleTemplate: true,
-  description: '围绕一个真实任务，说明输入、输出、人工判断、使用边界和观察项。具体范围须书面确认。',
+  title: '专业服务 | LEO Cybersecurity & AI',
+  description: '网络安全培训、AI 安全风险治理与企业 AI 安全应用能力建设。',
 };
-
-const taskQuestions = [
-  '任务的目标、频率和当前困难是什么？',
-  '输入材料来自哪里，哪些信息可以使用、哪些不能使用？',
-  '需要的输出是什么，谁负责复核和最终决定？',
-  '哪些步骤适合让 AI 协助，哪些必须保留人工判断？',
-  '以什么观察项判断继续、调整还是停止？',
-];
-
-const manufacturingMaterials = [
+const offerings = [
   {
-    id: 'workflow-roadmap',
-    title: 'AI 工作流诊断与试点路线图',
-    description: '围绕真实流程整理现状，比较候选场景，并列出首个验证需要确认的优先级、范围与准备事项。',
+    id: 'cybersecurity',
+    index: '01',
+    label: 'CYBERSECURITY',
+    title: '网络安全培训与意识建设',
+    desc: '面向企业员工、业务部门和技术团队，围绕风险识别、安全行为与组织防护建立共同语言。',
+    items: ['安全意识与社会工程风险', '账号、数据和日常工作防护', '团队风险沟通与安全实践'],
   },
   {
-    id: 'pilot-readiness',
-    title: 'AI 试点准备与使用边界设计',
-    description: '围绕已选方向梳理责任、允许场景、禁止输入类别、人工复核、评估方式和启动前需要确认的条件。',
+    id: 'ai-security',
+    index: '02',
+    label: 'AI SECURITY',
+    title: 'AI 安全与风险治理咨询',
+    desc: '围绕生成式 AI 应用中的数据使用、人员责任、风险识别与治理流程，帮助组织澄清关键问题。',
+    items: ['AI 使用场景与风险梳理', '数据输入边界与人工复核', '治理框架和优先行动建议'],
   },
   {
-    id: 'workshop',
-    title: '团队 AI 工作流共创工作坊',
-    description: '围绕一个真实流程，记录候选场景、风险、依赖和待确认的责任事项。',
+    id: 'ai-training',
+    index: '03',
+    label: 'ENTERPRISE AI',
+    title: '企业 AI 安全应用培训',
+    desc: '结合真实业务流程，讨论如何有效使用 AI，同时保留人工监督、结果验证和信息保护。',
+    items: ['生成式 AI 使用基础', '安全工作流与输出核验', '跨团队实践与工作坊设计'],
   },
 ];
 ---
 
-<Layout metadata={metadata}>
-  <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
-    <div class="max-w-4xl">
-      <p class="font-semibold text-primary dark:text-blue-500">AI 转型咨询</p>
-      <h1 class="mt-3 text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">
-        先把一件真实工作说清
-      </h1>
-      <p class="mt-5 text-xl text-muted dark:text-slate-300">
-        LeoOne 面向个人和企业提供 AI
-        转型咨询，不限定行业。开始讨论时，不必先谈一套宏大的转型方案；先看一项真实任务，澄清 AI
-        的用途、人工判断与下一步标准。具体项目范围以书面确认为准。
-      </p>
-    </div>
-  </section>
-
-  <section class="border-y border-gray-200 dark:border-slate-800 bg-gray-50/60 dark:bg-slate-900/30">
-    <div class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-heading">一项任务要先说明什么</h2>
-      <ol class="mt-8 grid gap-4 md:grid-cols-2">
-        {
-          taskQuestions.map((item, index) => (
-            <li class="flex gap-4 rounded-lg bg-white dark:bg-slate-800 p-5">
-              <span aria-hidden="true" class="font-bold text-primary dark:text-blue-500">
-                {index + 1}.
-              </span>
-              <span>{item}</span>
-            </li>
-          ))
-        }
-      </ol>
-      <p class="mt-6 max-w-4xl text-sm text-muted dark:text-slate-300">
-        这些问题帮助界定一个可讨论的场景，不构成对准确性、效率、ROI、上线日期、安全、合规或服务可用性的保证。
-      </p>
-    </div>
-  </section>
-
-  <section class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12 grid gap-6 lg:grid-cols-2">
-    <article class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-      <h2 class="text-2xl font-bold font-heading">LeoOne 可说明的有限帮助</h2>
-      <p class="mt-4 text-muted dark:text-slate-300">
-        围绕一个已有任务或流程，协助把输入、预期产出、检查点、责任人、使用边界和待确认前提列清；在项目获得确认的前提下，可用少量练习或记录检验做法能否被复用。重点是让开始前必须回答的问题可见，而不是替客户接管系统、业务决策或专业责任。
-      </p>
-    </article>
-    <article class="rounded-xl border border-gray-200 dark:border-slate-700 p-6 md:p-8">
-      <h2 class="text-2xl font-bold font-heading">LeoOne 不替代什么</h2>
-      <p class="mt-4 text-muted dark:text-slate-300">
-        LeoOne
-        不替代法务、隐私、安全、行业监管或其他专业判断；不承诺实现合规、数据不泄露、系统安全、输出无误、降本增收或固定上线时间。具体的信息处理与责任安排必须书面确认。
-      </p>
-    </article>
-  </section>
-
-  <section
-    id="scenarios"
-    class="border-y border-gray-200 dark:border-slate-800 bg-gray-50/60 dark:bg-slate-900/30 scroll-mt-24"
-  >
-    <div class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
-      <div class="max-w-4xl">
-        <p class="font-semibold text-primary dark:text-blue-500">场景档案</p>
-        <h2 class="mt-2 text-3xl md:text-4xl font-bold tracking-tight font-heading">制造业 AI 工作流诊断与试点准备</h2>
-        <p class="mt-4 text-lg text-muted dark:text-slate-300">
-          既有公开场景材料。它展示如何从一个具体流程梳理条件与人工复核，不代表 LeoOne 只服务或优先服务制造业。
-        </p>
+<Layout metadata={metadata}
+  ><main class="leo-page">
+    <section class="leo-page-hero">
+      <div class="leo-page-wrap">
+        <p class="leo-eyebrow">SERVICES / 专业服务</p><h1>连接网络安全<br />与 AI 应用的现实需求。</h1><p
+          class="leo-intro"
+        >
+          以培训、风险治理和组织能力建设为三个切入点。下列内容为专业服务方向，具体范围、可用性与交付安排须另行确认。
+        </p><div class="leo-actions">
+          <a class="leo-action" href="/contact">了解联系状态 ↗</a><a
+            class="leo-action leo-action-outline"
+            href="/training">查看培训课程 →</a
+          >
+        </div>
       </div>
-
-      <div class="mt-10 grid gap-4 lg:grid-cols-3">
+    </section><section class="leo-page-wrap leo-page-section">
+      <p class="leo-eyebrow">WHAT WE FOCUS ON</p><h2>三大专业方向</h2><div class="leo-offerings">
         {
-          manufacturingMaterials.map(({ id, title, description }) => (
-            <article
-              id={id}
-              class="rounded-xl border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 scroll-mt-24"
-            >
-              <h3 class="text-xl font-bold font-heading">{title}</h3>
-              <p class="mt-3 text-muted dark:text-slate-300">{description}</p>
+          offerings.map((o) => (
+            <article class="leo-offering" id={o.id}>
+              <>
+                <div>
+                  <>
+                    <span class="leo-index">
+                      {o.index} / {o.label}
+                    </span>
+                    <h3>{o.title}</h3>
+                    <p>{o.desc}</p>
+                  </>
+                </div>
+                <ul>
+                  {o.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </>
             </article>
           ))
         }
       </div>
-      <p class="mt-8 max-w-4xl text-sm text-muted dark:text-slate-300">
-        以上为既有公开场景材料，不是可购买套餐、已开放服务或项目申请入口；不代表任何行业的客户成果、实施能力或服务优先级。
-      </p>
-    </div>
-  </section>
-
-  <section class="mx-auto max-w-7xl px-4 md:px-6 py-10 md:py-12">
-    <p class="text-muted dark:text-slate-300">
-      实际工作范围、责任、可用信息和交付安排均须书面确认。
-      <a class="font-semibold text-primary hover:underline dark:text-blue-500" href={getPermalink('/safeguards')}>
-        查看服务边界 →
-      </a>
-    </p>
-  </section>
-</Layout>
+    </section><section class="leo-page-band">
+      <div class="leo-page-wrap leo-page-section">
+        <p class="leo-eyebrow">ENGAGEMENT APPROACH</p><h2>先确认问题，再确定工作范围</h2><div class="leo-page-grid">
+          <article>
+            <span class="leo-index">DISCOVER</span><h3>需求澄清</h3><p>了解受众、业务场景、风险问题和限制条件。</p>
+          </article><article>
+            <span class="leo-index">DESIGN</span><h3>范围设计</h3><p>明确拟议内容、责任边界和需进一步核实的条件。</p>
+          </article><article>
+            <span class="leo-index">REVIEW</span><h3>结果复核</h3><p>围绕培训或咨询目标设计适当的反馈与改进方式。</p>
+          </article>
+        </div>
+      </div>
+    </section><section class="leo-page-wrap leo-page-section">
+      <h2>合作与服务边界</h2><p class="leo-intro">
+        本站内容不构成对安全、合规、收益或交付日期的保证；不展示未经证实的客户案例或资质。网站目前没有开放项目资料提交入口。
+      </p><div class="leo-actions">
+        <a class="leo-action" href="/safeguards">阅读服务边界 ↗</a><a
+          class="leo-action leo-action-outline"
+          href="/contact">联系状态 →</a
+        >
+      </div>
+    </section>
+  </main></Layout
+>

@@ -1,66 +1,43 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-
-import { getPermalink } from '~/utils/permalinks';
-
 const metadata = {
-  title: '更正与来源政策',
-  description: 'LeoOne 的事实更正机制与来源标准：如何记录更正、如何区分证据状态，以及反馈的正确渠道。',
+  title: '更正与来源政策 | LEO Cybersecurity & AI',
+  description: 'LEO 的公开文章来源标准、事实更正与信息披露原则。',
 };
 ---
 
-<Layout metadata={metadata}>
-  <section class="mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20">
-    <div class="max-w-3xl">
-      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading">更正与来源政策</h1>
-      <p class="mt-4 text-xl text-muted dark:text-slate-300">
-        每篇文章都可被检查，也欢迎被纠正。以下是本站处理事实更正与来源标注的固定规则。
-      </p>
-    </div>
-
-    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">更正机制</h2>
-    <ul class="mt-8 space-y-4 text-lg">
-      {
-        [
-          '发现实质错误后，在文章“更新记录”中注明日期、原表述摘要与修改原因。',
-          '不悄然改写实质结论；已发布的结论性表述如需改变，必须留下可见记录。',
-          '非敏感事实的更正渠道将在真实目的地与责任人获批后公布；当前本站不接收提交。',
-        ].map((item) => (
-          <li class="flex gap-3">
-            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
-            <span>{item}</span>
-          </li>
-        ))
-      }
-    </ul>
-
-    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">来源标准</h2>
-    <ul class="mt-8 space-y-4 text-lg">
-      {
-        [
-          '以原始公告、论文、代码库、机构材料或直接记录为优先来源。',
-          '二手报道必须明确标注为二手，并尽可能回链原始材料。',
-          '固定区分证据状态：已证实、机构/作者主张、早期研究、未决问题。',
-          '信息不足时写明“未知”，不使用确定性表述掩盖不确定性。',
-        ].map((item) => (
-          <li class="flex gap-3">
-            <span aria-hidden="true" class="flex-none mt-2 h-2 w-2 rounded-full bg-primary dark:bg-blue-500" />
-            <span>{item}</span>
-          </li>
-        ))
-      }
-    </ul>
-
-    <h2 class="mt-12 md:mt-16 text-3xl md:text-4xl font-bold tracking-tight font-heading">反馈渠道边界</h2>
-    <p class="mt-8 text-lg text-muted dark:text-slate-400">
-      安全漏洞报告不通过普通联系入口处理。只有在真实安全联系渠道、处理人和披露规则获批准后，本站才会提供对应的专页或
-      security.txt 入口。
-    </p>
-  </section>
-
-  <CallToAction
-    title="继续了解"
-    actions={[{ variant: 'primary', text: '查看安全与编辑边界', href: getPermalink('/safeguards') }]}
-  />
-</Layout>
+<Layout metadata={metadata}
+  ><main class="leo-page">
+    <section class="leo-page-hero">
+      <div class="leo-page-wrap">
+        <p class="leo-eyebrow">EDITORIAL POLICY / 编辑原则</p><h1>让观点有依据，<br />让更正有记录。</h1><p
+          class="leo-intro"
+        >
+          专业文章应区分事实、来源主张、研究推断与尚未确定的问题。已有博客文章正文保持不变。
+        </p>
+      </div>
+    </section><section class="leo-page-wrap leo-page-section">
+      <div class="leo-page-grid">
+        <article class="leo-panel">
+          <span class="leo-index">01 / SOURCES</span><h2>来源标准</h2><p>
+            优先引用原始公告、论文、标准机构、代码仓库或直接记录；使用二手资料时尽可能回链原始来源。
+          </p>
+        </article><article class="leo-panel">
+          <span class="leo-index">02 / EVIDENCE</span><h2>证据状态</h2><p>
+            区分已证实事实、机构或作者主张、早期研究与未决问题；信息不足时明确标记未知。
+          </p>
+        </article><article class="leo-panel">
+          <span class="leo-index">03 / CORRECTIONS</span><h2>更正机制</h2><p>
+            实质性更正应记录日期、原表述摘要及修改原因，不悄然改写重要结论。
+          </p>
+        </article>
+      </div>
+    </section><section class="leo-page-band">
+      <div class="leo-page-wrap leo-page-section">
+        <h2>反馈与安全披露</h2><p class="leo-intro">
+          本站目前没有开放反馈表单或漏洞报告入口。未来只有在真实联系渠道、处理责任和披露规则确认后，才会公布对应方式。请勿通过公开评论提交敏感资料。
+        </p><div class="leo-actions"><a class="leo-action" href="/safeguards">查看服务边界 ↗</a></div>
+      </div>
+    </section>
+  </main></Layout
+>

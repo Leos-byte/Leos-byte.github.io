@@ -46,5 +46,43 @@ const { language, textDirection } = I18N;
     <slot />
 
     <BasicScripts />
+    <script is:inline>
+      (function () {
+        function setLanguage(lang) {
+          const value = lang === 'en' ? 'en' : 'zh';
+          document.querySelectorAll('[data-aw-i18n]').forEach((node) => {
+            const text = node.getAttribute('data-aw-i18n-' + value);
+            if (text !== null) node.textContent = text;
+          });
+          document.querySelectorAll('[data-leo-lang]').forEach((button) => {
+            button.setAttribute('aria-pressed', String(button.dataset.leoLang === value));
+          });
+          document.documentElement.lang = value === 'en' ? 'en' : 'zh-CN';
+        }
+        document.addEventListener('click', (event) => {
+          const button = event.target.closest('[data-leo-lang]');
+          if (!button) return;
+          const language = button.dataset.leoLang;
+          try {
+            localStorage.setItem('leo-language', language);
+          } catch {
+            /* Local storage can be disabled. */
+          }
+          setLanguage(language);
+        });
+        function initializeLanguage() {
+          let language = 'zh';
+          try {
+            language = localStorage.getItem('leo-language') || 'zh';
+          } catch {
+            /* Local storage can be disabled. */
+          }
+          setLanguage(language);
+        }
+        document.addEventListener('DOMContentLoaded', initializeLanguage);
+        document.addEventListener('astro:after-swap', initializeLanguage);
+        if (document.readyState !== 'loading') initializeLanguage();
+      })();
+    </script>
   </body>
 </html>

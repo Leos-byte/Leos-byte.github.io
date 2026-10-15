@@ -377,44 +377,6 @@ const courses = [
     </section>
   </div>
 </Layout>
-<script is:inline>
-  (function () {
-    function applyLanguage(language) {
-      const lang = language === 'en' ? 'en' : 'zh';
-      document.querySelectorAll('[data-aw-i18n]').forEach((element) => {
-        const text = element.getAttribute('data-aw-i18n-' + lang);
-        if (text !== null) element.textContent = text;
-      });
-      document.querySelectorAll('[data-leo-lang]').forEach((button) => {
-        button.setAttribute('aria-pressed', String(button.dataset.leoLang === lang));
-      });
-      document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
-    }
-    document.addEventListener('click', (event) => {
-      const button = event.target.closest('[data-leo-lang]');
-      if (!button) return;
-      const lang = button.dataset.leoLang;
-      try {
-        localStorage.setItem('leo-language', lang);
-      } catch {
-        /* Storage may be unavailable in private browsing. */
-      }
-      applyLanguage(lang);
-    });
-    function init() {
-      let lang = 'zh';
-      try {
-        lang = localStorage.getItem('leo-language') || 'zh';
-      } catch {
-        /* Storage may be unavailable in private browsing. */
-      }
-      applyLanguage(lang);
-    }
-    document.addEventListener('DOMContentLoaded', init);
-    document.addEventListener('astro:after-swap', init);
-    if (document.readyState !== 'loading') init();
-  })();
-</script>
 <style>
   .leo-site {
     font-family: Inter, 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif;

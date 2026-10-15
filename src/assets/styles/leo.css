@@ -775,3 +775,239 @@ footer .text-muted {
 .dark {
   --aw-color-primary: #bfd99c;
 }
+
+/* LEO site-wide page system — blog source content remains untouched. */
+.leo-page {
+  background: #f7f9fc;
+  color: #122b48;
+  min-height: 70vh;
+}
+.leo-page-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding-left: clamp(20px, 4vw, 56px);
+  padding-right: clamp(20px, 4vw, 56px);
+}
+.leo-page-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 85% 20%, #1b4a7e 0%, transparent 48%), linear-gradient(125deg, #08182b, #102e52);
+  color: #fff;
+  padding: clamp(76px, 10vw, 140px) 0;
+}
+.leo-page-hero:after {
+  content: '';
+  position: absolute;
+  right: -8%;
+  top: -50%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 800px;
+  border: 1px solid #86b9ff44;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 60px #7ab0ff08,
+    0 0 0 130px #7ab0ff07;
+  pointer-events: none;
+}
+.leo-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: #4a86d4;
+  margin-bottom: 18px;
+}
+.leo-page-hero .leo-eyebrow {
+  color: #8bbcff;
+}
+.leo-page h1 {
+  font-size: clamp(40px, 5.4vw, 76px);
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  max-width: 850px;
+}
+.leo-page h2 {
+  font-size: clamp(27px, 3vw, 42px);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  font-weight: 750;
+  margin-bottom: 24px;
+}
+.leo-page h3 {
+  font-size: 21px;
+  font-weight: 750;
+  line-height: 1.35;
+  margin-bottom: 13px;
+}
+.leo-intro {
+  font-size: clamp(17px, 1.65vw, 21px);
+  line-height: 1.85;
+  max-width: 780px;
+  margin-top: 26px;
+  color: inherit;
+  opacity: 0.85;
+}
+.leo-page-section {
+  padding-top: clamp(65px, 8vw, 105px);
+  padding-bottom: clamp(65px, 8vw, 105px);
+}
+.leo-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.leo-page-grid p,
+.leo-offering p,
+.leo-training-card p,
+.leo-page-section > p {
+  line-height: 1.85;
+  color: #536a83;
+}
+.leo-panel {
+  background: #fff;
+  border: 1px solid #e0e9f2;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 12px 40px #143e6a08;
+}
+.leo-page-band {
+  background: #eaf0f7;
+}
+.leo-page-band .leo-page-grid article {
+  border-top: 2px solid #80a8d5;
+  padding-top: 25px;
+}
+.leo-index {
+  display: block;
+  color: #3479c7;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  margin-bottom: 18px;
+}
+.leo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 35px;
+}
+.leo-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 24px;
+  background: #3677cb;
+  color: #fff;
+  border: 1px solid #3677cb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.leo-action:hover {
+  background: #1d5ea8;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.leo-action-outline {
+  background: transparent;
+  color: #2766ad;
+}
+.leo-action-outline:hover {
+  color: #fff;
+}
+.leo-page-hero .leo-action-outline {
+  border-color: #8eb6e6;
+  color: #e8f2ff;
+}
+.leo-offerings {
+  display: grid;
+  gap: 20px;
+}
+.leo-offering {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  padding: 38px;
+  background: white;
+  border: 1px solid #e0e9f2;
+  border-radius: 16px;
+}
+.leo-offering ul,
+.leo-training-card ul {
+  padding-left: 20px;
+  list-style: disc;
+  line-height: 2.15;
+  color: #37516d;
+}
+.leo-training-list {
+  display: grid;
+  gap: 18px;
+}
+.leo-training-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 34px;
+  border: 1px solid #e0e9f2;
+  border-radius: 16px;
+  background: #fff;
+}
+.leo-small {
+  font-size: 13px;
+  margin-top: 16px;
+}
+.leo-contact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 800px) {
+  .leo-page-grid,
+  .leo-offering,
+  .leo-training-card,
+  .leo-contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .leo-offering,
+  .leo-training-card {
+    padding: 25px;
+    gap: 16px;
+  }
+  .leo-page-hero {
+    padding: 85px 0;
+  }
+  .leo-panel {
+    padding: 25px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .leo-action {
+    transition: none;
+  }
+}
+.dark .leo-page {
+  background: #101d30;
+  color: #e9f2ff;
+}
+.dark .leo-page-band {
+  background: #152943;
+}
+.dark .leo-panel,
+.dark .leo-offering,
+.dark .leo-training-card {
+  background: #172d47;
+  border-color: #294360;
+}
+.dark .leo-page-grid p,
+.dark .leo-offering p,
+.dark .leo-training-card p,
+.dark .leo-page-section > p,
+.dark .leo-offering ul,
+.dark .leo-training-card ul {
+  color: #b9cbe0;
+}
