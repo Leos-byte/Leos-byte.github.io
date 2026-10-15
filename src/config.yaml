@@ -1,5 +1,5 @@
 site:
-  name: LeoOne
+  name: LEO Cybersecurity & AI
   site: 'https://leoone.uk'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: LeoOne
-    template: '%s｜LeoOne'
-  description: 面向个人和企业的 AI 转型咨询。从真实任务出发，厘清 AI 的用途、人工判断与下一步标准；分享 AI 研究与安全洞见。
+    default: LEO Cybersecurity & AI
+    template: '%s｜LEO Cybersecurity & AI'
+  description: 聚焦网络安全与 AI 安全融合，提供安全培训、AI 风险治理咨询及企业能力建设；分享经过审慎研究的专业洞见。
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: LeoOne
+    site_name: LEO Cybersecurity & AI
     images:
       - url: '~/assets/images/og-card.png'
         width: 1200
