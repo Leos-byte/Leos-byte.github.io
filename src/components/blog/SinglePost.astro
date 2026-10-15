@@ -18,10 +18,10 @@ export interface Props {
 const { post, url } = Astro.props;
 ---
 
-<section class="py-8 sm:py-16 lg:py-20 mx-auto">
-  <article>
-    <header>
-      <div class="flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
+<section class="leo-blog-article py-8 sm:py-16 lg:py-20 mx-auto">
+  <article class="leo-reading-surface">
+    <header class="leo-article-header">
+      <div class="leo-article-meta flex justify-between flex-col sm:flex-row max-w-3xl mx-auto mt-0 mb-2 px-4 sm:px-6 sm:items-center">
         <p>
           <Icon name="tabler:clock" class="w-4 h-4 inline-block -mt-0.5 dark:text-gray-400" />
           <time datetime={String(post.publishDate)} class="inline-block">{getFormattedDate(post.publishDate)}</time>
@@ -64,12 +64,12 @@ const { post, url } = Astro.props;
       </div>
 
       <h1
-        class="px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
+        class="leo-article-title px-4 sm:px-6 max-w-3xl mx-auto text-4xl md:text-5xl font-bold leading-tighter tracking-tighter font-heading"
       >
         {post.title}
       </h1>
       <p
-        class="max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl text-muted dark:text-slate-400 text-justify"
+        class="leo-article-excerpt max-w-3xl mx-auto mt-4 mb-8 px-4 sm:px-6 text-xl md:text-2xl"
       >
         {post.excerpt}
       </p>
@@ -78,7 +78,7 @@ const { post, url } = Astro.props;
         post.image ? (
           <Image
             src={post.image}
-            class="max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
+            class="leo-article-cover max-w-full lg:max-w-[900px] mx-auto mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700"
             widths={[400, 900]}
             sizes="(max-width: 900px) 400px, 900px"
             alt={post?.excerpt || ''}
@@ -96,12 +96,12 @@ const { post, url } = Astro.props;
       }
     </header>
     <div
-      class="mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl break-words dark:prose-invert dark:prose-headings:text-slate-300 prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-primary dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
+      class="leo-article-prose mx-auto px-6 sm:px-6 max-w-3xl prose prose-md lg:prose-xl break-words prose-img:rounded-md prose-img:shadow-lg mt-8 prose-headings:scroll-mt-[80px] prose-li:my-0"
     >
       <slot />
     </div>
     <div
-      class="mx-auto px-6 sm:px-6 max-w-3xl mt-10 border-t dark:border-slate-700 pt-6 text-sm text-muted dark:text-slate-400"
+      class="leo-editorial-notes mx-auto px-6 sm:px-6 max-w-3xl mt-10 border-t pt-6 text-sm"
     >
       <p>
         <span class="font-semibold">适用范围与局限：</span
