@@ -1011,3 +1011,115 @@ footer .text-muted {
 .dark .leo-training-card ul {
   color: #b9cbe0;
 }
+
+/* First-prototype design tokens for all non-blog informational pages */
+.leo-page {
+  background: #fff;
+  color: #142238;
+  font-family: Inter, 'Noto Sans SC', 'Microsoft YaHei', system-ui, sans-serif;
+}
+.leo-page-hero {
+  background: radial-gradient(ellipse at 80% 45%, #173e70 0%, #0b1526 56%);
+  padding: 90px 0 94px;
+}
+.leo-page-hero:after {
+  border-color: #72b3ff22;
+}
+.leo-page-hero h1 {
+  font-size: clamp(36px, 4.7vw, 66px);
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+}
+.leo-page-hero .leo-intro {
+  font-size: 17px;
+  color: #c0cfe2;
+  max-width: 700px;
+  line-height: 1.8;
+}
+.leo-page .leo-eyebrow {
+  color: #3979e5;
+}
+.leo-page-hero .leo-eyebrow {
+  color: #7eb6ff;
+}
+.leo-page h2 {
+  font-size: clamp(29px, 3vw, 43px);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+.leo-page .leo-panel,
+.leo-page .leo-offering,
+.leo-page .leo-training-card {
+  border: 1px solid #dfe6ef;
+  border-radius: 17px;
+  box-shadow: 0 9px 30px #13253a08;
+}
+.leo-page-band {
+  background: #f5f7fb;
+}
+.leo-page .leo-action {
+  background: #3979e5;
+  border-color: #3979e5;
+  border-radius: 9px;
+}
+.leo-page .leo-action-outline {
+  background: transparent;
+  color: #2366c8;
+}
+.leo-page-hero .leo-action-outline {
+  color: white;
+  border-color: #8193ad;
+}
+@media (max-width: 600px) {
+  .leo-page-hero {
+    padding: 65px 0;
+  }
+  .leo-page h1 {
+    font-size: 39px;
+  }
+  .leo-page-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+}
+
+/* Shared site chrome mirrors the first prototype's dark sticky navigation. */
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(11, 21, 38, 0.96) !important;
+  border-bottom: 1px solid #ffffff1c !important;
+  backdrop-filter: blur(16px);
+}
+#header > div:first-child {
+  background: transparent !important;
+}
+#header nav,
+#header nav a,
+#header nav button,
+#header .text-default {
+  color: #c7d6e9 !important;
+}
+#header nav a:hover,
+#header nav button:hover {
+  color: #fff !important;
+}
+#header .brand-mark {
+  color: #fff !important;
+}
+#header .brand-sub {
+  color: #a6b9d0 !important;
+}
+#header [data-leo-lang] {
+  color: #dce8f6;
+}
+#header [data-leo-lang][aria-pressed='true'] {
+  background: #3979e5;
+  color: #fff;
+}
+#header a:focus-visible,
+#header button:focus-visible {
+  outline: 2px solid #8ed1ff;
+  outline-offset: 3px;
+}
