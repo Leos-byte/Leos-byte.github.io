@@ -2,6 +2,8 @@
 
 Independent technology and product studio homepage.
 
-Static HTML/CSS/JavaScript. Open index.html locally, or serve this directory with any static server. No build dependencies.
+Static HTML/CSS/JavaScript with no build dependencies. Pushes to main deploy via GitHub Pages.
 
-Pushes to main deploy through GitHub Pages. Product concepts and planned articles are illustrative. The consultation form only downloads a local text brief; it does not send or store submissions.
+Contact: leo.oceanai@gmail.com. The consultation form opens a mailto draft in the visitor's email app for review and sending. A downloadable brief is also available. No form data is stored or sent by the website.
+
+Product concepts and planned articles are illustrative.
