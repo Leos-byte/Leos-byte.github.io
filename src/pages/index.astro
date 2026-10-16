@@ -1,4 +1,7 @@
 ---
+import '~/assets/styles/studio.css';
+import Header from '~/components/StudioHeader.astro';
+import Footer from '~/components/StudioFooter.astro';
 const projects = [
   {
     name: 'Agent Privacy Layer',
@@ -495,12 +498,7 @@ const principles = [
     </style>
   </head>
   <body>
-    <header class="wrap top">
-      <a class="brand" href="/" aria-label="LEOONE 首页"><span>✳</span>LEOONE</a><nav class="nav" aria-label="主导航">
-        <a href="#work">Work</a><a href="#journal">Journal</a><a href="#about">About</a><a href="#now">Now</a>
-      </nav><a class="topright" href="https://github.com/Leos-byte" target="_blank" rel="noopener noreferrer"
-        >GitHub ↗</a>
-    </header>
+    <Header />
     <main>
       <section class="wrap hero">
         <div>
@@ -510,8 +508,9 @@ const principles = [
             Ideas, experiments and products at the intersection of technology and humanity.<br
             />独立思考，创造有意义的产品。
           </p><div class="actions">
-            <a class="btn primary" href="#work">Explore Work ↗</a><a class="btn secondary" href="#journal"
-              >Read Journal →</a>
+            <a class="btn primary" href="/work/">Explore Work ↗</a><a class="btn secondary" href="/journal/"
+              >Read Journal →</a
+            >
           </div>
         </div><div class="art" aria-hidden="true"><div class="ring"></div></div>
       </section>
@@ -521,7 +520,8 @@ const principles = [
             class="more"
             href="https://github.com/Leos-byte"
             target="_blank"
-            rel="noopener noreferrer">Explore GitHub ↗</a>
+            rel="noopener noreferrer">Explore GitHub ↗</a
+          >
         </div><div class="projects">
           {
             projects.map((project) => (
@@ -538,7 +538,12 @@ const principles = [
                     </>
                   </div>
                   <div class="shape" aria-hidden="true" />
-                  <div class="bottom">Exploration in progress ↗</div>
+                  <a
+                    class="bottom"
+                    href={project.visual === 'privacy' ? '/work/agent-privacy-layer/' : '/work/prompt-coordinate/'}
+                  >
+                    了解项目构想 →
+                  </a>
                 </>
               </article>
             ))
@@ -564,21 +569,22 @@ const principles = [
       </section>
       <section class="wrap section" id="journal">
         <div class="sectionhead">
-          <div><div class="eyebrow">THOUGHTS & RESEARCH</div><h2>Journal</h2></div><a class="more" href="/blog"
-            >Read articles ↗</a>
+          <div><div class="eyebrow">THOUGHTS & RESEARCH</div><h2>Journal</h2></div><a class="more" href="/journal/"
+            >Read articles ↗</a
+          >
         </div><div class="journal">
           <article class="story">
             <div class="category">AI & AGENTS</div><h3>智能体与软件的未来</h3><p>
               关于 AI Agent、工作流、协作系统与工具构建的探索。
-            </p><a href="/blog">Explore writing ↗</a>
+            </p><a href="/journal/">Explore writing ↗</a>
           </article><article class="story">
             <div class="category">PRIVACY & SECURITY</div><h3>隐私作为基础设施</h3><p>
               关注隐私保护、网络安全与值得信赖的技术系统。
-            </p><a href="/blog">Explore writing ↗</a>
+            </p><a href="/journal/">Explore writing ↗</a>
           </article><article class="story">
             <div class="category">IDEAS & SOCIETY</div><h3>技术与人的关系</h3><p>
               记录独立思考、创造实践与技术的社会影响。
-            </p><a href="/blog">Explore writing ↗</a>
+            </p><a href="/journal/">Explore writing ↗</a>
           </article>
         </div>
       </section>
@@ -596,15 +602,9 @@ const principles = [
         <div class="eyebrow">CURRENTLY EXPLORING</div><h2>What's Next</h2><p class="lead">
           正在探索 AI Agent、隐私优先的开发工具，以及让知识与创造更容易被分享的产品。
         </p><a class="btn secondary" href="https://github.com/Leos-byte" target="_blank" rel="noopener noreferrer"
-          >Follow on GitHub ↗</a>
+          >Follow on GitHub ↗</a
+        >
       </section>
-    </main><footer class="wrap footer">
-      <div><strong>✳ LEOONE</strong><span> &nbsp; Think freely. Build boldly.</span></div><div class="footerlinks">
-        <a href="#work">Work</a><a href="#journal">Journal</a><a href="#about">About</a><a
-          href="https://github.com/Leos-byte"
-          target="_blank"
-          rel="noopener noreferrer">GitHub ↗</a>
-      </div><span>© {new Date().getFullYear()} LEOONE</span>
-    </footer>
+    </main><Footer />
   </body>
 </html>

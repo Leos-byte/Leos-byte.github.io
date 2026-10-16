@@ -1,0 +1,45 @@
+---
+import Layout from '~/layouts/StudioLayout.astro';
+import { fetchPosts } from '~/utils/blog';
+import { getPermalink } from '~/utils/permalinks';
+const posts = await fetchPosts();
+---
+
+<Layout title="Journal" description="关于 AI、工程、隐私与技术社会影响的研究、实践和思考。"
+  ><div class="eyebrow">THOUGHTS / RESEARCH / BUILD LOGS</div><h1>Notes from the journey.</h1><p class="intro">
+    记录所学，也分享尚在探索的问题。
+  </p><label for="journal-search">搜索文章</label><p>
+    <input id="journal-search" type="search" placeholder="输入标题、主题或关键词…" />
+  </p><p id="search-count" aria-live="polite">共 {posts.length} 篇文章</p><div>
+    {
+      posts.map((post) => (
+        <article
+          data-journal-entry
+          data-search={`${post.title} ${post.excerpt || ''} ${post.category?.title || ''} ${post.tags?.map((t) => t.title).join(' ') || ''}`}
+        >
+          <>
+            <div class="eyebrow">{post.category?.title || 'JOURNAL'}</div>
+            <h2>
+              <a href={getPermalink(post.permalink, 'post')}>{post.title} ↗</a>
+            </h2>
+            <time datetime={post.publishDate.toISOString()}>{post.publishDate.toISOString().slice(0, 10)}</time>
+            <p>{post.excerpt}</p>
+          </>
+        </article>
+      ))
+    }
+  </div><p><a href="/rss.xml">通过 RSS 订阅 →</a></p></Layout
+>
+<script>
+  const input = document.querySelector<HTMLInputElement>('#journal-search');
+  input?.addEventListener('input', () => {
+    const query = input.value.trim().toLocaleLowerCase();
+    let count = 0;
+    document.querySelectorAll<HTMLElement>('[data-journal-entry]').forEach((entry) => {
+      entry.hidden = !entry.dataset.search?.toLocaleLowerCase().includes(query);
+      if (!entry.hidden) count++;
+    });
+    const output = document.querySelector('#search-count');
+    if (output) output.textContent = count ? `找到 ${count} 篇文章` : '没有找到匹配文章，请尝试其他关键词。';
+  });
+</script>
