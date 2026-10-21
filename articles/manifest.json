@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "excluded_prior_topics": [
+    "darwin-immediate-recording-of-counterevidence",
+    "feynman-interest-driven-unconventional-study",
+    "simon-attention-conserving-information-systems"
+  ],
+  "articles": [
+    {
+      "id": "dewey-1910-define-problem",
+      "title": "先查清问题，再急着找答案",
+      "domain": "教育",
+      "person": "约翰·杜威",
+      "original_year": 1910,
+      "dedup_key": "problem-definition-before-solution",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/37423/37423-h/37423-h.htm",
+          "location": "How We Think，第六章，电子转录所标原书第74页",
+          "verification": "original-work transcription checked; first-edition facsimile not checked"
+        }
+      ],
+      "published_at": "2026-10-21T15:57:10Z",
+      "path": "articles/dewey-1910-define-problem.html",
+      "chinese_character_count": 854
+    },
+    {
+      "id": "mill-1859-hear-opponents",
+      "title": "理解反方，要听反方自己的论证",
+      "domain": "学习",
+      "person": "约翰·斯图亚特·密尔",
+      "original_year": 1859,
+      "dedup_key": "opponents-own-strongest-arguments",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/34901/34901-h/34901-h.htm",
+          "location": "On Liberty，第二章；所查电子转录标页67—68，属于后出版本页码",
+          "verification": "original-work transcription checked; first-edition facsimile not checked"
+        }
+      ],
+      "published_at": "2026-10-21T15:57:10Z",
+      "path": "articles/mill-1859-hear-opponents.html",
+      "chinese_character_count": 924
+    }
+  ]
+}
