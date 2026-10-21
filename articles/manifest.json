@@ -22,7 +22,8 @@
       ],
       "published_at": "2026-10-21T15:57:10Z",
       "path": "articles/dewey-1910-define-problem.html",
-      "chinese_character_count": 854
+      "chinese_character_count": 854,
+      "summary": "把“我学不会”变成一个能够观察、验证和解决的具体问题。"
     },
     {
       "id": "mill-1859-hear-opponents",
@@ -40,7 +41,8 @@
       ],
       "published_at": "2026-10-21T15:57:10Z",
       "path": "articles/mill-1859-hear-opponents.html",
-      "chinese_character_count": 924
+      "chinese_character_count": 924,
+      "summary": "从认真持有相反观点的人那里，理解对方最有力的理由。"
     }
   ]
 }
