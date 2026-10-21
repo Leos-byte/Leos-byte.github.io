@@ -1555,6 +1555,132 @@
       "chinese_character_count": 1016,
       "summary": "人能报告感受和选择，却未必直接看到产生它们的高阶过程；事后理由常由常识性的因果理论推断出来。",
       "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "vygotsky-assisted-performance",
+      "title": "评估学习潜力时，别只看他独自能做什么",
+      "domain": "教育",
+      "person": "列夫·维果茨基",
+      "original_year": 1978,
+      "dedup_key": "vygotsky-assisted-performance",
+      "sources": [
+        {
+          "url": "https://home.fau.edu/musgrove/web/vygotsky1978.pdf",
+          "location": "第六章“学习与发展的互动”，第84—91页，近侧发展区定义见第86页",
+          "work": "《心智在社会中》（Mind in Society）",
+          "verification": "英文选集由Michael Cole等编者于1978年出版，材料来自维果茨基较早的俄文著述与讲演；这里以1978年英文书面出处定位，不宣称该年是概念首次提出时间。链接为佛罗里达大西洋大学保存的章节PDF。"
+        }
+      ],
+      "published_at": "2026-10-21T23:56:20Z",
+      "path": "articles/vygotsky-assisted-performance.html",
+      "chinese_character_count": 1027,
+      "summary": "独立解题显示已经成熟的能力；在适当提示或与更有经验者合作时能做到什么，则可能显示正在形成的下一步。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "ebbinghaus-relearning-savings",
+      "title": "完全想不起来，也可能比第一次学得更快",
+      "domain": "学习",
+      "person": "赫尔曼·艾宾浩斯",
+      "original_year": 1885,
+      "dedup_key": "ebbinghaus-relearning-savings",
+      "sources": [
+        {
+          "url": "https://psychclassics.yorku.ca/Ebbinghaus/",
+          "location": "1885年德文原著；所查1913年英译本第四章“实验方法”及第七章“保留与遗忘”",
+          "work": "《记忆：实验心理学的贡献》（Über das Gedächtnis；英译 Memory）",
+          "verification": "德文原著发表于1885年；链接为York University保存的1913年Ruger与Bussenius英译全文。本篇按英译章节核对，没有直接校勘德文初版，因此英文引文是译文。"
+        }
+      ],
+      "published_at": "2026-10-21T23:56:20Z",
+      "path": "articles/ebbinghaus-relearning-savings.html",
+      "chinese_character_count": 983,
+      "summary": "一次材料已经无法自由回忆，并不表示学习痕迹归零；重新达到同一标准所节省的时间，也是一种保留证据。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "brooks-late-project-adding-people",
+      "title": "项目已经延期时，加人可能先让它更晚",
+      "domain": "工作",
+      "person": "弗雷德里克·布鲁克斯",
+      "original_year": 1975,
+      "dedup_key": "brooks-late-project-adding-people",
+      "sources": [
+        {
+          "url": "https://web.eecs.umich.edu/~weimerw/2018-481/readings/mythical-man-month.pdf",
+          "location": "第二章“The Mythical Man-Month”，尤其关于顺序任务、培训与沟通成本的讨论",
+          "work": "《人月神话》（The Mythical Man-Month）",
+          "verification": "初版由Addison-Wesley于1975年出版；链接为密歇根大学课程保存的周年版扫描，包含初版章节及后增内容。本篇引用第二章，不把1995年新增章节倒算为1975年。"
+        }
+      ],
+      "published_at": "2026-10-21T23:56:20Z",
+      "path": "articles/brooks-late-project-adding-people.html",
+      "chinese_character_count": 982,
+      "summary": "新人不是可立即并联的工时：现成员需要培训和协调，许多任务又有先后依赖；临近截止日期加人可能暂时降低净产出。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "tukey-data-analysis-empirical-science",
+      "title": "分析方法不能只在数学上漂亮，还要在真实数据上经受试验",
+      "domain": "科学",
+      "person": "约翰·图基",
+      "original_year": 1962,
+      "dedup_key": "tukey-data-analysis-empirical-science",
+      "sources": [
+        {
+          "url": "https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-33/issue-1/The-Future-of-Data-Analysis/10.1214/aoms/1177704711.full",
+          "location": "《Annals of Mathematical Statistics》33卷1期，第1—67页；开篇定义与“经验科学”讨论见第1—4页",
+          "work": "〈数据分析的未来〉（The Future of Data Analysis）",
+          "verification": "论文发表于1962年3月；链接为Project Euclid的期刊书目与原文PDF入口。本次核对公开PDF转录及期刊信息，页码沿用原刊。"
+        }
+      ],
+      "published_at": "2026-10-21T23:56:20Z",
+      "path": "articles/tukey-data-analysis-empirical-science.html",
+      "chinese_character_count": 987,
+      "summary": "数据分析是一门通过实际数据学习的方法科学；形式证明重要，但方法是否有用还要靠反复应用、比较与修正。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "hirschman-exit-can-weaken-voice",
+      "title": "离开很容易时，改善组织的发声能力反而可能萎缩",
+      "domain": "经济",
+      "person": "阿尔伯特·赫希曼",
+      "original_year": 1970,
+      "dedup_key": "hirschman-exit-can-weaken-voice",
+      "sources": [
+        {
+          "url": "https://pages.ucsd.edu/~bslantchev/courses/ps240/05%20Cooperation%20with%20States%20as%20Unitary%20Actors/Hirschman%20-%20Exit%2C%20voice%2C%20and%20loyalty%20%5BCh%201-5%5D.pdf",
+          "location": "第一至五章；退出与发声的定义见第3—5页，两者互动及发声萎缩见第43页附近",
+          "work": "《退出、发声与忠诚》（Exit, Voice, and Loyalty）",
+          "verification": "原书由Harvard University Press于1970年出版；链接为加州大学圣迭戈分校课程保存的前五章扫描。本篇只讨论已直接核对的章节，不把后来的扩展解释归给原书。"
+        }
+      ],
+      "published_at": "2026-10-21T23:56:20Z",
+      "path": "articles/hirschman-exit-can-weaken-voice.html",
+      "chinese_character_count": 994,
+      "summary": "面对质量下降，人可以离开，也可以留下来推动改变；若最敏感的人总是先走，组织可能失去最早的警报与发声能力。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "langer-choice-illusion-of-control",
+      "title": "能自己选择，不等于能改变随机结果",
+      "domain": "心理",
+      "person": "埃伦·兰格",
+      "original_year": 1975,
+      "dedup_key": "langer-choice-illusion-of-control",
+      "sources": [
+        {
+          "url": "https://nuovoeutile.it/wp-content/uploads/2014/10/Langer1975_IllusionofControl.pdf",
+          "location": "《Journal of Personality and Social Psychology》32卷2期，第311—328页；定义见第311页，选择彩票实验见第314—316页",
+          "work": "〈控制错觉〉（The Illusion of Control）",
+          "verification": "论文发表于1975年8月，DOI为10.1037/0022-3514.32.2.311；链接为公开保存的期刊版PDF。本次直接核对卷期、页码、摘要和实验描述，未核对出版社纸本。"
+        }
+      ],
+      "published_at": "2026-10-21T23:56:20Z",
+      "path": "articles/langer-choice-illusion-of-control.html",
+      "chinese_character_count": 970,
+      "summary": "选择、熟悉、练习和竞争通常提示“技能”，但它们进入纯随机情境时，也会让人高估自己改变结果的能力。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
     }
   ]
 }
