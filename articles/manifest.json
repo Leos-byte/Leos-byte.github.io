@@ -1303,6 +1303,132 @@
       "chinese_character_count": 991,
       "summary": "把任务完全想清楚后才允许使用工具，是一种合作方式；边试、边看结果、边修正问题，则可能支持另一种思考。",
       "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "bloom-time-to-mastery",
+      "title": "学得慢，不等于学不会：把能力看成达到掌握所需的时间",
+      "domain": "教育",
+      "person": "本杰明·布鲁姆",
+      "original_year": 1968,
+      "dedup_key": "bloom-time-to-mastery",
+      "sources": [
+        {
+          "url": "https://files.eric.ed.gov/fulltext/ED053419.pdf",
+          "location": "原刊《Evaluation Comment》1卷2期，第1—12页，尤其是能力、教学质量与允许学习时间的讨论",
+          "work": "〈掌握学习〉（Learning for Mastery）",
+          "verification": "文章发表于1968年5月；链接为ERIC保存的全文重印件，首页含原刊信息。本次核对该重印文本，未直接比对原刊纸本。"
+        }
+      ],
+      "published_at": "2026-10-21T22:00:59Z",
+      "path": "articles/bloom-time-to-mastery.html",
+      "chinese_character_count": 996,
+      "summary": "同一次统一考试测出的快慢，可能混合了能力、先备知识、教学质量与可用时间；不要过早把速度当成学习上限。",
+      "translation": "含短英文原文及自然中文转述；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "polya-look-back",
+      "title": "解出一道题以后，真正可迁移的学习才刚开始",
+      "domain": "学习",
+      "person": "乔治·波利亚",
+      "original_year": 1945,
+      "dedup_key": "polya-look-back",
+      "sources": [
+        {
+          "url": "https://math.hawaii.edu/home/pdf/putnam/PolyaHowToSolveIt.pdf",
+          "location": "第一部分“四阶段”，第四阶段 Look Back；所查第二版排印本第14—15页",
+          "work": "《怎样解题》（How to Solve It）",
+          "verification": "初版于1945年由Princeton University Press出版；链接为后出的第二版扫描副本，页码据该副本，不声称与1945年初版分页相同。"
+        }
+      ],
+      "published_at": "2026-10-21T22:00:59Z",
+      "path": "articles/polya-look-back.html",
+      "chinese_character_count": 916,
+      "summary": "答案完成后，回看关键转折、替代方法和可推广之处，才能把一次成功变成下次可调用的方法。",
+      "translation": "含短英文原文及自然中文转述；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "conway-communication-shapes-system",
+      "title": "系统的接口，往往先复制了团队的沟通边界",
+      "domain": "工作",
+      "person": "梅尔文·康威",
+      "original_year": 1968,
+      "dedup_key": "conway-communication-shapes-system",
+      "sources": [
+        {
+          "url": "https://www.melconway.com/Home/pdf/committees.pdf",
+          "location": "《Datamation》14卷5期，第28—31页，结论段",
+          "work": "〈委员会怎样发明？〉（How Do Committees Invent?）",
+          "verification": "文章发表于1968年4月；链接为作者网站保存、经原刊许可重印的四页PDF。本次按该重印本核对。"
+        }
+      ],
+      "published_at": "2026-10-21T22:00:59Z",
+      "path": "articles/conway-communication-shapes-system.html",
+      "chinese_character_count": 946,
+      "summary": "组织怎样分组和沟通，会限制它能设计出怎样的系统；改架构时，也要检查负责各部分的人如何交换信息。",
+      "translation": "含短英文原文及自然中文转述；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "chamberlin-multiple-hypotheses",
+      "title": "面对一个现象，先养几种解释，别过早爱上第一种",
+      "domain": "科学",
+      "person": "托马斯·钱伯林",
+      "original_year": 1890,
+      "dedup_key": "chamberlin-multiple-hypotheses",
+      "sources": [
+        {
+          "url": "https://www.auburn.edu/~tds0009/Articles/Chamberlain%201965.pdf",
+          "location": "1890年《Science》旧系列15卷366期，第92—96页；所查为1965年《Science》重印本第754—759页",
+          "work": "〈多重工作假说的方法〉（The Method of Multiple Working Hypotheses）",
+          "verification": "论文初刊于1890年2月7日；链接为《Science》1965年的重印版，并非1890年原刊扫描。1897年《Journal of Geology》另有经作者改写和缩短的版本，本文年份采用1890年初刊。"
+        }
+      ],
+      "published_at": "2026-10-21T22:00:59Z",
+      "path": "articles/chamberlin-multiple-hypotheses.html",
+      "chinese_character_count": 939,
+      "summary": "不要只带着一个最喜欢的解释收集证据；并列几种可工作的假说，主动寻找能区分它们的观察。",
+      "translation": "含短英文原文及自然中文转述；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "knight-risk-versus-uncertainty",
+      "title": "能估概率的风险，与根本缺少可用概率的不确定性，不该同表处理",
+      "domain": "经济",
+      "person": "弗兰克·奈特",
+      "original_year": 1921,
+      "dedup_key": "knight-risk-versus-uncertainty",
+      "sources": [
+        {
+          "url": "https://fraser.stlouisfed.org/files/docs/publications/books/risk/riskuncertaintyprofit.pdf",
+          "location": "第三部分第七—八章；所查1921年版第197—232页附近",
+          "work": "《风险、不确定性与利润》（Risk, Uncertainty and Profit）",
+          "verification": "原书于1921年出版；链接为圣路易斯联储FRASER保存的原版扫描。本次核对扫描中的章节与措辞，页码以该版本为准。"
+        }
+      ],
+      "published_at": "2026-10-21T22:00:59Z",
+      "path": "articles/knight-risk-versus-uncertainty.html",
+      "chinese_character_count": 966,
+      "summary": "有历史频率、可分类和可分摊的风险，可以计算；真正独特、缺少稳定样本的不确定性，只能依赖判断和可逆安排。",
+      "translation": "含短英文原文及自然中文转述；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "festinger-dissonance-information-avoidance",
+      "title": "观点受到挑战时，人不只会改观点，也可能主动躲开更多证据",
+      "domain": "心理",
+      "person": "利昂·费斯廷格",
+      "original_year": 1957,
+      "dedup_key": "festinger-dissonance-information-avoidance",
+      "sources": [
+        {
+          "url": "https://www.degruyterbrill.com/document/doi/10.1515/9781503620766-002/html",
+          "location": "第一章“理论导论”，第1—3页",
+          "work": "《认知失调理论》（A Theory of Cognitive Dissonance）",
+          "verification": "原书由Row, Peterson于1957年出版；链接为Stanford University Press后出电子版的第一章书目信息与正文入口。本次另核对公开章节节选，未直接核对1957年初印本。"
+        }
+      ],
+      "published_at": "2026-10-21T22:00:59Z",
+      "path": "articles/festinger-dissonance-information-avoidance.html",
+      "chinese_character_count": 972,
+      "summary": "信念、行为和新证据相互冲突时，心理不适会推动改变，也会推动合理化和回避；不适本身不保证人走向事实。",
+      "translation": "含短英文原文及自然中文转述；现代例子与练习为本文据此设计"
     }
   ]
 }
