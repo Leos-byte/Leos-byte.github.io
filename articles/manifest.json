@@ -1429,6 +1429,132 @@
       "chinese_character_count": 972,
       "summary": "信念、行为和新证据相互冲突时，心理不适会推动改变，也会推动合理化和回避；不适本身不保证人走向事实。",
       "translation": "含短英文原文及自然中文转述；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "skinner-immediate-feedback-small-steps",
+      "title": "别让学生等到期末才知道哪里错了：把学习拆成可立即反馈的小步",
+      "domain": "教育",
+      "person": "B. F. 斯金纳",
+      "original_year": 1954,
+      "dedup_key": "skinner-immediate-feedback-small-steps",
+      "sources": [
+        {
+          "url": "https://www.scribd.com/document/557518762/Skinner-B-F-1954-The-science-of-learning-and-the-art-of-teaching",
+          "location": "《Harvard Educational Review》24卷，第86—97页，尤其第94—96页关于小步进展与即时强化的讨论",
+          "work": "〈学习的科学与教学的艺术〉（The Science of Learning and the Art of Teaching）",
+          "verification": "论文发表于1954年；书目信息另由WorldCat与作者基金会书目核对。链接为第三方保存的全文阅览页，本次未直接比对原刊纸本，因此页码依通行引文定位。"
+        }
+      ],
+      "published_at": "2026-10-21T23:00:16Z",
+      "path": "articles/skinner-immediate-feedback-small-steps.html",
+      "chinese_character_count": 1043,
+      "summary": "学习任务应拆成能连续成功的小步，让学习者在作答后立即得到信息；漫长讲授后的统一判分来得太迟。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "craik-lockhart-process-for-meaning",
+      "title": "记得牢不只靠多看几遍，更取决于你对材料做了什么",
+      "domain": "学习",
+      "person": "弗格斯·克雷克、罗伯特·洛克哈特",
+      "original_year": 1972,
+      "dedup_key": "craik-lockhart-process-for-meaning",
+      "sources": [
+        {
+          "url": "https://wixtedlab.ucsd.edu/publications/Psych%20218/Craik_Lockhart_1972.pdf",
+          "location": "《Journal of Verbal Learning and Verbal Behavior》11卷，第671—684页；核心框架见第671—676页",
+          "work": "〈加工层次：记忆研究的一个框架〉（Levels of Processing: A Framework for Memory Research）",
+          "verification": "论文发表于1972年；链接为加州大学圣迭戈分校实验室保存的14页期刊版PDF。本次直接核对该PDF的卷期、页码与措辞。"
+        }
+      ],
+      "published_at": "2026-10-21T23:00:16Z",
+      "path": "articles/craik-lockhart-process-for-meaning.html",
+      "chinese_character_count": 983,
+      "summary": "重复停留在字形或声音层面，未必形成耐久记忆；解释含义、联系旧知识和作出判断，通常留下更丰富的痕迹。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "parnas-hide-changeable-decisions",
+      "title": "模块不该按流程切，而应把最可能变化的决定藏起来",
+      "domain": "工作",
+      "person": "戴维·帕纳斯",
+      "original_year": 1972,
+      "dedup_key": "parnas-hide-changeable-decisions",
+      "sources": [
+        {
+          "url": "https://www.cs.lafayette.edu/~gexia/cs301/resources/parnas.html",
+          "location": "《Communications of the ACM》15卷12期，第1053—1058页；两种分解比较与结论见第1056—1058页",
+          "work": "〈系统分解为模块应采用的准则〉（On the Criteria To Be Used in Decomposing Systems into Modules）",
+          "verification": "论文收稿于1971年、修订于1971年11月，发表于1972年12月。链接为拉法叶学院课程保存的期刊全文转录；卷期与页码另由ACM DOI记录核对，本次未直接比对纸本。"
+        }
+      ],
+      "published_at": "2026-10-21T23:00:16Z",
+      "path": "articles/parnas-hide-changeable-decisions.html",
+      "chinese_character_count": 1021,
+      "summary": "分解系统时，优先把可能改变的设计决定封装在一个模块内，而不是照处理流程把每一步各切一块。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "peirce-real-doubt-before-inquiry",
+      "title": "研究不是从假装怀疑开始，而是从真实会改变行动的困惑开始",
+      "domain": "科学",
+      "person": "查尔斯·桑德斯·皮尔士",
+      "original_year": 1877,
+      "dedup_key": "peirce-real-doubt-before-inquiry",
+      "sources": [
+        {
+          "url": "https://www.peirce.org/writings/p107.html",
+          "location": "《Popular Science Monthly》12卷（1877年11月），第1—15页；怀疑与探究见第二至三节",
+          "work": "〈信念的确定〉（The Fixation of Belief）",
+          "verification": "文章写作并发表于1877年；链接为Peirce.org按原刊信息整理的英文全文。页面标明原刊卷期与页码，本次核对网页全文，未直接比对1877年纸本扫描。"
+        }
+      ],
+      "published_at": "2026-10-21T23:00:16Z",
+      "path": "articles/peirce-real-doubt-before-inquiry.html",
+      "chinese_character_count": 1013,
+      "summary": "真正的探究由会打断原有行动习惯的疑惑推动；仅在口头上列出怀疑，并不会自动产生有方向的调查。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "bastiat-unseen-alternative-effects",
+      "title": "评价一个决定，别只数它创造了什么，也要问它挤掉了什么",
+      "domain": "经济",
+      "person": "弗雷德里克·巴斯夏",
+      "original_year": 1850,
+      "dedup_key": "bastiat-unseen-alternative-effects",
+      "sources": [
+        {
+          "url": "https://oll.libertyfund.org/pages/wswns",
+          "location": "1850年7月发表；导言及第一节“破窗”",
+          "work": "〈看得见的与看不见的〉（Ce qu’on voit et ce qu’on ne voit pas）",
+          "verification": "文章原以法文发表于1850年7月；链接为Liberty Fund在线文库的英译全文，含版本注释。本篇引用英文译文并作中文自然转述，未把译文措辞当作法文原句。"
+        }
+      ],
+      "published_at": "2026-10-21T23:00:16Z",
+      "path": "articles/bastiat-unseen-alternative-effects.html",
+      "chinese_character_count": 1005,
+      "summary": "眼前受益者和直接产出容易被看见，被占用资源原本可能产生的另一项价值却没有现场，仍应进入比较。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "nisbett-wilson-introspection-is-hypothesis",
+      "title": "你对“我为什么这样做”的解释，常是一个假说，不是内心录像",
+      "domain": "心理",
+      "person": "理查德·尼斯贝特、蒂莫西·威尔逊",
+      "original_year": 1977,
+      "dedup_key": "nisbett-wilson-introspection-is-hypothesis",
+      "sources": [
+        {
+          "url": "https://home.csulb.edu/~cwallis/382/readings/482/nisbett%20saying%20more.pdf",
+          "location": "《Psychological Review》84卷3期，第231—259页；摘要与理论结论见第231、255—258页",
+          "work": "〈我们说得比所知更多：关于心理过程的言语报告〉（Telling More Than We Can Know）",
+          "verification": "论文发表于1977年5月；链接为加州州立大学长滩分校课程保存的29页期刊版PDF。本次直接核对书目信息、摘要与正文。"
+        }
+      ],
+      "published_at": "2026-10-21T23:00:16Z",
+      "path": "articles/nisbett-wilson-introspection-is-hypothesis.html",
+      "chinese_character_count": 1016,
+      "summary": "人能报告感受和选择，却未必直接看到产生它们的高阶过程；事后理由常由常识性的因果理论推断出来。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
     }
   ]
 }
