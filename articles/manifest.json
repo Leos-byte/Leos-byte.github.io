@@ -43,6 +43,1266 @@
       "path": "articles/mill-1859-hear-opponents.html",
       "chinese_character_count": 924,
       "summary": "从认真持有相反观点的人那里，理解对方最有力的理由。"
+    },
+    {
+      "id": "dewey-curiosity",
+      "title": "好奇心需要被引向调查，而不只是被满足",
+      "domain": "教育",
+      "person": "约翰·杜威",
+      "original_year": 1910,
+      "dedup_key": "dewey-curiosity",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/37423/37423-h/37423-h.htm",
+          "location": "第三章：训练思维的天然资源，Curiosity小节",
+          "work": "《我们怎样思维》（How We Think）",
+          "verification": "原著1910年出版；本次使用英文电子转录，未逐页核对初版影印。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/dewey-curiosity.html",
+      "chinese_character_count": 1010,
+      "summary": "回答了一个问题，不等于培养了提问的能力。好奇心若总以“告诉我答案”结束，很容易变成不断索取新鲜消息。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "dewey-directed-observation",
+      "title": "观察力不是把一切细节都记下来",
+      "domain": "学习",
+      "person": "约翰·杜威",
+      "original_year": 1910,
+      "dedup_key": "dewey-directed-observation",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/37423/37423-h/37423-h.htm",
+          "location": "第十四章：观察与信息在心智训练中的作用",
+          "work": "《我们怎样思维》（How We Think）",
+          "verification": "原著1910年出版；本次使用英文电子转录，未逐页核对初版影印。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/dewey-directed-observation.html",
+      "chinese_character_count": 983,
+      "summary": "看得很仔细，仍可能不知道自己在找什么。有效观察需要一个用途：这些细节会帮助我回答哪个问题？",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "dewey-concrete-relative",
+      "title": "具体与抽象，取决于你熟悉什么",
+      "domain": "教育",
+      "person": "约翰·杜威",
+      "original_year": 1910,
+      "dedup_key": "dewey-concrete-relative",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/37423/37423-h/37423-h.htm",
+          "location": "第十章：具体思维与抽象思维",
+          "work": "《我们怎样思维》（How We Think）",
+          "verification": "原著1910年出版；本次使用英文电子转录，未逐页核对初版影印。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/dewey-concrete-relative.html",
+      "chinese_character_count": 985,
+      "summary": "拿来一个实物，不代表讲解就变得具体；写在纸上的符号，也未必对所有人都抽象。关键在于学习者能不能把它接到经验上。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "dewey-language-understanding",
+      "title": "会用一个术语，还不等于掌握一个观念",
+      "domain": "学习",
+      "person": "约翰·杜威",
+      "original_year": 1910,
+      "dedup_key": "dewey-language-understanding",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/37423/37423-h/37423-h.htm",
+          "location": "第十三章：语言与思维训练",
+          "work": "《我们怎样思维》（How We Think）",
+          "verification": "原著1910年出版；本次使用英文电子转录，未逐页核对初版影印。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/dewey-language-understanding.html",
+      "chinese_character_count": 987,
+      "summary": "“我能复述定义”是一种进步，但还不足以判断自己是否理解。一个词说得越来越顺，背后的关系却可能依旧模糊。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "james-changing-attention",
+      "title": "专注同一主题，也需要不断换一个问题看它",
+      "domain": "心理",
+      "person": "威廉·詹姆斯",
+      "original_year": 1899,
+      "dedup_key": "james-changing-attention",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/16287/16287-h/16287-h.htm",
+          "location": "对教师讲演第十一章：注意",
+          "work": "《对教师谈心理学；对学生谈人生理想》（Talks to Teachers）",
+          "verification": "讲演集1899年初版，所查转录底本含1899、1900年版权标记；不把再版年份当作观点首次出现的年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/james-changing-attention.html",
+      "chinese_character_count": 990,
+      "summary": "盯着同一页越久，注意力未必越集中。有时需要改变的不是主题，而是你对这个主题提出的问题。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "james-old-new-links",
+      "title": "新知识要接到已有经验上，才容易成为自己的知识",
+      "domain": "教育",
+      "person": "威廉·詹姆斯",
+      "original_year": 1899,
+      "dedup_key": "james-old-new-links",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/16287/16287-h/16287-h.htm",
+          "location": "对教师讲演第十四章：统觉（Apperception）",
+          "work": "《对教师谈心理学；对学生谈人生理想》（Talks to Teachers）",
+          "verification": "讲演集1899年初版，所查转录底本含1899、1900年版权标记；不把再版年份当作观点首次出现的年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/james-old-new-links.html",
+      "chinese_character_count": 1008,
+      "summary": "同一句解释，有人一下就懂，有人听完仍找不到入口。差别有时不在解释是否足够简单，而在它接到了什么旧知识上。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "james-first-action",
+      "title": "想养成习惯，别错过第一次可以行动的机会",
+      "domain": "心理",
+      "person": "威廉·詹姆斯",
+      "original_year": 1899,
+      "dedup_key": "james-first-action",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/16287/16287-h/16287-h.htm",
+          "location": "对教师讲演第八章：习惯",
+          "work": "《对教师谈心理学；对学生谈人生理想》（Talks to Teachers）",
+          "verification": "讲演集1899年初版，所查转录底本含1899、1900年版权标记；不把再版年份当作观点首次出现的年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/james-first-action.html",
+      "chinese_character_count": 996,
+      "summary": "一项决心什么时候开始变成习惯？不是在你把计划写得最完整的时候，而是在它第一次落实为动作的时候。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "james-relaxation-effort",
+      "title": "认真做事，不必把额外紧张也当作努力",
+      "domain": "工作",
+      "person": "威廉·詹姆斯",
+      "original_year": 1899,
+      "dedup_key": "james-relaxation-effort",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/16287/16287-h/16287-h.htm",
+          "location": "对学生讲演：The Gospel of Relaxation",
+          "work": "《对教师谈心理学；对学生谈人生理想》（Talks to Teachers）",
+          "verification": "讲演集1899年初版，所查转录底本含1899、1900年版权标记；不把再版年份当作观点首次出现的年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/james-relaxation-effort.html",
+      "chinese_character_count": 967,
+      "summary": "皱眉、咬牙、全身绷紧，很容易让人觉得自己正在竭尽全力。但这些额外动作未必对手头任务有帮助。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "montessori-self-correction",
+      "title": "让错误能被自己看见，比不断等人判对错更重要",
+      "domain": "教育",
+      "person": "玛丽亚·蒙台梭利",
+      "original_year": 1914,
+      "dedup_key": "montessori-self-correction",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/29635/pg29635-images.html",
+          "location": "感官教具部分：圆柱体与错误的控制",
+          "work": "《蒙台梭利亲授手册》（Dr. Montessori’s Own Handbook）",
+          "verification": "所查英文手册版权页标1914年。这里以该书的明确记载为准，不认定这是这一方法的最早提出时间。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/montessori-self-correction.html",
+      "chinese_character_count": 996,
+      "summary": "如果每一步都要等老师说“对了”，练习者学到的可能是观察老师的表情，而不是检查自己的操作。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "montessori-prepared-environment",
+      "title": "自主并不只靠放手，也靠环境让人做得到",
+      "domain": "教育",
+      "person": "玛丽亚·蒙台梭利",
+      "original_year": 1914,
+      "dedup_key": "montessori-prepared-environment",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/29635/pg29635-images.html",
+          "location": "环境部分：儿童尺度的家具与日常管理",
+          "work": "《蒙台梭利亲授手册》（Dr. Montessori’s Own Handbook）",
+          "verification": "所查英文手册版权页标1914年。这里以该书的明确记载为准，不认定这是这一方法的最早提出时间。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/montessori-prepared-environment.html",
+      "chinese_character_count": 983,
+      "summary": "一个人被允许自己做，却够不到工具、找不到材料、移动不了桌椅，这种自主仍然停留在口头上。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "montessori-isolate-difference",
+      "title": "想学会分辨，先减少同时变化的东西",
+      "domain": "学习",
+      "person": "玛丽亚·蒙台梭利",
+      "original_year": 1914,
+      "dedup_key": "montessori-isolate-difference",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/29635/pg29635-images.html",
+          "location": "感官教育部分：隔离感官、配对与渐进排列",
+          "work": "《蒙台梭利亲授手册》（Dr. Montessori’s Own Handbook）",
+          "verification": "所查英文手册版权页标1914年。这里以该书的明确记载为准，不认定这是这一方法的最早提出时间。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/montessori-isolate-difference.html",
+      "chinese_character_count": 987,
+      "summary": "面对一组复杂材料时，初学者常不知道该比较哪一点。让一次练习只突出一种差异，可以把“凭感觉”变成有根据的分辨。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "whitehead-inert-ideas",
+      "title": "知识学完就该开始使用，而不是等到全部学完",
+      "domain": "教育",
+      "person": "阿尔弗雷德·诺思·怀特海",
+      "original_year": 1917,
+      "dedup_key": "whitehead-inert-ideas",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/77011/pg77011-images.html",
+          "location": "第一章：教育的目的，inert ideas段落",
+          "work": "《思想的组织：教育与科学》（The Organisation of Thought）",
+          "verification": "所查文本注明源自1917年《思想的组织》，后收入1929年《教育的目的及其他论文》；本篇以1917年书面记载定位，不把1929年当作首倡年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/whitehead-inert-ideas.html",
+      "chinese_character_count": 1012,
+      "summary": "一条知识只在课堂里出现、只在考试时被认出，很容易成为“知道它存在，却不知道能拿它做什么”的东西。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "whitehead-few-thorough",
+      "title": "少学几项，但把关键关系学透",
+      "domain": "学习",
+      "person": "阿尔弗雷德·诺思·怀特海",
+      "original_year": 1917,
+      "dedup_key": "whitehead-few-thorough",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/77011/pg77011-images.html",
+          "location": "第一章：教育的目的，关于少教与教透的两条要求",
+          "work": "《思想的组织：教育与科学》（The Organisation of Thought）",
+          "verification": "所查文本注明源自1917年《思想的组织》，后收入1929年《教育的目的及其他论文》；本篇以1917年书面记载定位，不把1929年当作首倡年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/whitehead-few-thorough.html",
+      "chinese_character_count": 1010,
+      "summary": "课程越长、书单越满，学习看起来越充实。但接触过多少主题，与能够独立运用多少观念，是两回事。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "whitehead-art-in-work",
+      "title": "技术教育也需要审美判断，而不只是操作步骤",
+      "domain": "工作",
+      "person": "阿尔弗雷德·诺思·怀特海",
+      "original_year": 1917,
+      "dedup_key": "whitehead-art-in-work",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/77011/pg77011-images.html",
+          "location": "第二章：技术教育及其与科学和文学的关系",
+          "work": "《思想的组织：教育与科学》（The Organisation of Thought）",
+          "verification": "所查文本注明源自1917年《思想的组织》，后收入1929年《教育的目的及其他论文》；本篇以1917年书面记载定位，不把1929年当作首倡年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/whitehead-art-in-work.html",
+      "chinese_character_count": 1020,
+      "summary": "把一项工作做对，与把它做得清楚、合宜、可理解，并不是同一层要求。后者经常被当成装饰，其实会影响工作本身。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "bacon-mental-instruments",
+      "title": "思考也需要工具，不能只靠脑子硬撑",
+      "domain": "科学",
+      "person": "弗朗西斯·培根",
+      "original_year": 1620,
+      "dedup_key": "bacon-mental-instruments",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/45988/45988-h/45988-h.htm",
+          "location": "第一卷，第二则格言",
+          "work": "《新工具》（Novum Organum）",
+          "verification": "拉丁文原著1620年出版；本次阅读后出的英语译文电子转录，中文为据此所作的意思转述，并非直接校译拉丁文。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/bacon-mental-instruments.html",
+      "chinese_character_count": 998,
+      "summary": "我们很少要求工匠徒手完成精密工作，却经常要求自己只凭记忆比较复杂信息。思考的工具同样值得认真设计。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "bacon-words-obstruct",
+      "title": "争论卡住时，先检查是不是同一个词装了不同意思",
+      "domain": "科学",
+      "person": "弗朗西斯·培根",
+      "original_year": 1620,
+      "dedup_key": "bacon-words-obstruct",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/45988/45988-h/45988-h.htm",
+          "location": "第一卷，第四十三、第五十九至六十则格言：市场偶像",
+          "work": "《新工具》（Novum Organum）",
+          "verification": "拉丁文原著1620年出版；本次阅读后出的英语译文电子转录，中文为据此所作的意思转述，并非直接校译拉丁文。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/bacon-words-obstruct.html",
+      "chinese_character_count": 986,
+      "summary": "两个人反复争论“公平”“效率”或“智能”，可能并没有在回答同一个问题。词语听起来一致，背后的分类却未必相同。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "bacon-middle-axioms",
+      "title": "别从几个例子，直接跳到解释一切的大道理",
+      "domain": "科学",
+      "person": "弗朗西斯·培根",
+      "original_year": 1620,
+      "dedup_key": "bacon-middle-axioms",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/45988/45988-h/45988-h.htm",
+          "location": "第一卷，第十九与第一百零四则格言",
+          "work": "《新工具》（Novum Organum）",
+          "verification": "拉丁文原著1620年出版；本次阅读后出的英语译文电子转录，中文为据此所作的意思转述，并非直接校译拉丁文。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/bacon-middle-axioms.html",
+      "chinese_character_count": 987,
+      "summary": "看到三次成功，就总结出一条放之四海皆准的法则，往往比承认自己只掌握了局部规律更有吸引力。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "bacon-light-experiments",
+      "title": "有些实验的价值，是让你知道原因，而不是马上有产出",
+      "domain": "科学",
+      "person": "弗朗西斯·培根",
+      "original_year": 1620,
+      "dedup_key": "bacon-light-experiments",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/45988/45988-h/45988-h.htm",
+          "location": "第一卷，第九十九则格言：带来光亮的实验与带来果实的实验",
+          "work": "《新工具》（Novum Organum）",
+          "verification": "拉丁文原著1620年出版；本次阅读后出的英语译文电子转录，中文为据此所作的意思转述，并非直接校译拉丁文。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/bacon-light-experiments.html",
+      "chinese_character_count": 1013,
+      "summary": "一次尝试没有立刻提高分数、销量或速度，也可能很有价值：它让你排除了一种解释，知道下一步该往哪里走。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "descartes-divide-difficulty",
+      "title": "拆任务时，拆到能解决，而不是拆到清单很长",
+      "domain": "学习",
+      "person": "勒内·笛卡尔",
+      "original_year": 1637,
+      "dedup_key": "descartes-divide-difficulty",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/59/pg59-images.html",
+          "location": "第二部分：第二条方法规则",
+          "work": "《谈谈方法》（Discourse on the Method）",
+          "verification": "法文原著1637年出版；本次使用后出英译本的电子转录，中文核心意思为转述，不冒充原版逐字译文。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/descartes-divide-difficulty.html",
+      "chinese_character_count": 975,
+      "summary": "“把大任务拆小”听起来很熟悉，真正难的是判断：拆开之后，每一部分是否已经能够独立处理？",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "descartes-order-learning",
+      "title": "学习顺序应按依赖关系安排，而不只按材料顺序",
+      "domain": "学习",
+      "person": "勒内·笛卡尔",
+      "original_year": 1637,
+      "dedup_key": "descartes-order-learning",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/59/pg59-images.html",
+          "location": "第二部分：第三条方法规则",
+          "work": "《谈谈方法》（Discourse on the Method）",
+          "verification": "法文原著1637年出版；本次使用后出英译本的电子转录，中文核心意思为转述，不冒充原版逐字译文。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/descartes-order-learning.html",
+      "chinese_character_count": 981,
+      "summary": "教材第一页未必就是你的最佳起点。更有用的问题是：要理解眼前这一项，我先得掌握哪些关系？",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "descartes-provisional-action",
+      "title": "判断可以暂缓，行动却有时需要一条临时规则",
+      "domain": "工作",
+      "person": "勒内·笛卡尔",
+      "original_year": 1637,
+      "dedup_key": "descartes-provisional-action",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/59/pg59-images.html",
+          "location": "第三部分：临时道德准则",
+          "work": "《谈谈方法》（Discourse on the Method）",
+          "verification": "法文原著1637年出版；本次使用后出英译本的电子转录，中文核心意思为转述，不冒充原版逐字译文。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/descartes-provisional-action.html",
+      "chinese_character_count": 987,
+      "summary": "等待完全确定，可能意味着永远不开始。但仓促把暂时选择说成永远正确，也会让人失去修正的余地。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "smith-market-specialization",
+      "title": "专业化能走多远，还取决于有没有足够的需求",
+      "domain": "经济",
+      "person": "亚当·斯密",
+      "original_year": 1776,
+      "dedup_key": "smith-market-specialization",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/3300/3300-h/3300-h.htm",
+          "location": "第一卷第三章：分工受市场范围的限制",
+          "work": "《国富论》（The Wealth of Nations）",
+          "verification": "原著1776年出版，后有修订；本次核对后出英文版电子转录，以卷、章定位，不混用不同版本的页码。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/smith-market-specialization.html",
+      "chinese_character_count": 1022,
+      "summary": "一个细分技能再精湛，如果只有极少数人需要，也未必足以支持一个独立岗位。能力与需求之间，还有一层常被忽略的关系。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "smith-division-mental-cost",
+      "title": "重复劳动带来效率，也可能缩窄人的能力",
+      "domain": "工作",
+      "person": "亚当·斯密",
+      "original_year": 1776,
+      "dedup_key": "smith-division-mental-cost",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/3300/3300-h/3300-h.htm",
+          "location": "第五卷第一章，关于教育与分工影响的讨论",
+          "work": "《国富论》（The Wealth of Nations）",
+          "verification": "原著1776年出版，后有修订；本次核对后出英文版电子转录，以卷、章定位，不混用不同版本的页码。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/smith-division-mental-cost.html",
+      "chinese_character_count": 994,
+      "summary": "把一个步骤做得越来越快，可能同时意味着越来越少需要理解整个过程。效率增长与能力成长，不一定自动同步。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "smith-use-exchange-value",
+      "title": "对生活很有用的东西，市场价格未必高",
+      "domain": "经济",
+      "person": "亚当·斯密",
+      "original_year": 1776,
+      "dedup_key": "smith-use-exchange-value",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/3300/3300-h/3300-h.htm",
+          "location": "第一卷第四章：价值的两种含义",
+          "work": "《国富论》（The Wealth of Nations）",
+          "verification": "原著1776年出版，后有修订；本次核对后出英文版电子转录，以卷、章定位，不混用不同版本的页码。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/smith-use-exchange-value.html",
+      "chinese_character_count": 982,
+      "summary": "一件东西贵，不等于它对生活最重要；一项劳动难以卖出高价，也不等于它没有价值。讨论“值不值”前，要先说清在用哪把尺子。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "mill-experiments-living",
+      "title": "不同的生活方式，可以成为彼此学习的实验",
+      "domain": "心理",
+      "person": "约翰·斯图亚特·密尔",
+      "original_year": 1859,
+      "dedup_key": "mill-experiments-living",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/34901/34901-h/34901-h.htm",
+          "location": "第三章：论个性作为福祉的要素",
+          "work": "《论自由》（On Liberty）",
+          "verification": "原著1859年出版；所查电子转录含后出版本导言。本篇只依据密尔正文，按章节定位，不将编者的话归给作者。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/mill-experiments-living.html",
+      "chinese_character_count": 1006,
+      "summary": "一种安排适合大多数人，并不代表适合每个人。若所有人都照同一条路线生活，我们也会失去比较不同可能性的机会。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "mill-choice-faculties",
+      "title": "替一个人安排好所有选择，也会减少他练习判断的机会",
+      "domain": "教育",
+      "person": "约翰·斯图亚特·密尔",
+      "original_year": 1859,
+      "dedup_key": "mill-choice-faculties",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/34901/34901-h/34901-h.htm",
+          "location": "第三章：习俗、选择与人的能力",
+          "work": "《论自由》（On Liberty）",
+          "verification": "原著1859年出版；所查电子转录含后出版本导言。本篇只依据密尔正文，按章节定位，不将编者的话归给作者。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/mill-choice-faculties.html",
+      "chinese_character_count": 994,
+      "summary": "有人替你选好了最优路线，短期内确实省事；但如果长期没有选择，你也少了一次发现自己如何判断的机会。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "mill-distribution-institutions",
+      "title": "生产条件与分配规则，不能混成一种自然规律",
+      "domain": "经济",
+      "person": "约翰·斯图亚特·密尔",
+      "original_year": 1848,
+      "dedup_key": "mill-distribution-institutions",
+      "sources": [
+        {
+          "url": "https://www.econlib.org/library/Mill/mlP.html?chapter_num=17",
+          "location": "第二卷第一章：论财产，第一节",
+          "work": "《政治经济学原理》（Principles of Political Economy）",
+          "verification": "原著初版1848年；所查网站采用后出的修订版本。这里标明该著作初版年，不断言所查每一措辞都与初版相同。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/mill-distribution-institutions.html",
+      "chinese_character_count": 991,
+      "summary": "“东西只能这样生产”与“收益只能这样分”，是两种不同的判断。把后者说成像重力一样不可改变，会提前关掉制度讨论。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "mill-stationary-improvement",
+      "title": "物质规模不再增加，不等于人的进步必须停止",
+      "domain": "经济",
+      "person": "约翰·斯图亚特·密尔",
+      "original_year": 1848,
+      "dedup_key": "mill-stationary-improvement",
+      "sources": [
+        {
+          "url": "https://www.econlib.org/library/Mill/mlP.html?chapter_num=64",
+          "location": "第四卷第六章：论静止状态",
+          "work": "《政治经济学原理》（Principles of Political Economy）",
+          "verification": "原著初版1848年；所查网站采用后出的修订版本。这里标明该著作初版年，不断言所查每一措辞都与初版相同。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/mill-stationary-improvement.html",
+      "chinese_character_count": 1009,
+      "summary": "“更好”是否一定意味着拥有更多、生产更多、把日程塞得更满？如果只有增长才算进步，生活中许多改善就难以被看见。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "franklin-one-virtue",
+      "title": "改习惯时，一次把注意力放在一件事上",
+      "domain": "心理",
+      "person": "本杰明·富兰克林",
+      "original_year": 1784,
+      "dedup_key": "franklin-one-virtue",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/148/148-h/148-h.htm",
+          "location": "自传第二部分：十三项美德的练习安排",
+          "work": "《富兰克林自传》（The Autobiography of Benjamin Franklin）",
+          "verification": "这一段属于1784年写作的自传第二部分；第一部分的法文版于1791年出版，不能据此把第二部分也标作1791年发表。前三部分于1818年合刊。本次核对Gutenberg后出英文文本，未直接核对手稿或1818年初印本。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/franklin-one-virtue.html",
+      "chinese_character_count": 1009,
+      "summary": "想同时变得早起、整洁、耐心、节俭，往往会让每一次失误都像整体失败。把练习范围缩小，反而更容易知道哪里需要改。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "franklin-reconstruct-writing",
+      "title": "学写作，可以试着把好文章重新写出来再比较",
+      "domain": "学习",
+      "person": "本杰明·富兰克林",
+      "original_year": 1791,
+      "dedup_key": "franklin-reconstruct-writing",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/148/148-h/148-h.htm",
+          "location": "自传第一部分：以《旁观者》练习写作的记述",
+          "work": "《富兰克林自传》（The Autobiography of Benjamin Franklin）",
+          "verification": "自传写于1771—1790年间，1791年先有法文出版；本次使用后出英文版转录。1791年是作品出版定位，不是这些练习的实施年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/franklin-reconstruct-writing.html",
+      "chinese_character_count": 981,
+      "summary": "欣赏一段好文字，与自己能组织出同样清楚的表达之间，还有一段距离。重建原文，能让这段距离具体显现出来。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "franklin-modest-language",
+      "title": "减少绝对化措辞，可以给讨论留出检验空间",
+      "domain": "工作",
+      "person": "本杰明·富兰克林",
+      "original_year": 1784,
+      "dedup_key": "franklin-modest-language",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/148/148-h/148-h.htm",
+          "location": "自传第二部分：关于谦逊与表达习惯的记述",
+          "work": "《富兰克林自传》（The Autobiography of Benjamin Franklin）",
+          "verification": "这一段属于1784年写作的自传第二部分；第一部分的法文版于1791年出版，不能据此把第二部分也标作1791年发表。前三部分于1818年合刊。本次核对Gutenberg后出英文文本，未直接核对手稿或1818年初印本。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/franklin-modest-language.html",
+      "chinese_character_count": 996,
+      "summary": "“毫无疑问”“这显然就是”有时只是语气很强，并没有增加证据。表达稍留余地，反而可能让真正的分歧更容易浮现。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "babbage-mental-division",
+      "title": "脑力工作也能分工，但要先看清哪些步骤不同",
+      "domain": "工作",
+      "person": "查尔斯·巴贝奇",
+      "original_year": 1832,
+      "dedup_key": "babbage-mental-division",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/4238/pg4238-images.html",
+          "location": "第十九章：脑力劳动的分工",
+          "work": "《论机器和制造业的经济》（On the Economy of Machinery and Manufactures）",
+          "verification": "该书初版于1832年；本次核对英文电子转录，按主题章名定位。书中的工业实例有时代限制，不直接充当现代效果证据。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/babbage-mental-division.html",
+      "chinese_character_count": 997,
+      "summary": "写报告、研究问题或编制数据，常被视为一整块“靠脑子”的工作。实际上，提出方法、执行计算和核对结果，需要的能力并不一样。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "babbage-match-skill",
+      "title": "别让最稀缺的能力，耗在不需要它的环节上",
+      "domain": "工作",
+      "person": "查尔斯·巴贝奇",
+      "original_year": 1832,
+      "dedup_key": "babbage-match-skill",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/4238/pg4238-images.html",
+          "location": "第十八章：分工及技能需求的差别",
+          "work": "《论机器和制造业的经济》（On the Economy of Machinery and Manufactures）",
+          "verification": "该书初版于1832年；本次核对英文电子转录，按主题章名定位。书中的工业实例有时代限制，不直接充当现代效果证据。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/babbage-match-skill.html",
+      "chinese_character_count": 1023,
+      "summary": "一个任务需要很高水平的人，并不意味着它的每一分钟都需要那种水平。关键判断与重复准备混在一起，可能同时浪费专长和学习机会。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "babbage-firsthand-inquiry",
+      "title": "改流程之前，先去看工作实际怎样发生",
+      "domain": "工作",
+      "person": "查尔斯·巴贝奇",
+      "original_year": 1832,
+      "dedup_key": "babbage-firsthand-inquiry",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/4238/pg4238-images.html",
+          "location": "调查制造业的提问清单，段落160—161",
+          "work": "《论机器和制造业的经济》（On the Economy of Machinery and Manufactures）",
+          "verification": "该书初版于1832年；本次核对英文电子转录，按主题章名定位。书中的工业实例有时代限制，不直接充当现代效果证据。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/babbage-firsthand-inquiry.html",
+      "chinese_character_count": 975,
+      "summary": "流程图说明的是工作应该怎样做；现场记录才可能告诉你，它实际上怎样完成。二者之间的差距，往往藏着真正的改进机会。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "taylor-system-not-hero",
+      "title": "遇到反复出错，先检查系统，而不只寻找更能干的人",
+      "domain": "工作",
+      "person": "弗雷德里克·温斯洛·泰勒",
+      "original_year": 1911,
+      "dedup_key": "taylor-system-not-hero",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/6435/pg6435-images.html",
+          "location": "导言与第一章：科学管理的基本出发点",
+          "work": "《科学管理原理》（The Principles of Scientific Management）",
+          "verification": "原著1911年出版；本次核对英文电子转录。本文讨论其中一种可检验的工作设计思想，不照单接受作者的劳资观和历史数字。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/taylor-system-not-hero.html",
+      "chinese_character_count": 1010,
+      "summary": "把一个总能救火的人放进混乱流程，可能暂时改善结果，却也可能让混乱一直不用被修复。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "taylor-test-method",
+      "title": "工作方法也可以比较，而不必只靠资历传承",
+      "domain": "工作",
+      "person": "弗雷德里克·温斯洛·泰勒",
+      "original_year": 1911,
+      "dedup_key": "taylor-test-method",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/cache/epub/6435/pg6435-images.html",
+          "location": "第二章：从经验做法转向研究和合作的原则",
+          "work": "《科学管理原理》（The Principles of Scientific Management）",
+          "verification": "原著1911年出版；本次核对英文电子转录。本文讨论其中一种可检验的工作设计思想，不照单接受作者的劳资观和历史数字。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/taylor-test-method.html",
+      "chinese_character_count": 988,
+      "summary": "“我们一直这样做”说明一种方法有历史，却不能单独证明它最合适。真正值得比较的是，在相同要求下，它带来什么结果和代价。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "gilbreth-rest-design",
+      "title": "休息应进入工作设计，而不是等人撑不住才出现",
+      "domain": "工作",
+      "person": "莉莲·吉尔布雷斯、弗兰克·吉尔布雷斯",
+      "original_year": 1916,
+      "dedup_key": "gilbreth-rest-design",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/67908/67908-h/67908-h",
+          "location": "第三章：为克服疲劳预先安排休息",
+          "work": "《疲劳研究》（Fatigue Study）",
+          "verification": "所查合著英文版1916年出版。本篇借用工作条件与动作设计的思路，不把当时的生理学解释视为现代医学结论。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/gilbreth-rest-design.html",
+      "chinese_character_count": 1006,
+      "summary": "只有在筋疲力尽后才停下来，等于把疲劳当成私人问题，而没有把恢复当作工作安排的一部分。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "gilbreth-motion-environment",
+      "title": "减少疲劳，有时该先移动物品，而不是训练自己更快",
+      "domain": "工作",
+      "person": "莉莲·吉尔布雷斯、弗兰克·吉尔布雷斯",
+      "original_year": 1916,
+      "dedup_key": "gilbreth-motion-environment",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/67908/67908-h/67908-h",
+          "location": "第二章与工作条件调查：不必要动作和环境安排",
+          "work": "《疲劳研究》（Fatigue Study）",
+          "verification": "所查合著英文版1916年出版。本篇借用工作条件与动作设计的思路，不把当时的生理学解释视为现代医学结论。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/gilbreth-motion-environment.html",
+      "chinese_character_count": 1008,
+      "summary": "一天里反复伸手、起身、寻找，看起来都只是小动作。累积起来，它们可能比某一次特别艰难的操作更耗人。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "veblen-conspicuous-consumption",
+      "title": "买一件东西，有时也在购买别人对自己的看法",
+      "domain": "经济",
+      "person": "索尔斯坦·凡勃伦",
+      "original_year": 1899,
+      "dedup_key": "veblen-conspicuous-consumption",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/833/833-h/833-h.htm",
+          "location": "第四章：炫耀性消费",
+          "work": "《有闲阶级论》（The Theory of the Leisure Class）",
+          "verification": "该书1899年出版；本次核对英文电子转录。它是一种社会经济解释，不能据此推断每个具体消费者的动机。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/veblen-conspicuous-consumption.html",
+      "chinese_character_count": 969,
+      "summary": "同一件商品既能满足需要，也能向别人展示身份。若只讨论它的实用功能，就可能漏掉价格与偏好的另一部分来源。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "veblen-standards-ratchet",
+      "title": "生活标准容易随比较上移，却很难自然降回来",
+      "domain": "经济",
+      "person": "索尔斯坦·凡勃伦",
+      "original_year": 1899,
+      "dedup_key": "veblen-standards-ratchet",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/833/833-h/833-h.htm",
+          "location": "第二章：金钱竞比；第五章：金钱生活标准",
+          "work": "《有闲阶级论》（The Theory of the Leisure Class）",
+          "verification": "该书1899年出版；本次核对英文电子转录。它是一种社会经济解释，不能据此推断每个具体消费者的动机。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/veblen-standards-ratchet.html",
+      "chinese_character_count": 990,
+      "summary": "收入增加后，人可能很快适应新的日常标准；当需要缩减时，同样的变化却会被体验成明显损失。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "jevons-efficiency-total",
+      "title": "单次使用更省，不代表总消耗一定减少",
+      "domain": "经济",
+      "person": "威廉·斯坦利·杰文斯",
+      "original_year": 1865,
+      "dedup_key": "jevons-efficiency-total",
+      "sources": [
+        {
+          "url": "https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/317/Jevons_0546_EBk_v6.0.pdf",
+          "location": "第七章：论燃料的节约",
+          "work": "《煤炭问题》（The Coal Question）",
+          "verification": "原著1865年出版；所查文本含第二版说明。本文聚焦节约燃料与总消耗的关系，不采纳作者关于煤矿寿命的所有预测。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/jevons-efficiency-total.html",
+      "chinese_character_count": 980,
+      "summary": "一个工具把每次操作的成本降了一半，人们却因此使用三倍次数。最后的总开销，可能比原来更大。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "russell-impersonal-interest",
+      "title": "给生活留一种不围着自己得失打转的兴趣",
+      "domain": "心理",
+      "person": "伯特兰·罗素",
+      "original_year": 1930,
+      "dedup_key": "russell-impersonal-interest",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/77894/77894-h/77894-h.htm",
+          "location": "第十五章：非个人的兴趣",
+          "work": "《幸福之路》（The Conquest of Happiness）",
+          "verification": "原著1930年出版；本次核对英文电子转录。这是作者的人生论述，不是临床试验，也不用于替代心理治疗。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/russell-impersonal-interest.html",
+      "chinese_character_count": 981,
+      "summary": "当所有阅读、交往和练习都与自己的成绩、收入或形象相关时，休息也可能只是换个方式继续考核自己。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "russell-tolerate-boredom",
+      "title": "有价值的生活，也需要容纳一部分平淡",
+      "domain": "心理",
+      "person": "伯特兰·罗素",
+      "original_year": 1930,
+      "dedup_key": "russell-tolerate-boredom",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/77894/77894-h/77894-h.htm",
+          "location": "第四章：无聊与兴奋",
+          "work": "《幸福之路》（The Conquest of Happiness）",
+          "verification": "原著1930年出版；本次核对英文电子转录。这是作者的人生论述，不是临床试验，也不用于替代心理治疗。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/russell-tolerate-boredom.html",
+      "chinese_character_count": 935,
+      "summary": "如果只在新鲜感最强的时候行动，许多长期值得做的事，就会在刚进入重复阶段时被放弃。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "russell-envy-measure",
+      "title": "比较若只盯着别人拥有的部分，很难得到公平的全貌",
+      "domain": "心理",
+      "person": "伯特兰·罗素",
+      "original_year": 1930,
+      "dedup_key": "russell-envy-measure",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/77894/77894-h/77894-h.htm",
+          "location": "第六章：嫉妒",
+          "work": "《幸福之路》（The Conquest of Happiness）",
+          "verification": "原著1930年出版；本次核对英文电子转录。这是作者的人生论述，不是临床试验，也不用于替代心理治疗。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/russell-envy-measure.html",
+      "chinese_character_count": 974,
+      "summary": "我们常拿自己的全部生活，与别人最醒目的一个优点比较。这样得出的差距，可能比现实更单一，也更难弥补。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "poincare-incubation",
+      "title": "灵感常在离开问题后出现，但离开之前通常已经认真工作",
+      "domain": "科学",
+      "person": "亨利·庞加莱",
+      "original_year": 1908,
+      "dedup_key": "poincare-incubation",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/39713/39713-h/39713-h.htm",
+          "location": "《科学与方法》第一编第三章：数学创造",
+          "work": "《科学与方法》（Science and Method）",
+          "verification": "法文原著1908年出版；本次阅读1913年英译合辑《科学的基础》中的相应部分，不把合辑出版年当作原著年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/poincare-incubation.html",
+      "chinese_character_count": 995,
+      "summary": "散步时突然想到答案的故事很迷人，容易让人忘记：在那个瞬间之前，往往已经有长时间的尝试和失败。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "poincare-select-facts",
+      "title": "科学不只是积累事实，还要选择能照亮关系的事实",
+      "domain": "科学",
+      "person": "亨利·庞加莱",
+      "original_year": 1908,
+      "dedup_key": "poincare-select-facts",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/39713/39713-h/39713-h.htm",
+          "location": "《科学与方法》第一编第一章：事实的选择",
+          "work": "《科学与方法》（Science and Method）",
+          "verification": "法文原著1908年出版；本次阅读1913年英译合辑《科学的基础》中的相应部分，不把合辑出版年当作原著年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/poincare-select-facts.html",
+      "chinese_character_count": 1019,
+      "summary": "如果只是收集更多材料就能自动得到理解，最大的资料库应该也是最好的解释者。但事实之间的选择和组织，本身就是工作。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "poincare-small-causes",
+      "title": "小小的初始差异，也可能让长期结果难以预测",
+      "domain": "科学",
+      "person": "亨利·庞加莱",
+      "original_year": 1908,
+      "dedup_key": "poincare-small-causes",
+      "sources": [
+        {
+          "url": "https://www.gutenberg.org/files/39713/39713-h/39713-h.htm",
+          "location": "《科学与方法》第一编第四章：偶然",
+          "work": "《科学与方法》（Science and Method）",
+          "verification": "法文原著1908年出版；本次阅读1913年英译合辑《科学的基础》中的相应部分，不把合辑出版年当作原著年份。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/poincare-small-causes.html",
+      "chinese_character_count": 988,
+      "summary": "规则已知，不一定就能精确预测很久以后的结果。如果起点测不准，而差异又会放大，确定的规则也可能产生难以预报的过程。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "bush-associative-trails",
+      "title": "笔记之间的连接，也值得作为知识保存",
+      "domain": "学习",
+      "person": "万尼瓦尔·布什",
+      "original_year": 1945,
+      "dedup_key": "bush-associative-trails",
+      "sources": [
+        {
+          "url": "https://www.w3.org/History/1945/vbush/vbush7.shtml",
+          "location": "〈诚如所思〉第七节：联想索引与路径",
+          "work": "〈诚如所思〉（As We May Think）",
+          "verification": "文章发表于1945年7月《大西洋月刊》；本次阅读保留分节的英文转录。memex是文中的设想，不是已经验证的产品。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/bush-associative-trails.html",
+      "chinese_character_count": 978,
+      "summary": "收藏一篇文章容易，几个月后想起“当时为什么把它和另一篇放在一起”却很难。被丢掉的，常是自己的思考路线。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "bush-share-research-path",
+      "title": "分享研究时，别只交结论，也交一条可追溯的阅读路线",
+      "domain": "工作",
+      "person": "万尼瓦尔·布什",
+      "original_year": 1945,
+      "dedup_key": "bush-share-research-path",
+      "sources": [
+        {
+          "url": "https://www.w3.org/History/1945/vbush/vbush8.shtml",
+          "location": "〈诚如所思〉第七至八节：共享路径与路径开拓者",
+          "work": "〈诚如所思〉（As We May Think）",
+          "verification": "文章发表于1945年7月《大西洋月刊》；本次阅读保留分节的英文转录。memex是文中的设想，不是已经验证的产品。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/bush-share-research-path.html",
+      "chinese_character_count": 988,
+      "summary": "收到一份结论后，别人常常还得重新做一遍查找，才能知道它从哪里来、哪些地方需要特别小心。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "hamming-important-feasible",
+      "title": "选重要问题，也要找到自己能够切入的一步",
+      "domain": "科学",
+      "person": "理查德·汉明",
+      "original_year": 1986,
+      "dedup_key": "hamming-important-feasible",
+      "sources": [
+        {
+          "url": "https://www2.cs.uh.edu/~gnawali/courses/writing-f12/YouAndYourResearch.html",
+          "location": "〈你与你的研究〉：重要问题与合理进攻路径的段落",
+          "work": "〈你与你的研究〉（You and Your Research）",
+          "verification": "所查转录记载演讲日期为1986年3月7日，地点为Bellcore；本次依据讲演转录，未逐字比对录音。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/hamming-important-feasible.html",
+      "chinese_character_count": 991,
+      "summary": "一个问题影响巨大，却完全找不到着手办法；另一个问题容易完成，却几乎不改变任何事情。好的选题常在两者之间寻找入口。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "hamming-open-door",
+      "title": "保护专注之外，也要给外界留下进入的窗口",
+      "domain": "科学",
+      "person": "理查德·汉明",
+      "original_year": 1986,
+      "dedup_key": "hamming-open-door",
+      "sources": [
+        {
+          "url": "https://www2.cs.uh.edu/~gnawali/courses/writing-f12/YouAndYourResearch.html",
+          "location": "〈你与你的研究〉：开门工作与外界线索的段落",
+          "work": "〈你与你的研究〉（You and Your Research）",
+          "verification": "所查转录记载演讲日期为1986年3月7日，地点为Bellcore；本次依据讲演转录，未逐字比对录音。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/hamming-open-door.html",
+      "chinese_character_count": 973,
+      "summary": "把所有干扰都隔绝，可能提高眼前任务的速度，也可能让你越来越少知道外面什么问题正在变得重要。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "follett-law-situation",
+      "title": "协作时，让双方共同研究情境，而不是只争谁有权命令",
+      "domain": "工作",
+      "person": "玛丽·帕克·福莱特",
+      "original_year": 1925,
+      "dedup_key": "follett-law-situation",
+      "sources": [
+        {
+          "url": "https://www.panarchy.org/follett/lawsituation.html",
+          "location": "〈发布命令〉中“情境法则”的讨论",
+          "work": "〈发布命令〉（The Giving of Orders）",
+          "verification": "所查原作节录以1925年定位，常见书目亦以1926年论文集版本引用；这里按讲演与后出收录作区分，未核对初次印行页。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/follett-law-situation.html",
+      "chinese_character_count": 976,
+      "summary": "一句要求如果只被理解成“因为我是负责人”，执行者就可能先回应权力关系，而不是实际任务需要。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "follett-integrate-conflict",
+      "title": "冲突不一定只能折中，也可以重新组合双方的需要",
+      "domain": "工作",
+      "person": "玛丽·帕克·福莱特",
+      "original_year": 1925,
+      "dedup_key": "follett-integrate-conflict",
+      "sources": [
+        {
+          "url": "https://psychsafety.com/wp-content/uploads/2025/11/FollettConstructiveConflict.pdf",
+          "location": "〈建设性冲突〉：支配、妥协与整合的区分",
+          "work": "〈建设性冲突〉（Constructive Conflict）",
+          "verification": "所查原作节录注明1925年1月的报告，后收入论文集；节录不是完整初版。本篇以已能核对的整合与妥协之分为限。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/follett-integrate-conflict.html",
+      "chinese_character_count": 966,
+      "summary": "两个人争一个窗户该开还是关，若只在这两个立场之间折中，就可能一直找不到双方真正需要的东西。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "platt-discriminating-test",
+      "title": "好测试要能区分解释，而不只是制造更多数据",
+      "domain": "科学",
+      "person": "约翰·R.普拉特",
+      "original_year": 1964,
+      "dedup_key": "platt-discriminating-test",
+      "sources": [
+        {
+          "url": "https://courses.washington.edu/esrm441/pdfs/Platt1964.pdf",
+          "location": "〈强推断〉开篇的方法步骤与实验设计讨论",
+          "work": "〈强推断〉（Strong Inference）",
+          "verification": "原文发表于1964年10月16日《Science》146卷，347—353页。本次核对原论文副本，日常练习是后文另行设计的。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/platt-discriminating-test.html",
+      "chinese_character_count": 961,
+      "summary": "两种解释都能说明已有现象时，再收集十个相同现象，未必能帮助你决定该相信哪一种。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "coase-coordination-cost",
+      "title": "外包还是自己做，别只比较表面单价",
+      "domain": "经济",
+      "person": "罗纳德·科斯",
+      "original_year": 1937,
+      "dedup_key": "coase-coordination-cost",
+      "sources": [
+        {
+          "url": "https://cameroneconomics.com/coase%201937.pdf",
+          "location": "〈企业的性质〉：价格机制的使用成本与组织边界",
+          "work": "〈企业的性质〉（The Nature of the Firm）",
+          "verification": "原文发表于1937年《Economica》4卷16期，386—405页；本次核对原论文公开副本中的相关段落，不将日常类比当作原文已验证的应用。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/coase-coordination-cost.html",
+      "chinese_character_count": 998,
+      "summary": "一项服务报价很低，沟通、找人、说明需求和检查结果却花去大量时间。真正的成本，未必都写在价格标签上。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "hayek-local-knowledge",
+      "title": "做决定所需的知识，往往分散在不同人的现场经验里",
+      "domain": "经济",
+      "person": "弗里德里希·哈耶克",
+      "original_year": 1945,
+      "dedup_key": "hayek-local-knowledge",
+      "sources": [
+        {
+          "url": "https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/92/Hayek_0766_EBk_v6.0.pdf",
+          "location": "〈知识在社会中的运用〉第三至五节",
+          "work": "〈知识在社会中的运用〉（The Use of Knowledge in Society）",
+          "verification": "原文发表于1945年9月《American Economic Review》35卷4期，519—530页；本次核对原文的后出排印本，引用按原论文分节定位。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/hayek-local-knowledge.html",
+      "chinese_character_count": 1012,
+      "summary": "一份汇总报告看起来包含全部信息，仍可能漏掉现场人员最清楚的那个变化：今天缺哪件东西、哪条路暂时走不通。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "merton-universalism",
+      "title": "评判一项主张时，先让理由接受检查，再看提出者是谁",
+      "domain": "科学",
+      "person": "罗伯特·K.默顿",
+      "original_year": 1942,
+      "dedup_key": "merton-universalism",
+      "sources": [
+        {
+          "url": "https://movicoma.blogs.uoc.edu/wp-content/uploads/sites/35/2016/07/merton_normativeStructureOfScience_1942.pdf",
+          "location": "后出文集〈科学的规范结构〉：普遍主义小节",
+          "work": "〈民主秩序中的科学与技术〉，后以〈科学的规范结构〉收入文集",
+          "verification": "1942年初刊题为Science and Technology in a Democratic Order；本次查阅后出文集章节The Normative Structure of Science，不能把后出题名当作原刊题名。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/merton-universalism.html",
+      "chinese_character_count": 992,
+      "summary": "同一段论证，若换一个署名就让你立刻改变态度，值得检查改变来自证据，还是来自对身份的预判。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "simon-satisficing-search",
+      "title": "先定下可接受标准，再决定还要不要继续找",
+      "domain": "心理",
+      "person": "赫伯特·西蒙",
+      "original_year": 1956,
+      "dedup_key": "simon-satisficing-search",
+      "sources": [
+        {
+          "url": "https://pages.ucsd.edu/~mckenzie/Simon1956PsychReview.pdf",
+          "location": "〈理性选择与环境结构〉：搜索、目标与抱负水平的模型",
+          "work": "〈理性选择与环境结构〉（Rational Choice and the Structure of the Environment）",
+          "verification": "论文发表于1956年《Psychological Review》63卷2期，129—138页。本篇讨论搜索与满意标准，不重复此前的注意力稀缺选题。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/simon-satisficing-search.html",
+      "chinese_character_count": 999,
+      "summary": "多看一个选项总有可能更好，但搜索也会消耗时间。若从不规定什么时候够了，选择可能吞掉原本要留给使用的精力。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "shannon-information-meaning",
+      "title": "信息量、真实性与意义，不是同一件事",
+      "domain": "科学",
+      "person": "克劳德·香农",
+      "original_year": 1948,
+      "dedup_key": "shannon-information-meaning",
+      "sources": [
+        {
+          "url": "https://www.nokia.com/bell-labs/publications-and-media/publications/a-mathematical-theory-of-communication/",
+          "location": "〈通信的数学理论〉开头：工程问题与语义的区分",
+          "work": "〈通信的数学理论〉（A Mathematical Theory of Communication）",
+          "verification": "论文分两部分发表于1948年《Bell System Technical Journal》；本次核对贝尔实验室公开页面所载正文开头，不声称读取了全部公式推导。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/shannon-information-meaning.html",
+      "chinese_character_count": 995,
+      "summary": "一段消息很长、很意外，或者压缩后占用很多空间，都不能单独说明它真实、重要，或值得你相信。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
+    },
+    {
+      "id": "licklider-formulative-partner",
+      "title": "计算机不只应替你算答案，也可以帮助你把问题想清楚",
+      "domain": "工作",
+      "person": "J.C.R.利克莱德",
+      "original_year": 1960,
+      "dedup_key": "licklider-formulative-partner",
+      "sources": [
+        {
+          "url": "https://groups.csail.mit.edu/medg/people/psz/Licklider.html",
+          "location": "〈人机共生〉摘要与第二至四节",
+          "work": "〈人机共生〉（Man-Computer Symbiosis）",
+          "verification": "论文发表于1960年3月《IRE Transactions on Human Factors in Electronics》，4—11页；本次核对MIT保存的全文转录，现代工具只是类比。"
+        }
+      ],
+      "published_at": "2026-10-21T17:01:11Z",
+      "path": "articles/licklider-formulative-partner.html",
+      "chinese_character_count": 991,
+      "summary": "把任务完全想清楚后才允许使用工具，是一种合作方式；边试、边看结果、边修正问题，则可能支持另一种思考。",
+      "translation": "中文意思转述；未将改写伪作逐字引文"
     }
   ]
 }
