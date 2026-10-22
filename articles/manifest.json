@@ -1807,6 +1807,132 @@
       "chinese_character_count": 1053,
       "summary": "知道某种行为会带来结果，并不表示你相信自己能完成那项行为；有效支持要把笼统鼓励变成可完成、可累积的掌握经验。",
       "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "bruner-spiral-core-ideas",
+      "title": "不要等“准备好了”才教核心思想：先诚实地简化，再反复加深",
+      "domain": "教育",
+      "person": "杰罗姆·布鲁纳",
+      "original_year": 1960,
+      "dedup_key": "bruner-spiral-core-ideas",
+      "sources": [
+        {
+          "url": "https://edci770.pbworks.com/w/file/fetch/45494576/Bruner_Processes_of_Education.pdf",
+          "location": "第二章“结构的重要性”，原书第12—13页；关于任何学科的“智识上诚实的形式”见第四章第33页",
+          "work": "《教育过程》（The Process of Education）",
+          "verification": "本书由Harvard University Press于1960年出版，源于1959年伍兹霍尔会议。本次核对公开扫描件，链接文件附有后出前言，但正文页码沿用原书；不把后来流行的所有“螺旋课程”版本都归给布鲁纳。"
+        }
+      ],
+      "published_at": "2026-10-22T02:02:56Z",
+      "path": "articles/bruner-spiral-core-ideas.html",
+      "chinese_character_count": 1041,
+      "summary": "复杂学科不必等到先修内容全部完成才出现；可以先呈现不失真的核心结构，之后在更高层次反复返回、增加形式化与应用。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "tulving-thomson-encoding-specificity",
+      "title": "想不起来时，别只加大力气：换回与学习时相配的线索",
+      "domain": "学习",
+      "person": "恩德尔·图尔文、唐纳德·汤姆森",
+      "original_year": 1973,
+      "dedup_key": "tulving-thomson-encoding-specificity",
+      "sources": [
+        {
+          "url": "https://wixtedlab.ucsd.edu/publications/Psych%20218/Tulving_Thompson_1973.pdf",
+          "location": "《Psychological Review》80卷5期，第352—373页；原则定义见第369页，实验与讨论见第359—371页",
+          "work": "〈情景记忆中的编码特异性与提取过程〉（Encoding Specificity and Retrieval Processes in Episodic Memory）",
+          "verification": "论文发表于1973年，DOI 10.1037/h0020071。本次核对加州大学圣迭戈分校保存的期刊版PDF及卷期页码；论文讨论词语实验，本文的日常应用是谨慎类比。"
+        }
+      ],
+      "published_at": "2026-10-22T02:02:56Z",
+      "path": "articles/tulving-thomson-encoding-specificity.html",
+      "chinese_character_count": 1016,
+      "summary": "提示本身强不强并不够；它能否唤起记忆，取决于它和最初编码时留下的信息是否匹配。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "argyris-double-loop-governing-values",
+      "title": "纠正错误不只改动作，也要检查产生动作的规则",
+      "domain": "工作",
+      "person": "克里斯·阿吉里斯",
+      "original_year": 1977,
+      "dedup_key": "argyris-double-loop-governing-values",
+      "sources": [
+        {
+          "url": "https://theisrm.org/documents/Argyris%20%281977%29%20Double%20Loop%20Learning%20in%20Organizations.pdf",
+          "location": "《Harvard Business Review》1977年9—10月号，第115—125页；单环与双环图示及定义见第116—117页",
+          "work": "〈组织中的双环学习〉（Double Loop Learning in Organizations）",
+          "verification": "阿吉里斯与Donald Schön在1974年已系统讨论行动理论；本篇以阿吉里斯1977年文章的明确表述定位，不宣称概念始于该年。链接为HBR文章副本，卷期另由HBR书目页核实。"
+        }
+      ],
+      "published_at": "2026-10-22T02:02:56Z",
+      "path": "articles/argyris-double-loop-governing-values.html",
+      "chinese_character_count": 1037,
+      "summary": "单环学习在既定目标下纠偏；双环学习进一步追问目标、假设和评价规则是否本身制造了问题。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "lakatos-programmes-over-single-tests",
+      "title": "别凭一次反例判理论死刑：看它能否形成更有预测力的后续方案",
+      "domain": "科学",
+      "person": "伊姆雷·拉卡托斯",
+      "original_year": 1970,
+      "dedup_key": "lakatos-programmes-over-single-tests",
+      "sources": [
+        {
+          "url": "https://www.csun.edu/~vcsoc00i/classes/s497f09/s690s08/Lakatos.pdf",
+          "location": "收入《Criticism and the Growth of Knowledge》，第91—196页；“进步与退化的问题转换”讨论见第116—138页",
+          "work": "〈证伪与科学研究纲领的方法论〉（Falsification and the Methodology of Scientific Research Programmes）",
+          "verification": "论文集由Cambridge University Press于1970年出版；链接为课程节选，包含相关第1—3节而非全章。本篇以原书页码和节选交叉定位，未把1978年身后论文集的编者材料当作1970年原文。"
+        }
+      ],
+      "published_at": "2026-10-22T02:02:56Z",
+      "path": "articles/lakatos-programmes-over-single-tests.html",
+      "chinese_character_count": 1059,
+      "summary": "理论通常以研究纲领的序列发展；关键不只是它遇到反例，而是后续修改能否提前带来新预测，并得到事实支持。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "akerlof-quality-uncertainty",
+      "title": "买家分不清好坏时，低价不只便宜，还可能把好产品赶走",
+      "domain": "经济",
+      "person": "乔治·阿克洛夫",
+      "original_year": 1970,
+      "dedup_key": "akerlof-quality-uncertainty",
+      "sources": [
+        {
+          "url": "https://econweb.ucsd.edu/~atimmerm/174/akerlof.pdf",
+          "location": "《Quarterly Journal of Economics》84卷3期，第488—500页；二手车模型见第489—492页，质量保证机制见第499—500页",
+          "work": "〈“柠檬”市场：质量不确定性与市场机制〉（The Market for “Lemons”）",
+          "verification": "论文发表于1970年8月；链接为加州大学圣迭戈分校课程保存的JSTOR期刊版。本文使用原模型说明信息不对称，不宣称现实中的每个二手市场都会完全崩溃。"
+        }
+      ],
+      "published_at": "2026-10-22T02:02:56Z",
+      "path": "articles/akerlof-quality-uncertainty.html",
+      "chinese_character_count": 1056,
+      "summary": "若卖家知道质量、买家只能按平均质量出价，高质量卖家可能退出；留下的平均质量继续下降，交易甚至会消失。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "tversky-kahneman-insufficient-adjustment",
+      "title": "先看到的数字即使随意，也会把后面的估计拽向它",
+      "domain": "心理",
+      "person": "阿莫斯·特沃斯基、丹尼尔·卡尼曼",
+      "original_year": 1974,
+      "dedup_key": "tversky-kahneman-insufficient-adjustment",
+      "sources": [
+        {
+          "url": "https://sites.socsci.uci.edu/~bskyrms/bio/readings/tversky_k_heuristics_biases.pdf",
+          "location": "《Science》185卷4157期，第1124—1131页；“调整与锚定”见第1128—1130页",
+          "work": "〈不确定性下的判断：启发式与偏差〉（Judgment under Uncertainty: Heuristics and Biases）",
+          "verification": "论文发表于1974年9月27日，DOI 10.1126/science.185.4157.1124。本次直接核对期刊版PDF。本篇只采用其中锚定一节；后续研究对机制和边界有扩展，不能全部倒归给这篇论文。"
+        }
+      ],
+      "published_at": "2026-10-22T02:02:56Z",
+      "path": "articles/tversky-kahneman-insufficient-adjustment.html",
+      "chinese_character_count": 1019,
+      "summary": "人们常从一个初始值出发再调整；调整通常不充分，因此不同起点会系统地拉开最终判断，即使起点与问题无关。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
     }
   ]
 }
