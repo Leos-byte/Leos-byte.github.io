@@ -7,6 +7,25 @@
   ],
   "articles": [
     {
+      "id": "feynman-interest-driven-unconventional-study",
+      "title": "你可以有自己的学法",
+      "domain": "学习",
+      "person": "理查德·费曼",
+      "original_year": 1965,
+      "dedup_key": "feynman-interest-driven-unconventional-study",
+      "sources": [
+        {
+          "url": "https://www.magicalquote.com/authorquotes/study-hard-what-interests-you-the-most-in-the-most-undisciplined/",
+          "location": "1965年11月30日致 J. M. Szabados 的信；2005年 Basic Books 版书信集，第206页",
+          "verification": "公开书目定位与回信摘录交叉核对；未核对原信影印件"
+        }
+      ],
+      "published_at": "2026-10-22T03:24:44.438Z",
+      "path": "articles/feynman-interest-driven-unconventional-study.html",
+      "chinese_character_count": 1929,
+      "summary": "从最感兴趣的问题开始，认真钻研，保留追问，也寻找适合自己的学法。"
+    },
+    {
       "id": "dewey-1910-define-problem",
       "title": "先查清问题，再急着找答案",
       "domain": "教育",
