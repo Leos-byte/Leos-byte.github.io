@@ -1681,6 +1681,132 @@
       "chinese_character_count": 970,
       "summary": "选择、熟悉、练习和竞争通常提示“技能”，但它们进入纯随机情境时，也会让人高估自己改变结果的能力。",
       "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "freire-problem-posing-dialogue",
+      "title": "别只把知识存进学生脑中：把课程变成共同追问的问题",
+      "domain": "教育",
+      "person": "保罗·弗莱雷",
+      "original_year": 1970,
+      "dedup_key": "freire-problem-posing-dialogue",
+      "sources": [
+        {
+          "url": "https://files.libcom.org/files/Paulo%20Freire%2C%20Myra%20Bergman%20Ramos%2C%20Donaldo%20Macedo%20-%20Pedagogy%20of%20the%20Oppressed%2C%2030th%20Anniversary%20Edition%20%282000%2C%20Bloomsbury%20Academic%29.pdf",
+          "location": "第二章，英译30周年版第71—86页；“银行式教育”定义与批评集中在第72—80页",
+          "work": "《被压迫者教育学》（Pedagogy of the Oppressed）",
+          "verification": "葡萄牙文原稿写于1967—1968年前后，葡萄牙文版于1968年出版，Myra Bergman Ramos英译本于1970年出版。本篇按2000年30周年英译版的第二章核对页码，不声称1970年是思想首次形成的年份。"
+        }
+      ],
+      "published_at": "2026-10-22T01:01:15Z",
+      "path": "articles/freire-problem-posing-dialogue.html",
+      "chinese_character_count": 1074,
+      "summary": "若教学只允许教师讲、学生收，学习者练到的是保存结论；问题化教育则让双方围绕现实对象提问、核查并修正理解。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "bjork-desirable-difficulties",
+      "title": "练习时更顺，不一定学得更牢",
+      "domain": "学习",
+      "person": "罗伯特·比约克",
+      "original_year": 1994,
+      "dedup_key": "bjork-desirable-difficulties",
+      "sources": [
+        {
+          "url": "https://augmentingcognition.com/assets/Bjork1994.pdf",
+          "location": "收入《Metacognition: Knowing about Knowing》第9章，第185—205页；“desirable difficulties”讨论见所查章节影印第192—199页附近",
+          "work": "〈人类训练中的记忆与元记忆考量〉（Memory and Metamemory Considerations in the Training of Human Beings）",
+          "verification": "章节由MIT Press于1994年出版。本次核对公开的章节影印件及MIT Press书目信息；页码采用书中页码。后来的检索练习与交错学习研究扩展了证据，本篇不把后续结论倒归给1994年章节。"
+        }
+      ],
+      "published_at": "2026-10-22T01:01:15Z",
+      "path": "articles/bjork-desirable-difficulties.html",
+      "chinese_character_count": 1030,
+      "summary": "训练中的流畅表现只是眼前状态；间隔、变化和降低反馈频率可能暂时让人出错，却让记忆更耐久、更能迁移。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "trist-bamforth-joint-work-design",
+      "title": "引进新技术时，别只优化机器，也要重新设计协作关系",
+      "domain": "工作",
+      "person": "埃里克·特里斯特、肯·班福思",
+      "original_year": 1951,
+      "dedup_key": "trist-bamforth-joint-work-design",
+      "sources": [
+        {
+          "url": "https://www.uv.es/gonzalev/PSI%20ORG%2006-07/ARTICULOS%20RRHH%20SOCIOTEC/Trist%20Long%20Wall%20Method%20HR%201951.pdf",
+          "location": "《Human Relations》4卷1期，第3—38页；旧式小组组织、机械化长壁系统与“综合工作组织”的比较贯穿全文",
+          "work": "〈长壁采煤法的一些社会与心理后果〉（Some Social and Psychological Consequences of the Longwall Method of Coal-Getting）",
+          "verification": "论文发表于1951年，DOI 10.1177/001872675100400101。链接为大学保存的SAGE期刊版PDF。本篇依据原文案例转述；“共同优化”后来成为社会—技术系统传统的概括，不把这个后出的固定术语伪作论文原句。"
+        }
+      ],
+      "published_at": "2026-10-22T01:01:15Z",
+      "path": "articles/trist-bamforth-joint-work-design.html",
+      "chinese_character_count": 1087,
+      "summary": "同一项机械技术嵌入不同分工与团队结构，会产生不同的产出、责任感和压力；技术方案与社会组织不能分开设计。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "kuhn-normal-science-no-novelty",
+      "title": "科学的日常工作，往往不是寻找颠覆，而是在既有框架里解谜",
+      "domain": "科学",
+      "person": "托马斯·库恩",
+      "original_year": 1962,
+      "dedup_key": "kuhn-normal-science-no-novelty",
+      "sources": [
+        {
+          "url": "https://www.lri.fr/~mbl/Stanford/CS477/papers/Kuhn-SSR-2ndEd.pdf",
+          "location": "初版1962年；第二版第三至六章，第23—65页，尤其第四章“常规科学作为解谜活动”与第六章“异常与发现”",
+          "work": "《科学革命的结构》（The Structure of Scientific Revolutions）",
+          "verification": "原书初版发表于1962年；链接为大学课程保存的1970年第二版PDF，其中含1969年后记。本篇所引核心段落来自正文第三至六章，并明确以第二版页码定位，不把后记内容标成1962年原文。"
+        }
+      ],
+      "published_at": "2026-10-22T01:01:15Z",
+      "path": "articles/kuhn-normal-science-no-novelty.html",
+      "chinese_character_count": 1092,
+      "summary": "成熟学科的大量进展来自在共享范式下提高精度、扩展应用；异常通常先被当成待解难题，只有持续失配才可能推动框架改变。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "ostrom-commons-self-governance",
+      "title": "共享资源不只剩“私有化或政府接管”两种选择",
+      "domain": "经济",
+      "person": "埃莉诺·奥斯特罗姆",
+      "original_year": 1990,
+      "dedup_key": "ostrom-commons-self-governance",
+      "sources": [
+        {
+          "url": "https://www.actu-environnement.com/media/pdf/ostrom_1990.pdf",
+          "location": "第一章第1—28页批评三种常用模型；第三章第58—102页比较长期存续案例；设计原则汇总见第90页表3.1",
+          "work": "《治理公地》（Governing the Commons）",
+          "verification": "Cambridge University Press初版发表于1990年；链接为完整书籍扫描。本篇直接核对目录、案例章节及第90页表格，但未核对出版社纸本。设计原则是从特定长期案例归纳，不宣称作者给出适用于所有公地的配方。"
+        }
+      ],
+      "published_at": "2026-10-22T01:01:15Z",
+      "path": "articles/ostrom-commons-self-governance.html",
+      "chinese_character_count": 1103,
+      "summary": "使用者在一定条件下能够自己制定边界、监测和冲突处理规则；公地问题的答案取决于具体制度，而非固定的国家—市场二选一。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
+    },
+    {
+      "id": "bandura-task-specific-self-efficacy",
+      "title": "“我相信这方法有效”与“我相信自己做得到”是两回事",
+      "domain": "心理",
+      "person": "阿尔伯特·班杜拉",
+      "original_year": 1977,
+      "dedup_key": "bandura-task-specific-self-efficacy",
+      "sources": [
+        {
+          "url": "https://www.researchgate.net/profile/Maha-Alameri-4/post/Regarding-Theories-Is-there-a-difference-between-the-theory-of-Social-cognitive-and-the-theory-of-self-efficacy/attachment/5c2ec506cfe4a764550de080/AS%3A711175943749632%401546568966163/download/10.1.1.315.4567.pdf",
+          "location": "《Psychological Review》84卷2期，第191—215页；结果预期与效能预期的区分见第193页，信息来源见第195—200页",
+          "work": "〈自我效能：行为改变的统一理论〉（Self-efficacy: Toward a Unifying Theory of Behavioral Change）",
+          "verification": "论文发表于1977年3月。本次直接核对期刊版PDF的卷期、页码和正文；链接为公开副本，书目信息另由PubMed记录核实。论文主要讨论恐惧与治疗任务，日常例子是本文谨慎外推。"
+        }
+      ],
+      "published_at": "2026-10-22T01:01:15Z",
+      "path": "articles/bandura-task-specific-self-efficacy.html",
+      "chinese_character_count": 1053,
+      "summary": "知道某种行为会带来结果，并不表示你相信自己能完成那项行为；有效支持要把笼统鼓励变成可完成、可累积的掌握经验。",
+      "translation": "含短英文原文及自然中文译文；现代例子与练习为本文据此设计"
     }
   ]
 }
